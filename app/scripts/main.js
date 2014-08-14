@@ -125,7 +125,7 @@ $(document).ready(function() {
 
 
     $('#overlay, #close').bind('click tap',function() {
-        $('#logo-big').animate({top: "15%" }, 'slow' );
+        $('#logo-big').animate({top: "21%" }, 'slow' );
         $(modalTarget).animate({
                 top: "-80%",
                 //bottom: "110%",

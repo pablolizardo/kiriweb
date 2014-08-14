@@ -297,7 +297,7 @@ header {
     left: 0;
     height: 67px;
     text-align: right;
-    background-color: rgba($cNegro,.9);
+    background-color: rgba($cNegro,.7);
     /*background: url('../images/header_bg.png') no-repeat center center;*/
     z-index: 1;
 
@@ -342,7 +342,7 @@ header {
 
     #menu a{
         @include transition();
-        color: $cIndigo;
+        color: $cAzulDark;
         margin-right:1%;
         padding: 7px 1.5%;
         font-size: 1.2em;
@@ -512,7 +512,7 @@ footer {
         -o-animation-iteration-count: infinite;
     }
 #home {
-    background-image: url('../images/backgrounds/geriatricoDia.jpg');
+    background-image: url('../images/backgrounds/geriatricoDiaBlur.jpg');
     background-position: center center;
     overflow: hidden;
     h1, h5, strong, a.active, a:hover {
@@ -521,39 +521,43 @@ footer {
 }
 #logo-big {
     position: absolute;
-    top: 15%;
-    //border:1px solid red;
-    width:100%;
-    z-index: 100009;
+    top: 21%;
+    z-index: 100;
+    // border:1px solid green;
+    padding:0; margin:auto;
+    left: 0; right: 0;
     #logo_1_big {
-        margin: auto;
-        max-width: 90%;
         @include opacity(0);
         @include animation (1s, .5s, welcome);
         @extend .sprite-kiriweb;
+        position:absolute;
+        margin: auto;
         background-position: 0px -200px;
         width: 512px; height: 138px;
-
+        // border:1px solid yellow;
+        top:0; bottom: 0;left: 0;right: 0;
     }
     #logo_2_big {
-        margin: auto;
-        max-width: 80%;
-        margin-top: -15px;
         @include opacity(0);
         @include animation (1.5s, .3s, welcome);
         @extend .sprite-kiriweb;
+        position:absolute;
+        margin: auto;
         background-position: 0px -350px;
         width: 400px; height: 50px;
+        // border:1px solid cyan;
+        bottom: -120px;left: 0;right: 0;
     }
     #logo_3_big {
-        margin: auto;
-        max-width: 40%;
-        margin-top: -20px;
         @include opacity(0);
         @include animation (2s, 2.5s, tresde);
         @extend .sprite-kiriweb;
+        position:absolute;
+        margin: auto;
         background-position: 0px -400px;
         width: 150px; height: 110px;
+        bottom: -205px;left: 0;right: 0;
+        // border:1px solid red;
     }
 }
 
@@ -563,11 +567,12 @@ footer {
 
 }
 
-.modalGaleria{ @include opacity(.9); }
+.modalGaleria{ //@include opacity(.9); 
+}
 .layer {
-    @extend .sprite-front;
-    @include opacity(.9);
     position: absolute;
+    @extend .sprite-front;
+    //@include opacity(.9);
 }
 .layer:hover, .modalGaleria:hover {
     cursor: pointer;
@@ -580,11 +585,11 @@ footer {
 }
 #layer-carlos {
     background-position: -61px -406px;
-    left: 30%; top: 50%; width: 142px; height: 180px;
+    left: 30%; top: 45%; width: 142px; height: 180px;
 }
 #layer-yermo {
     background-position:  -22px -22px;
-    width: 313px; height: 361px; right: 30%; top: 47%;
+    width: 313px; height: 361px; right: 25%; top: 44%;
 }
 #layer-luisito {
     // background-position: -114px -234px;
@@ -592,11 +597,11 @@ footer {
 }
 #layer-malos {
     background-position: -348px -350px;
-    right: 7%; top: 51%; width: 218px; height: 228px;
+    right: 7%; top: 50%; width: 218px; height: 228px;
 }
 #layer-viejitos {
     background-position: -351px -13px;
-    left: 7%; top: 55%;  width: 231px; height: 219px;
+    left: 7%; top: 50%;  width: 231px; height: 219px;
 }
 #overlay{
     width: 100%;
@@ -1138,12 +1143,12 @@ body.pagina-7 { header, footer { background-color: rgba($cNegro, .3); } }
 .icon-twitter:hover  { background-position: -100px -75px; }
 .icon-youtube        { background-position: -150px -50px; }
 .icon-youtube:hover  { background-position: -150px -75px; }
-.icon-telefono       { background-position: -200px -50px; }
-.icon-telefono:hover { background-position: -200px -75px; }
 .icon-mail           { background-position: -100px -100px; }
 .icon-mail:hover     { background-position: -100px -125px; }
 .icon-lugar          { background-position: -150px -150px; }
 .icon-lugar:hover    { background-position: -150px -175px; }
+.icon-home           { background-position: -250px -50px; }
+.icon-home:hover     { background-position: -275px -75px; }
 .icon-Dummy          { background-image: none; }
 
 
