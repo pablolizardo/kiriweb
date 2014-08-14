@@ -59,7 +59,8 @@ $footer-height : 75px; // antes 75px;
 .sprite-kiriweb { background-image:     url('../images/sprites/sprite-kiriweb.png');    }
 .sprite-elenco  { background-image:     url('../images/sprites/sprite-elenco.png');     }
 .sprite-equipo  { background-image:     url('../images/sprites/sprite-equipo.png');     }
-.sprite-front   { background-image:     url('../images/sprites/sprite-front.png');      }
+//.sprite-front   { background-image:     url('../images/sprites/sprite-front.png');      }
+.sprite-front   { background-image:     url('../images/sprites/sprite-front_2.png');      }
 
 /* mixins */
 /* para usar: .box { @include border-radius(10px); } */
@@ -574,28 +575,28 @@ footer {
 }
 
 #layer-marta {
-    background-position: -33px -219px;
-    top: 53%; left:40%; width: 69px; height: 177px;
+    // background-position: -33px -219px;
+    // top: 53%; left:40%; width: 69px; height: 177px;
 }
 #layer-carlos {
-    background-position: -109px 0px;
-    left: 33%; top: 50%; width: 72px; height: 206px;
+    background-position: -61px -406px;
+    left: 30%; top: 50%; width: 142px; height: 180px;
 }
 #layer-yermo {
-    background-position: 0px 0px;
-    right: 32%; top: 52%; width: 109px; height: 219px;
+    background-position:  -22px -22px;
+    width: 313px; height: 361px; right: 30%; top: 47%;
 }
 #layer-luisito {
-    background-position: -114px -234px;
-    right: 40%; top: 61%; width: 70px; height: 120px;
+    // background-position: -114px -234px;
+    // right: 40%; top: 61%; width: 70px; height: 120px;
 }
 #layer-malos {
-    background-position: -412px 0px;
-    right: 7%; top: 43%; width: 282px; height: 400px;
+    background-position: -348px -350px;
+    right: 7%; top: 51%; width: 218px; height: 228px;
 }
 #layer-viejitos {
-    background-position: -186px 0px;
-    left: 7%; top: 41%; width: 226px; height: 377px;
+    background-position: -351px -13px;
+    left: 7%; top: 55%;  width: 231px; height: 219px;
 }
 #overlay{
     width: 100%;
