@@ -12,11 +12,17 @@ $(document).ready(function() {
         new_x = currentMousePos.x / 2;
         //$('#debug').text(new_x+' '+currentMousePos.y);
         //$('#debug').text(home_w + ' x ' + home_h + ' center: '+home_w_center + ' x ' + home_h_center + 'cursor' + currentMousePos.x + ' x ' + currentMousePos.y);
+        // fondo
         $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
+        // personajes
         $("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
         $("#layer-viejitos").css('left', 7 + currentMousePos.x/300 + '%');
         $("#layer-malos").css('right', 7 - currentMousePos.x/250 + '%');
         $("#layer-yermo").css('right', 25 - currentMousePos.x/100 + '%');
+        // overlays
+        $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
+        $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
+        // logo
         $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
             //$("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
             $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');

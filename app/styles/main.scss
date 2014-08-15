@@ -190,7 +190,8 @@ $font-cursive   : McLaren, "McLaren", "McLaren-Regular","McLaren Pro", "Chelsea 
 
 
 header, footer, h1, h2, h3, h4, h5, h6 {font-family: $font-kiriFont; }
-body {background-color: $cNegro; color: $cBlanco; } a        {    color: $cBlanco; }
+body {background-color: $cNegro; color: $cBlanco; } 
+a        {    color: $cBlanco; }
 a:hover  {    color: $cAmarillo; }
 a:active {    color: $cVerde; }
 hr {
@@ -326,7 +327,8 @@ header {
         position: fixed;
         top: 0;
         left:0;
-        display: none;
+        @include opacity(.6)
+         //display: none;
         }
     #logo{
         @extend .sprite-kiriweb;
@@ -503,16 +505,15 @@ footer {
     line-height: 1.7em ;
     color: $cBlanco;
     @include text-shadow();
-
-        bottom:10%;
-        @include animation(0s , 2s ,doSwipe);
-        animation-iteration-count: infinite;
-        -webkit-animation-iteration-count: infinite;
-        -moz-animation-iteration-count: infinite;
-        -o-animation-iteration-count: infinite;
+    bottom:10%;
+    @include animation(0s , 2s ,doSwipe);
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
     }
 #home {
-    background-image: url('../images/backgrounds/geriatricoDia.jpg');
+    background-image: url('../images/backgrounds/geriatricoDiaBlur.jpg');
     background-position: 50% 50%;
     overflow: hidden;
     h1, h5, strong, a.active, a:hover {
@@ -615,10 +616,29 @@ footer {
     background-position: -351px -13px;
     left: 7%; top: 50%;  width: 231px; height: 219px;
 }
+
+
+#layer-ramas {
+    //background-position: -351px -13px;
+    position: absolute;
+    z-index: 390;
+    background-image: url('../images/front_ramas.png');
+    background-size: cover;
+    left: -10%; top: 0%;  width: 510px; height: 241px;
+}
+#layer-arbol {
+    //background-position: -351px -13px;
+    position: absolute;
+    z-index: 391;
+    background-image: url('../images/arbol.png');
+    background-size: cover;
+    right: -10%; top: 0%;  width: 177px; height: 100%;
+}
+
 #overlay{
     width: 100%;
     height: 100%;
-    background: rgba($cIndigo/3, .75);
+    background: rgba(#000, .6);
     position: fixed;
     top:0;
     left:0;
@@ -823,13 +843,12 @@ body.pagina-3  { header, footer { background-color: rgba($cNegro, .6); } }
         @include border-radius(5px);
         @include box-shadow();
         @extend .sprite-equipo;
-        margin: 5px 15px 5px 0px;
         float: left;
         @include border-radius(40px);
     }
 
     .img-75 .equipo-foto{         @include transform(scale(.75));  margin: 2px;    }
-    .img-50 .equipo-foto{         @include transform(scale(.50));  margin:-2px;   }
+    .img-50 .equipo-foto{         @include transform(scale(.5));  margin:-2px;   }
     .img-25 .equipo-foto{         @include transform(scale(.25));     }
     #equipo-marcos     { background-position: 0px 0px; }
     #equipo-ale     { background-position: -237px -79px; }
@@ -856,40 +875,43 @@ body.pagina-3  { header, footer { background-color: rgba($cNegro, .6); } }
     }
     ul li {
         //border:1px solid purple;
+        padding: 11px 0px 11px 10px;
+        margin:0;
     }
 
     ul li i {
-        @include transform(scale(.75)); 
+        @include transform(scale(.4)); 
         @include transition();
+        margin: -19px -15px;
     }
     ul li:hover  i{
-        @include transform(scale(1) rotate(-5deg)); 
+        @include transform(scale(.75) rotate(-7deg)); 
     }
     
     ul.big li i {
-        @include transform(scale(1)); 
+        @include transform(scale(.75)); 
     }
     ul.big li:hover  i{
-        @include transform(scale(1.25) rotate(-5deg)); 
+        @include transform(scale(1) rotate(-5deg)); 
     }
     ul.big li span {
-        margin-top: 14px;
-        font-size: 1.4em;
+        font-size: 1.2em;
         line-height: 1.75em;
+        //border:1px solid cyan;
+
     }
 
     ul.big li { 
         //border:1px solid yellow;
-        padding:10px;
     }
     ul li span {
+        //border:1px solid cyan;
         word-break:break-all;
         word-wrap: break-word;
         display: block;
-        margin-top: 20px;
         font-family: $font-kiriFont;
-        font-size: 1em;
-        line-height: 1.75em;
+        font-size: .8em;
+        line-height: 1.7em;
     }
 }
 
