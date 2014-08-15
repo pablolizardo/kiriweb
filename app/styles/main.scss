@@ -512,8 +512,8 @@ footer {
         -o-animation-iteration-count: infinite;
     }
 #home {
-    background-image: url('../images/backgrounds/geriatricoDiaBlur.jpg');
-    background-position: center center;
+    background-image: url('../images/backgrounds/geriatricoDia.jpg');
+    background-position: 50% 50%;
     overflow: hidden;
     h1, h5, strong, a.active, a:hover {
         color: $cGris !important;
@@ -551,6 +551,8 @@ footer {
     #logo_3_big {
         @include opacity(0);
         @include animation (2s, 2.5s, tresde);
+        animation-play-state: pause;
+        animation-iteration-count:infinite;
         @extend .sprite-kiriweb;
         position:absolute;
         margin: auto;
@@ -558,6 +560,9 @@ footer {
         width: 150px; height: 110px;
         bottom: -205px;left: 0;right: 0;
         // border:1px solid red;
+    }
+    #logo_3_big:hover{
+        animation-play-state: play;
     }
 }
 
@@ -576,7 +581,14 @@ footer {
 }
 .layer:hover, .modalGaleria:hover {
     cursor: pointer;
-    @include opacity(1);
+    //@include opacity(1);
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
+    filter:         drop-shadow(0px 0px 5px rgba($cBlanco,.6)); 
+    -o-filter: drop-shadow(0px 0px 5px rgba($cBlanco,.6));
+    -moz-filter: drop-shadow(0px 0px 5px rgba($cBlanco,.6));
+    -webkit-filter: drop-shadow(0px 0px 5px rgba($cBlanco,.6));
+
 }
 
 #layer-marta {
@@ -585,7 +597,7 @@ footer {
 }
 #layer-carlos {
     background-position: -61px -406px;
-    left: 30%; top: 45%; width: 142px; height: 180px;
+    left: 30%; top: 49%; width: 142px; height: 180px;
 }
 #layer-yermo {
     background-position:  -22px -22px;
@@ -655,7 +667,7 @@ footer {
 }
 .modalMarta{
     h4{ color: #c07a85;}
-    #modalContent {}
+    //#modalContent {}
 
 }
 #modalGaleria {
@@ -686,48 +698,48 @@ footer {
     }
 
 }
-#modalEquipo {
-    @include text-shadow(0 2px 0px rgba(0,0,0,.3));
-    z-index: 99999;
-    text-align: center;
-    position: fixed;
-    top:-80%;
-    left: 20%;
-    right: 20%;
-    pointer-events: none;
-    color: #fff;
-    h4 {color: $cIndigo; margin-bottom:0; }
-    h4, p.lead { font-family: $font-cursive; }
-    h1{ line-height: 1.5em; color: $cRojo;}
+// #modalEquipo {
+//     @include text-shadow(0 2px 0px rgba(0,0,0,.3));
+//     z-index: 99999;
+//     text-align: center;
+//     position: fixed;
+//     top:-80%;
+//     left: 20%;
+//     right: 20%;
+//     pointer-events: none;
+//     color: #fff;
+//     h4 {color: $cIndigo; margin-bottom:0; }
+//     h4, p.lead { font-family: $font-cursive; }
+//     h1{ line-height: 1.5em; color: $cRojo;}
 
-    #modalContent {
-        img{
-            float: right;
-            margin-left: 15px;
-        }
-    }
+//     #modalContent {
+//         img{
+//             float: right;
+//             margin-left: 15px;
+//         }
+//     }
 
-}
-#modalElenco {
-    @include text-shadow(0 2px 0px rgba(0,0,0,.3));
-    z-index: 99999;
-    position: fixed;
-    top:-80%;
-    left: 20%;
-    right: 20%;
-    pointer-events: none;
-    color: #fff;
-    h4{ font-family: $font-cursive; margin-bottom:0; }
-    #modalContent {
-        padding: 20px;
-        background: rgba($cIndigoDark, .8);
-        img{
-            max-width: 100%;
-            height: auto;
-        }
-    }
+// }
+// #modalElenco {
+//     @include text-shadow(0 2px 0px rgba(0,0,0,.3));
+//     z-index: 99999;
+//     position: fixed;
+//     top:-80%;
+//     left: 20%;
+//     right: 20%;
+//     pointer-events: none;
+//     color: #fff;
+//     h4{ font-family: $font-cursive; margin-bottom:0; }
+//     #modalContent {
+//         padding: 20px;
+//         background: rgba($cIndigoDark, .8);
+//         img{
+//             max-width: 100%;
+//             height: auto;
+//         }
+//     }
 
-}
+// }
 
 #modalGaleria #close, #modal #close{
         width:25px;

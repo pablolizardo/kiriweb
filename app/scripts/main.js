@@ -1,6 +1,30 @@
 //$(function onLoad(){
 $(document).ready(function() {
 
+    var currentMousePos = { x: -1, y: -1 };
+    var home_w = $('#home').width();
+    var home_h = $('#home').height();
+    $('#home').mousemove(function(event) {
+        home_w_center = home_w/2;
+        home_h_center = home_h/2;
+        currentMousePos.x = event.pageX-home_w_center;
+        currentMousePos.y = event.pageY-home_h_center;
+        new_x = currentMousePos.x / 2;
+        //$('#debug').text(new_x+' '+currentMousePos.y);
+        //$('#debug').text(home_w + ' x ' + home_h + ' center: '+home_w_center + ' x ' + home_h_center + 'cursor' + currentMousePos.x + ' x ' + currentMousePos.y);
+        $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
+        $("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
+        $("#layer-viejitos").css('left', 7 + currentMousePos.x/300 + '%');
+        $("#layer-malos").css('right', 7 - currentMousePos.x/250 + '%');
+        $("#layer-yermo").css('right', 25 - currentMousePos.x/100 + '%');
+        $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
+            //$("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
+            $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');
+            $("#logo_2_big").css('bottom', -120 + currentMousePos.y/75 + 'px');
+            $("#logo_3_big").css('bottom', -205 - currentMousePos.y/50 + 'px');
+    });
+
+    $("#logo_3_big").mouseover(function() { $(this).addClass("tresde"); });
 
     //hammertime.on("tap", alert("hola?"));
     // arranca el volumen en mute
@@ -60,12 +84,12 @@ $(document).ready(function() {
     });
 
 
-    $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
-    $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
+    // $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
+    // $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
 
     $(".layer").bind('click tap',function() {
 
-        console.log("hiciste clic en layer");
+        //console.log("hiciste clic en layer");
         charName = $(this).data("name");
         modalColor = $(this).data("color");
         modalTarget = $(this).data('target');
@@ -83,7 +107,7 @@ $(document).ready(function() {
     });
 
     $(".modalGaleria").bind('click tap',function() {
-        console.log("hiciste clic en modalGaleria");
+        //console.log("hiciste clic en modalGaleria");
         imgSrc = $(this).attr('src');
         imgAlt = $(this).attr('alt');
         modalTarget = $(this).data('target');
@@ -91,7 +115,7 @@ $(document).ready(function() {
         var fullImgSrc = imgSrc.replace('.min', '');
         fullImgSrc = fullImgSrc.replace('thumbs/', '');
         fullImgSrc = fullImgSrc.replace('images/', 'images/backgrounds/');
-        console.log("la ruta nueva es: "+fullImgSrc);
+        //console.log("la ruta nueva es: "+fullImgSrc);
         $('#modalGaleria' + ' img').attr('src', fullImgSrc);
         $('#modalGaleria' + ' h4').text(imgAlt);
         $('#overlay').fadeIn('200', function() {
@@ -148,7 +172,7 @@ $(document).ready(function() {
     $('.toggleNextSection').on('click',function() {
         /* Act on the event */
         $('#section-arte').toggle('slow');
-        console.log("hiciste clic en la flechitaaa");
+        //console.log("hiciste clic en la flechitaaa");
     });
     //$('#social-globo').mouseout(function() {$(this).delay(200).fadeOut('fast'); });
 });
