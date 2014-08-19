@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"h",
+				"h	height"
+			],
+			[
+				"modal",
+				"modal"
+			],
+			[
 				"cCya",
 				"cCyanDark"
 			],
@@ -142,10 +150,6 @@
 			[
 				"rg",
 				"rig	right"
-			],
-			[
-				"modal",
-				"modalGaleria"
 			],
 			[
 				"point",
@@ -371,7 +375,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 49083,
+				"buffer_size": 47689,
 				"line_ending": "Unix"
 			}
 		},
@@ -379,7 +383,7 @@
 			"file": "app/styles/main.scss",
 			"settings":
 			{
-				"buffer_size": 38230,
+				"buffer_size": 37957,
 				"line_ending": "Unix"
 			}
 		},
@@ -387,7 +391,7 @@
 			"file": "app/scripts/main.js",
 			"settings":
 			{
-				"buffer_size": 7015,
+				"buffer_size": 7018,
 				"line_ending": "Unix"
 			}
 		},
@@ -521,6 +525,7 @@
 	},
 	"file_history":
 	[
+		"/home/pablo/sources/bashscripts/text-gtk.sh",
 		"/home/pablo/sources/kiriWeb/app/styles/main.scss",
 		"/home/pablo/sources/kiriWeb/app/index_OLD_5.html",
 		"/home/pablo/sources/kiriWeb/app/index_OLD_6.html",
@@ -611,6 +616,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"80",
+			"50px",
+			"%",
+			"close",
 			";",
 			"doSwipe",
 			"4",
@@ -734,11 +743,7 @@
 			"social",
 			"footer",
 			"love",
-			"cRojo",
-			"cNegro",
-			"cAmarillo",
-			"h4",
-			"12"
+			"cRojo"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -778,15 +783,15 @@
 					"file": "app/index.html",
 					"settings":
 					{
-						"buffer_size": 49083,
+						"buffer_size": 47689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1000,
-								1000
+								9123,
+								9123
 							]
 						],
 						"settings":
@@ -1037,7 +1042,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2648.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1047,15 +1052,15 @@
 					"file": "app/styles/main.scss",
 					"settings":
 					{
-						"buffer_size": 38230,
+						"buffer_size": 37957,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4861,
-								4861
+								20589,
+								20589
 							]
 						],
 						"settings":
@@ -1306,7 +1311,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2805.0,
+						"translation.y": 11919.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1316,15 +1321,15 @@
 					"file": "app/scripts/main.js",
 					"settings":
 					{
-						"buffer_size": 7015,
+						"buffer_size": 7018,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1228,
-								1228
+								5919,
+								5919
 							]
 						],
 						"settings":
@@ -1575,7 +1580,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 2268.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

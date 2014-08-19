@@ -126,8 +126,7 @@ $(document).ready(function() {
         $('#modalGaleria' + ' h4').text(imgAlt);
         $('#overlay').fadeIn('200', function() {
             $('#modalGaleria').animate({
-                    top: "10%",
-                    bottom: "10%",
+                    top: "0",
                     opacity: "1"
                 },
                 200);
@@ -146,6 +145,7 @@ $(document).ready(function() {
         $('#overlay').fadeIn('200', function() {
             $('#modalEquipo').animate({
                     top: "20%",
+                    bottom: "0",
                     opacity: "1"
                 },
                 200);
@@ -154,10 +154,10 @@ $(document).ready(function() {
     });
 
 
-    $('#overlay, #close').bind('click tap',function() {
+    $('#overlay, #modal-close').bind('click tap',function() {
         $('#logo-big').animate({top: "21%" }, 'slow' );
         $(modalTarget).animate({
-                top: "-80%",
+                top: "-200%",
                 //bottom: "110%",
                 opacity: "0"
             },

@@ -83,20 +83,20 @@ $footer-height : 75px; // antes 75px;
              transform: $transform;
 }
 
-@mixin transition(    $time:.2s) {
+@mixin transition(    $time:.1s) {
   -webkit-transition: $time;
      -moz-transition: $time;
       -ms-transition: $time;
           transition: $time;
 }
-@mixin text-shadow( $shadow:0 3px 0px rgba($cNegro, .4)){
+@mixin text-shadow( $shadow:0px 2px 0px rgba($cNegro, .3)){
     -webkit-text-shadow: $shadow;
        -moz-text-shadow: $shadow;
          -o-text-shadow: $shadow;
             text-shadow: $shadow;
 }
 
-@mixin box-shadow(      $shadow: 0px 3px 1px rgba($cNegro, .5) ){
+@mixin box-shadow(      $shadow: 0px 2px 0px rgba($cNegro, .4) ){
             box-shadow: $shadow;
         -ms-box-shadow: $shadow;
        -moz-box-shadow: $shadow;
@@ -370,7 +370,7 @@ header {
         margin-right:1%;
         padding: 7px 1.5%;
         font-size: 1.2em;
-        @include text-shadow(0px 1px 2px rgba($cNegro, .6));
+        @include text-shadow(0px 2px 0px rgba($cNegro, .6));
         &:hover{
             color: $cBlanco !important;
             text-decoration: none;
@@ -502,38 +502,28 @@ footer {
         height: 120px;
         padding-top: 12px;
         padding-left: 17px;
-        h4 { color: $cIndigo;   font-family: $font-cursive; font-size: 1.1em;}
-        h1 { color: $cRojo;     font-family: $font-kiriFont; font-size: 1.6em; margin: 0;}
     }
     .socialGloboShow {@include animation(0s, 0.5s, socialGlobo);}
     .socialGloboHide {@include animation(0s, 0.5s, socialGloboInv);}
 }
 /* ::::::::::::::::::::::::: FIN: FOOTER ::::::::::::::::::::::::::: */
 
-
-
 /* :::::::::::::::::::::::::[2] LI#HOME::::::::::::::::::::::::::: */
-//body.pagina-0 {  #logo { @include opacity(0);} }
 #doSwipe {
     @extend .sprite-kiriweb;
     background-position: -388px -119px;
     position: absolute;
     width: 123px;
     height:76px;
-    text-align: center;
     left:0;
     right: 0;
     margin:auto;
-    font-family: $font-kiriFont;
-    line-height: 1.7em ;
-    color: $cBlanco;
-    @include text-shadow();
     bottom:10%;
     @include animation(0s , 2s ,doSwipe);
-    animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -o-animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+         -o-animation-iteration-count: infinite;
     }
 #home {
     background-image: url('../images/backgrounds/geriatricoDiaBlur.jpg');
@@ -574,7 +564,7 @@ footer {
     }
     #logo_3_big {
         @include opacity(0);
-        @include animation (2s, 2.5s, tresde);
+        @include animation (3s, 2.5s, tresde);
         animation-play-state: pause;
         animation-iteration-count:infinite;
         @extend .sprite-kiriweb;
@@ -590,28 +580,16 @@ footer {
     }
 }
 
-.btn-leerMas {
-    font-family: $font-cursive;
-    padding: 10px;
-
-}
-
-.modalGaleria{ //@include opacity(.9); 
-}
-.layer {
-    position: absolute;
-    @extend .sprite-front;
-    //@include opacity(.9);
-}
+.layer {position: absolute; @extend .sprite-front; }
 .layer:hover, .modalGaleria:hover {
     cursor: pointer;
     //@include opacity(1);
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-    filter:         drop-shadow(0px 0px 5px rgba($cBlanco,.6)); 
-    -o-filter: drop-shadow(0px 0px 5px rgba($cBlanco,.6));
-    -moz-filter: drop-shadow(0px 0px 5px rgba($cBlanco,.6));
-    -webkit-filter: drop-shadow(0px 0px 5px rgba($cBlanco,.6));
+    filter:         drop-shadow(0px 0px 8px rgba($cBlanco,.4)); 
+    -o-filter:      drop-shadow(0px 0px 8px rgba($cBlanco,.4));
+    -moz-filter:    drop-shadow(0px 0px 8px rgba($cBlanco,.4));
+    -webkit-filter: drop-shadow(0px 0px 8px rgba($cBlanco,.4));
 
 }
 
@@ -671,22 +649,23 @@ footer {
 }
 #front{
     width: 100%;
-    height: 100%;
+    height: 10%;
     pointer-events: none;
     position: fixed;
-    top:0;
+    bottom:0;
     left:0;
-
+    // border:1px solid red;
     z-index: 199999;
     img { position: absolute; bottom: 0; right: 0;}
 }
 
 #modal {
-    @include text-shadow(0 2px 0px rgba(0,0,0,.3));
+    @include text-shadow(0 2px 0px rgba(0,0,0,.2));
+    @include transform(rotate(-1deg));
     z-index: 99999;
     position: fixed;
     top:-80%;
-    pointer-events: none;
+    //pointer-events: none;
     color: #fff;
     p{ 
         font-family: $font-cursive; 
@@ -694,7 +673,7 @@ footer {
     }
     p.lead{ 
         font-family: $font-kiriFont; 
-        font-size: 1.2em; 
+        font-size: 1.15em; 
         margin-bottom: 5px; 
     }
     h4{
@@ -702,45 +681,67 @@ footer {
         margin-bottom:0; 
     }
     #modalContent {
-        padding: 20px;
-        background: rgba($cIndigoDark, .8);
+        padding: 25px;
+        //background: rgba($cIndigoDark, .8);
         padding-right:60px;
         @include box-shadow();
+
+    }
+    #modal-close{
+
+        width:25px;
+        height:25px;
+        cursor:pointer;
+        float: right;
+        top:20px;
+        z-index: 100;
+        @extend .sprite-kiriweb;
+        background-position: 0px -150px;
+
+        &:hover{
+            background-position: -25px -175px;
+        }
     }
 }
-.modalMarta{
-    h4{ color: #c07a85;}
-    //#modalContent {}
 
-}
 #modalGaleria {
-    @include text-shadow(0 2px 0px rgba(0,0,0,.3));
+    @include text-shadow(0 2px 0px rgba(0,0,0,.2));
+    @include transform(rotate(-1deg));
     z-index: 99999;
+    margin: auto;
     position: fixed;
-    top:-80%;
+    top:-200%;
     bottom:100%;
-    left: 10%;
-    right: 10%;
-    pointer-events: none;
+    left: 0;
+    right: 0;
+    width: 75%;
+    height: 65%;
     color: #fff;
 
-    #modalContent {
-        padding: 15px;
-        background: $cNegro ; // azul;
-        position:relative;
-        h4{
-            position:absolute;
-            bottom: 13px;
-            left: 35px;
+    img{
+        width: 100%;
+        // max-width: 100%;
+        // max-height: 100%;
+    }
+    #modal-close{
+        position: fixed;
+        top: -12px;
+        right: -12px;
+        width:25px;
+        height:25px;
+        cursor:pointer;
+        z-index: 89999;
+        @extend .sprite-kiriweb;
+        background-position: 0px -150px;
 
-        }
-        img{
-            max-width: 100%;
-            height: auto;
+        &:hover{
+            background-position: -25px -175px;
         }
     }
 
 }
+
+
 // #modalEquipo {
 //     @include text-shadow(0 2px 0px rgba(0,0,0,.3));
 //     z-index: 99999;
@@ -784,19 +785,6 @@ footer {
 
 // }
 
-#modalGaleria #close, #modal #close{
-        width:25px;
-        height:25px;
-        cursor:pointer;
-        float: right;
-        top:20px;
-        @extend .sprite-kiriweb;
-        background-position: 0px -150px;
-
-        &:hover{
-            background-position: -25px -175px;
-        }
-    }
 
 /* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
 body.pagina-1 { header, footer { background-color: rgba($cNegro, .3);  } }

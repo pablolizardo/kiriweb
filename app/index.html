@@ -92,15 +92,15 @@
         <a data-page="0" href="#home.html" id="logo" class="hidden" ></a>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <nav class="nav"  id="menu">
-
                 <a data-page="0" href="#home.html" class="active ">Inicio</a>
                 <a data-page="1" href="#trailer.html">Galeria</a>
                 <a data-page="2" href="#sinopsis.html">Sinópsis</a>
-                <a data-page="3" href="#noticias.html" class="hidden">Noticias</a>
-                <a data-page="4" href="#equipo.html">Equipo</a>
-                <a data-page="5" href="#elenco.html">Elenco</a>
-                <span id="debug" class="pull-left small hidden">debug</span>
+                <!-- <a href="#noticias.html" class="hidden">Noticias</a> -->
+                <a data-page="3" href="#equipo.html">Equipo</a>
+                <a data-page="4" href="#elenco.html">Elenco</a>
             </nav>
+                            <span id="debug" class="pull-left small hidden">debug</span>
+
         </div>
     </div>
 </header>
@@ -138,8 +138,8 @@
                 </div>
             </div>
             <div id="copyright" class="col-xs-2  col-sm-2 col-md-2 col-lg-2 text-right" >
-                <a data-page="6" href="#prensa.html" class="C-tooltip" data-toggle="tooltip" title="Descarga el kit">Prensa</a>
-                <a data-page="7" href="#contacto.html" class="C-tooltip" data-toggle="tooltip" title="Mandanos tu mensaje o consulta!">Contacto</a>
+                <a data-page="5" href="#prensa.html" class="C-tooltip" data-toggle="tooltip" title="Descarga el kit">Prensa</a>
+                <a data-page="6" href="#contacto.html" class="C-tooltip" data-toggle="tooltip" title="Mandanos tu mensaje">Contacto</a>
                 <br>
                 <small class="hidden">LOS PERSONAJES SON MARCA REGISTRADA DE SAN LUIS ANIMACION Y SAN LUIS CINE.</small>
             </div>
@@ -157,25 +157,27 @@
 <div id="modal" >
     <div class="container-fluid">
 
-            <div class="row">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-                    <h4>subtitulo</h4>
-                </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+
+                <h4>subtitulo</h4>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-                    <div id="close"></div>
-                    <h1>titulo</h1>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+                <div id="modal-close" class="C-tooltip" data-toggle="tooltip" title="Volver"></div>
+                <h1>titulo</h1>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" id="modalContent" >
-                    <p>parrafo</p>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6" id="modalContent" >
+                <p>parrafo</p>
             </div>
+        </div>
     </div>
+
 </div>
-<div id="modalGaleria" > <div id="modalContent" > <img src="images/#"><h4 class="hidden">titulo </h4></div> </div>
+<div id="modalGaleria" ><img src="images/#"><div id="modal-close" class="C-tooltip" data-toggle="tooltip" title="Volver"></div></div>
 <!-- <div id="modalEquipo" >
     <h4>subtitulo</h4>
     <h1>titulo</h1>
@@ -228,14 +230,14 @@
 
                     <div data-target="#modal" data-img="malos"  data-color="#d44d41" data-name="Dora y Camilo" data-subtitulo="Conocé a ..." class="layer" id="layer-malos"   ></div>
                     <span class="hidden">
-                        <p><strong>Dora</strong> es la directora del geriatrico “La Última Estación” . Es fuerte y de muy mal carácter, es una de las principales antagonistas de la película, ella no permitirá que se le escape ningún abuelito del  Geriátrico.</p>
+                        <p class="lead"><strong>Dora</strong> es la directora del geriatrico “La Última Estación” .</p><p> Es fuerte y de muy mal carácter, es una de las principales antagonistas de la película, ella no permitirá que se le escape ningún abuelito del  Geriátrico.</p>
 
                         <p><strong>Camilo</strong> es el asistente de Dora,  es enfermero y un boy scout adulto feliz . Es un personaje simpático, amante de la paz interior, el yoga y todo lo relacionado a la meditación y Tai Chi. Aunque su inteligencia es   reducida, siempre se esfuerza por hacer bien su trabajo.</p>
                     </span>
                     <div data-target="#modal" data-img="viejitos"  data-color="#31abb2" data-name="Elena, Telma y Totó" data-subtitulo="Conocé a ..." class="layer" id="layer-viejitos"></div>
                     <span class="hidden">
 
-                        <p ><strong>Elena</strong> es una abuelita que está desde hace mucho tiempo en el geriátrico “La Última Estación” aunque no recuerda cómo ni cuándo llegó allí. Es uno de los personajes más simpáticos de la película, no tiene buena memoria y es cinturón negro en Taekwondo. Le gusta mucho tejer y comer chocolate.</p>
+                        <p class="lead"><strong>Elena</strong> es una abuelita que está desde hace mucho tiempo en el geriátrico “La Última Estación” aunque no recuerda cómo ni cuándo llegó allí.</p><p> Es uno de los personajes más simpáticos de la película, no tiene buena memoria y es cinturón negro en Taekwondo. Le gusta mucho tejer y comer chocolate.</p>
 
                         <p ><strong>Telma Dolídez</strong> es una señora que Yermo conoce en el geriátrico. Es una mujer inteligente y planificadora; ex prestigiosa directora de escuela, fue jubilada y acusada de pedir dinero para aprobar a los alumnos. </p>
 
@@ -270,7 +272,7 @@
                         </div>
                     </div>
 
-                    <div class="row hidden">
+                    <div class="row ">
                         <div id="video-div" class="col-xs-12 col-md-offset-1  col-md-10 text-center">
                         </div>
                     </div>
@@ -279,22 +281,18 @@
 
                     <div class="row">
                             <div class="col-xs-12 col-md-offset-1 col-md-10">
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/elparaiso_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/calleDark_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/geriatrico_bg.min.jpg"    /> </div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/plaza_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/loteria_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/feria_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/malamuerte_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/autopista_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/elparaiso_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/calleDark_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/geriatrico_bg.min.jpg"    /> </div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/plaza_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/loteria_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/feria_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/malamuerte_bg.min.jpg"   /></div>
-                                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/autopista_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/elparaiso_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/calleDark_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/geriatrico_bg.min.jpg"    /> </div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/plaza_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/loteria_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/feria_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/malamuerte_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/autopista_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/elparaiso_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/calleDark_bg.min.jpg"   /></div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/geriatrico_bg.min.jpg"    /> </div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 "> <img class="img-responsive modalGaleria" data-target="#modalGaleria" src="images/thumbs/plaza_bg.min.jpg"   /></div>
                             </div>
                     </div>
 
@@ -727,16 +725,6 @@
 
 
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            // e.src='//www.google-analytics.com/analytics.js';
-            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            // ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-
         <!-- build:js scripts/plugins.js -->
         <!--
             <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
@@ -759,7 +747,6 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
 
-        <!-- <script type="text/javascript" src="scripts/dragend.js"></script> -->
 
 </body>
 </html>
