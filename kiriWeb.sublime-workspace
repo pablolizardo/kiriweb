@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cCya",
+				"cCyanDark"
+			],
+			[
 				"conta",
 				"contain"
 			],
@@ -375,7 +379,7 @@
 			"file": "app/styles/main.scss",
 			"settings":
 			{
-				"buffer_size": 37164,
+				"buffer_size": 38230,
 				"line_ending": "Unix"
 			}
 		},
@@ -517,6 +521,7 @@
 	},
 	"file_history":
 	[
+		"/home/pablo/sources/kiriWeb/app/styles/main.scss",
 		"/home/pablo/sources/kiriWeb/app/index_OLD_5.html",
 		"/home/pablo/sources/kiriWeb/app/index_OLD_6.html",
 		"/home/pablo/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
@@ -527,7 +532,6 @@
 		"/home/pablo/sources/kiriWeb/Gruntfile.js",
 		"/home/pablo/.config/sublime-text-2/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
 		"/home/pablo/.config/sublime-text-2/Packages/User/JavascriptBeautify.sublime-settings",
-		"/home/pablo/sources/kiriWeb/app/styles/main.scss",
 		"/run/media/pablo/fed/app/styles/style.scss",
 		"/run/media/pablo/fed/app/scripts/main.js",
 		"/run/media/pablo/fed/app/styles/main.scss",
@@ -607,6 +611,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";",
+			"doSwipe",
 			"4",
 			"col-xs-12 col-sm-6 col-md-4 col-lg-4",
 			"6",
@@ -732,9 +738,7 @@
 			"cNegro",
 			"cAmarillo",
 			"h4",
-			"12",
-			"col-xs-12",
-			"6"
+			"12"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -766,7 +770,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -781,8 +785,8 @@
 						"selection":
 						[
 							[
-								22026,
-								22026
+								1000,
+								1000
 							]
 						],
 						"settings":
@@ -1033,7 +1037,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1870.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1043,15 +1047,15 @@
 					"file": "app/styles/main.scss",
 					"settings":
 					{
-						"buffer_size": 37164,
+						"buffer_size": 38230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								25602,
-								25602
+								4861,
+								4861
 							]
 						],
 						"settings":
@@ -1302,7 +1306,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 16477.0,
+						"translation.y": 2805.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -180,11 +180,31 @@ $footer-height : 75px; // antes 75px;
 
 /* ::::::::::: FONTS ::::::::::: */
 
-@font-face { font-family: kiriFont; src: url(../fonts/KiriFont.ttf); }
-@font-face { font-family: McLaren; src: url(../fonts/McLaren-Regular.ttf); }
+// OLD FONT-FACE LINE :: @font-face { font-family: kiriFont; src: url('../fonts/KiriFont.ttf'); }
+@font-face {
+    font-family: 'kiriFont';
+    src: url('../fonts/kirifont-webfont.eot');
+    src: url('../fonts/kirifont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/kirifont-webfont.woff') format('woff'),
+         url('../fonts/kirifont-webfont.ttf') format('truetype'),
+         url('../fonts/kirifont-webfont.svg#kirifontnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
-$font-kiriFont  : kiriFont, "kiriFont", "KiriFont","HammersmithOne", "helvetica", "Helvetica", "Montserrat", sans-serif;
-$font-cursive   : McLaren, "McLaren", "McLaren-Regular","McLaren Pro", "Chelsea Market","FF Duper", sans-serif; 
+}
+// OLD FONT FACE :: @font-face { font-family: McLaren; src: url('../fonts/McLaren-Regular.ttf'); }
+@font-face {
+    font-family: 'mclarenregular';
+    src: url('../fonts/mclaren-regular-webfont.eot');
+    src: url('../fonts/mclaren-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/mclaren-regular-webfont.woff') format('woff'),
+         url('../fonts/mclaren-regular-webfont.ttf') format('truetype'),
+         url('../fonts/mclaren-regular-webfont.svg#mclarenregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+$font-kiriFont  : kiriFont, 'kiriFont', "KiriFont","HammersmithOne", "Helvetica Neue","helvetica", "Helvetica", "Montserrat",Arial, Verdana,sans,  sans-serif;
+$font-cursive   : mclarenregular, 'mclarenregular', 'McLaren', "McLaren-Regular","McLaren Pro", "Chelsea Market","FF Duper", "Helvetica Neue","helvetica", "Helvetica", "Montserrat",Arial, Verdana,sans,   sans-serif; 
 
 /* ::::::::::: FIN FONTS ::::::::::: */
 
@@ -195,17 +215,12 @@ a        {    color: $cBlanco; }
 a:hover  {    color: $cAmarillo; }
 a:active {    color: $cVerde; }
 hr {
-    // @include box-shadow();
-    // border: 1px solid $cIndigo;
-    // width: 80%;
-    // margin: 30px auto ;
     @extend .sprite-kiriweb;
     width: 255px;
     height: 5px;
     background-position: 0px -340px;
     margin: 5px auto; padding: 0;  
     border:0;  
-    //width:90%;
 }
 hr.indigo { background-position: 0px -345px; }
 hr.light { background-position: -255px -340px; }
@@ -213,15 +228,24 @@ hr.cyan { background-position: -255px -345px; }
 
 html, body{
     height: 100%;
-    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-font-smoothing: antialiased!important;
+    -o-font-smoothing: antialiased!important;
+    -ms-font-smoothing: antialiased!important;
+    font-smoothing: antialiased!important;
+    font-smooth: always!important;
+    
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    overflow-x: hidden; /* disable horizontal scrollbar */
+    
     padding:0px !important;
+     overflow-x: hidden; /* disable horizontal scrollbar */
 
 }
 /* ::::::::::::::::::::::::: FIN: GLOBALS ::::::::::::::::::::::::::: */
@@ -233,15 +257,13 @@ html, body{
     
     
     @extend .sprite-kiriweb;
-    z-index: 99995;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    //background-image : url('../images/flechas.png');
-    //background-repeat: no-repeat;
     position: fixed;
     top:0; bottom:0;
     margin:auto;
+    z-index: 6;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
 }
 .flechas.deactivated { display: none; }
 .prev       {left: -20px;  background-position: -175px 0px; }
@@ -287,20 +309,17 @@ ul#pages { list-style-type: none; height: 100%; margin: 0 !important; padding: 0
 
 
 /* ::::::::::::::::::::::::: STICKY/HEADER ::::::::::::::::::::::::::: */
-//body.pagina-0 { header #menu {text-align: center; @include transition();}}
+
 header {
-    /*@include transition();*/
-    width: 100%;
     position: fixed;
     top: -70px;
-    padding-top: 26px;
-    padding-right: 40px;
+    right: 0;
     left: 0;
+    width: 100%;
+    z-index: 5;
+    padding-top: 26px;
     height: 67px;
-    text-align: right;
     background-color: rgba($cNegro,.7);
-    /*background: url('../images/header_bg.png') no-repeat center center;*/
-    z-index: 1;
 
     #volumen{
         @extend .sprite-kiriweb;
@@ -319,32 +338,35 @@ header {
         background-position: -75px -100px;
     }
     #gradient {
+        position: fixed;
+        top: 0;
+        left:0;
         width: 100%;
         height: 80px;
         background-position: bottom center;
         background-size: contain;
         background-image: url('../images/gradient_up.png');
-        position: fixed;
-        top: 0;
-        left:0;
         @include opacity(.6)
          //display: none;
         }
     #logo{
+        position:fixed;
+        top: -70px;
+        left: 30px;
         @extend .sprite-kiriweb;
         background-position: -200px -100px;
         width: 175px;
         height: 40px;
-        position:fixed;
-        top: -70px;
-        left: 30px;
         z-index: 52;
     }
     #logo:hover { background-position: -200px -150px; }
-
+    #menu{
+        position: relative;
+        width: 100%;
+    }
     #menu a{
         @include transition();
-        color: $cAzulDark;
+        color: $cIndigo;
         margin-right:1%;
         padding: 7px 1.5%;
         font-size: 1.2em;
@@ -353,7 +375,7 @@ header {
             color: $cBlanco !important;
             text-decoration: none;
         }
-        &.active { color: $cBlanco; }
+        &.active { color: $cCyan; }
         &:last-child { margin-right:0; }
     }
 }
@@ -494,13 +516,14 @@ footer {
 //body.pagina-0 {  #logo { @include opacity(0);} }
 #doSwipe {
     @extend .sprite-kiriweb;
-    background-position: -250px 0px;
+    background-position: -388px -119px;
     position: absolute;
-    width: 135px;
-    height:100px;
+    width: 123px;
+    height:76px;
     text-align: center;
-    left:35%;
-    right: 35%;
+    left:0;
+    right: 0;
+    margin:auto;
     font-family: $font-kiriFont;
     line-height: 1.7em ;
     color: $cBlanco;
@@ -1044,6 +1067,7 @@ body.pagina-7 { header, footer { background-color: rgba($cNegro, .3); } }
 /* :::::::::::::: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
 @media (max-width:768px) {
     li .container { padding-top: 30px !important; padding-bottom:50px  !important; }
+
 }
 
 
@@ -1077,8 +1101,8 @@ body.pagina-7 { header, footer { background-color: rgba($cNegro, .3); } }
 }
 
 @include keyframes(doSwipe){
-    0%,100%  {  @include transform(translateX( -70px )); }
-    50% {       @include transform(translateX( 0px )); }
+    0%,100%  {  @include transform(translateX( -30px )); }
+    50% {       @include transform(translateX( 30px )); }
 }
 
 @include keyframes(socialGlobo){
