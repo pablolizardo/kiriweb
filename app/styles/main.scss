@@ -4,50 +4,11 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+@import "mixins";
+@import "colors";
 /* ::::::::::::::::::::::::: variables/mixins ::::::::::::::::::::::::::: */
 
-/* paleta nueva */
-$cCyan : #0dcdc0;
-$cCyanDark : #0ead99;
 
-$cVerde : #a7d163;
-$cVerdeDark : #27ae61;
-
-$cAmarillo : #fbcf62;
-$cAmarilloDark : #f9c82d;
-
-$cNaranja : #e5ba5b;
-$cNaranjaDark : #e3a711;
-
-$cRojo: #ff6f6f;
-$cRojoDark: #d13f4a;
-
-$cRosa: #d49f99;
-$cRosaDark: #745260;
-
-$cTomateLight: #fe7d60;
-$cTomate: #e84b3a;
-$cTomateDark: #c1392b;
-
-$cAzul : #3598db;
-$cAzulDark : #297fb8;
-
-$cIndigo: #48647c;
-$cIndigoDark: #2d3e50;
-
-$cVioleta: #b13f73;
-$cVioletaDark: #832d50;
-
-
-
-$cBlanco : #ffffff;
-$cGris : #dedede;
-$cGrisDark : #bec3c7;
-
-$cMarron: #69625c;
-
-$cNegro : #0b0d0f;
-$cCiruelon : #404048;
 
 $header-height : 105px;
 $footer-height : 75px; // antes 75px;
@@ -61,115 +22,6 @@ $footer-height : 75px; // antes 75px;
 .sprite-equipo  { background-image:     url('../images/sprites/sprite-equipo.png');     }
 //.sprite-front   { background-image:     url('../images/sprites/sprite-front.png');      }
 .sprite-front   { background-image:     url('../images/sprites/sprite-front_2.png');      }
-
-/* mixins */
-/* para usar: .box { @include border-radius(10px); } */
-
-@mixin border-radius(    $radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-          // keeps background from busting out of border
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
-}
-@mixin transform($transform){
-     -webkit-transform: $transform;
-         -ms-transform: $transform;
-        -moz-transform: $transform;
-          -o-transform: $transform;
-             transform: $transform;
-}
-
-@mixin transition(    $time:.1s) {
-  -webkit-transition: $time;
-     -moz-transition: $time;
-      -ms-transition: $time;
-          transition: $time;
-}
-@mixin text-shadow( $shadow:0px 2px 0px rgba($cNegro, .3)){
-    -webkit-text-shadow: $shadow;
-       -moz-text-shadow: $shadow;
-         -o-text-shadow: $shadow;
-            text-shadow: $shadow;
-}
-
-@mixin box-shadow(      $shadow: 0px 2px 0px rgba($cNegro, .4) ){
-            box-shadow: $shadow;
-        -ms-box-shadow: $shadow;
-       -moz-box-shadow: $shadow;
-     -opera-box-shadow: $shadow;
-    -webkit-box-shadow: $shadow;
-}
-
-@mixin opacity (    $opacity: 0.5 ) {
-          opacity: $opacity;
-   -khtml-opacity: $opacity;
-     -moz-opacity: $opacity;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $opacity * 100 ")";
-  filter: alpha(opacity= $opacity * 100 );
-}
-
-@mixin transform-origin($value: center center){
-    -webkit-transform-origin: $value;
-       -moz-transform-origin: $value;
-        -ms-transform-origin: $value;
-         -o-transform-origin: $value;
-            transform-origin: $value;
-}
-
-@mixin animation ($delay, $duration, $animation) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
-    -webkit-animation-name: $animation;
-    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
-    -moz-animation-name: $animation;
-    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-
-    -o-animation-delay: $delay;
-    -o-animation-duration: $duration;
-    -o-animation-name: $animation;
-    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-
-    animation-delay: $delay;
-    animation-duration: $duration;
-    animation-name: $animation;
-    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
-}
-
-@mixin hide-text{
-    font: 0/0 a;
-    text-shadow: none;
-    color: transparent;
-}
-
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  }
-}
-
-@mixin blur($value:10px) {
-     -webkit-filter: blur($value);
-        -moz-filter: blur($value);
-          -o-filter: blur($value);
-         -ms-filter: blur($value);
-             filter: blur($value);
-}
 
 
 
@@ -398,44 +250,36 @@ footer {
     #love {
         padding: 6px 0 0 25px;
     }
-    .logos-logo{
-        margin:auto;
-        cursor: pointer;
-    }
-    #logos {
-        
-        padding: 0;
-        #logo-if{
+    #logos a{
+        @extend .sprite-kiriweb;
+        display: inline-block;
+        &#logo-if{
             margin-top: 18px;
             width: 105px; height:7px;
-            @extend .sprite-kiriweb;
+            
                         background-position: -150px -400px;
             &:hover{    background-position: -150px -415px; }
         }
-        #logo-sla{
+        &#logo-sla{
             margin-top: 6px;
             width: 72px; height:26px;
-            @extend .sprite-kiriweb;
                         background-position: -260px -400px;
             &:hover{    background-position: -260px -430px; }
         }
-        #logo-slc{
+        &#logo-slc{
             width: 92px; height:40px;
-            @extend .sprite-kiriweb;
                         background-position: -405px -350px;
             &:hover{    background-position: -405px -395px; }
         }
-        #logo-incaa{
+        &#logo-incaa{
             margin-top: 5px;
             width: 52px; height:28px;
-            @extend .sprite-kiriweb;
                         background-position: -150px -430px;
             &:hover{    background-position: -150px -460px; }
         }
-        #logo-zetta{
+        &#logo-zetta{
             margin-top: 10px;
             width: 41px; height:18px;
-            @extend .sprite-kiriweb;
                         background-position: -205px -435px;
             &:hover{    background-position: -205px -460px; }
         }
@@ -581,41 +425,29 @@ footer {
 }
 
 .layer {position: absolute; @extend .sprite-front; }
-.layer:hover, .modalGaleria:hover {
+.layer:hover {
     cursor: pointer;
-    //@include opacity(1);
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-    filter:         drop-shadow(0px 0px 8px rgba($cBlanco,.4)); 
-    -o-filter:      drop-shadow(0px 0px 8px rgba($cBlanco,.4));
-    -moz-filter:    drop-shadow(0px 0px 8px rgba($cBlanco,.4));
-    -webkit-filter: drop-shadow(0px 0px 8px rgba($cBlanco,.4));
+    filter:         drop-shadow(0px 0px 3px rgba($cBlanco,.6)); 
+    -o-filter:      drop-shadow(0px 0px 3px rgba($cBlanco,.6));
+    -moz-filter:    drop-shadow(0px 0px 3px rgba($cBlanco,.6));
+    -webkit-filter: drop-shadow(0px 0px 3px rgba($cBlanco,.6));
 
 }
 
-#layer-marta {
-    // background-position: -33px -219px;
-    // top: 53%; left:40%; width: 69px; height: 177px;
+#layer-center {
+    background-position:  0px 0px;
+    width: 393px; height: 421px; right: 35%; top: 44%;
 }
-#layer-carlos {
-    background-position: -61px -406px;
-    left: 30%; top: 49%; width: 142px; height: 180px;
+
+#layer-right {
+   background-position: -393px 0px;
+    right: 7%; top: 36%;width: 359px; height: 422px;
 }
-#layer-yermo {
-    background-position:  -22px -22px;
-    width: 313px; height: 361px; right: 25%; top: 44%;
-}
-#layer-luisito {
-    // background-position: -114px -234px;
-    // right: 40%; top: 61%; width: 70px; height: 120px;
-}
-#layer-malos {
-    background-position: -348px -350px;
-    right: 7%; top: 50%; width: 218px; height: 228px;
-}
-#layer-viejitos {
-    background-position: -351px -13px;
-    left: 7%; top: 50%;  width: 231px; height: 219px;
+#layer-left {
+    background-position: -162px -421px;
+    left: 7%; top: 40%;  width: 451px; height: 325px;
 }
 
 
@@ -645,27 +477,19 @@ footer {
     left:0;
     cursor: pointer;
     z-index: 99998;
-    //img { position: absolute; bottom: 0; right: 5%;}
-}
-#front{
-    width: 100%;
-    height: 10%;
-    pointer-events: none;
-    position: fixed;
-    bottom:0;
-    left:0;
-    // border:1px solid red;
-    z-index: 199999;
-    img { position: absolute; bottom: 0; right: 0;}
 }
 
+img.front {
+    pointer-events: none;
+    position: absolute; bottom: 0; right: 0;
+    z-index: 199999;
+}
 #modal {
     @include text-shadow(0 2px 0px rgba(0,0,0,.2));
-    @include transform(rotate(-1deg));
+    width: 100%;
     z-index: 99999;
     position: fixed;
     top:-80%;
-    //pointer-events: none;
     color: #fff;
     p{ 
         font-family: $font-cursive; 
@@ -680,110 +504,45 @@ footer {
         font-family: $font-cursive; 
         margin-bottom:0; 
     }
-    #modalContent {
-        padding: 25px;
-        //background: rgba($cIndigoDark, .8);
-        padding-right:60px;
+    .modalContent {
+        padding: 25px 60px 25px 25px;
         @include box-shadow();
+        @include border-radius();
 
     }
-    #modal-close{
-
-        width:25px;
-        height:25px;
-        cursor:pointer;
-        float: right;
-        top:20px;
-        z-index: 100;
-        @extend .sprite-kiriweb;
-        background-position: 0px -150px;
-
-        &:hover{
-            background-position: -25px -175px;
-        }
-    }
+    
 }
+#modal-close{
 
+    width:25px;
+    height:25px;
+    cursor:pointer;
+    float: right;
+    top:20px;
+    z-index: 100;
+    @extend .sprite-kiriweb;
+    background-position: 0px -150px;
+
+    &:hover{
+        background-position: -25px -175px;
+    }
+    }
 #modalGaleria {
     @include text-shadow(0 2px 0px rgba(0,0,0,.2));
     @include transform(rotate(-1deg));
     z-index: 99999;
     margin: auto;
     position: fixed;
-    top:-200%;
-    bottom:100%;
+    top:-250%;
+    //bottom:100%;
     left: 0;
     right: 0;
     width: 75%;
     height: 65%;
     color: #fff;
-
-    img{
-        width: 100%;
-        // max-width: 100%;
-        // max-height: 100%;
-    }
-    #modal-close{
-        position: fixed;
-        top: -12px;
-        right: -12px;
-        width:25px;
-        height:25px;
-        cursor:pointer;
-        z-index: 89999;
-        @extend .sprite-kiriweb;
-        background-position: 0px -150px;
-
-        &:hover{
-            background-position: -25px -175px;
-        }
-    }
-
+    img{width: 100%; }
 }
 
-
-// #modalEquipo {
-//     @include text-shadow(0 2px 0px rgba(0,0,0,.3));
-//     z-index: 99999;
-//     text-align: center;
-//     position: fixed;
-//     top:-80%;
-//     left: 20%;
-//     right: 20%;
-//     pointer-events: none;
-//     color: #fff;
-//     h4 {color: $cIndigo; margin-bottom:0; }
-//     h4, p.lead { font-family: $font-cursive; }
-//     h1{ line-height: 1.5em; color: $cRojo;}
-
-//     #modalContent {
-//         img{
-//             float: right;
-//             margin-left: 15px;
-//         }
-//     }
-
-// }
-// #modalElenco {
-//     @include text-shadow(0 2px 0px rgba(0,0,0,.3));
-//     z-index: 99999;
-//     position: fixed;
-//     top:-80%;
-//     left: 20%;
-//     right: 20%;
-//     pointer-events: none;
-//     color: #fff;
-//     h4{ font-family: $font-cursive; margin-bottom:0; }
-//     #modalContent {
-//         padding: 20px;
-//         background: rgba($cIndigoDark, .8);
-//         img{
-//             max-width: 100%;
-//             height: auto;
-//         }
-//     }
-
-// }
 
 
 /* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
@@ -1134,10 +893,6 @@ body.pagina-7 { header, footer { background-color: rgba($cNegro, .3); } }
     right: 0;
     bottom: 0;
     margin:auto;
-    //@include opacity(.7);
-    // @include transform-origin(center center);
-    //         animation : bounce 1.5s infinite;
-    // -webkit-animation : bounce 1.5s infinite;
     width: 170px; height: 70px;
     @extend .sprite-kiriweb;
     background-position: -340px -440px;

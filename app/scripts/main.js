@@ -15,10 +15,10 @@ $(document).ready(function() {
         // fondo
         $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
         // personajes
-        $("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
-        $("#layer-viejitos").css('left', 7 + currentMousePos.x/300 + '%');
-        $("#layer-malos").css('right', 7 - currentMousePos.x/250 + '%');
-        $("#layer-yermo").css('right', 25 - currentMousePos.x/100 + '%');
+        //$("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
+        $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
+        $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
+        $("#layer-center").css('right', 35 - currentMousePos.x/100 + '%');
         // overlays
         $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
         $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     // overlay, front y social-globo arrancan invisibles,
     $("#overlay").toggle();
-    $("#front").toggle();
+    $(".front").toggle();
     $("#social-globo").toggle();
 
 
@@ -46,38 +46,37 @@ $(document).ready(function() {
     $('.C-tooltip').tooltip();
 
     //se crea el elemento de audio
-    var audioElement = document.createElement('audio');
+    //var audioElement = document.createElement('audio');
     // y se aniade el attr del origen de la fuente.
-    audioElement.setAttribute('src', '../sounds/ice.ogg');
+    //audioElement.setAttribute('src', '../sounds/ice.ogg');
 
     // no se bien que hace esto, revisar por si es necesario realmente
     $.get();
 
     // play
-    var play = false;
-    $('#volumen').click(function() {
+    // var play = false;
+    // $('#volumen').click(function() {
 
-        if (play == false) {
-            audioElement.play();
-            $(this).addClass("mute");
-            play = true;
-        } else if (play) {
-            audioElement.pause();
-            $(this).removeClass("mute");
-            play = false;
-        }
-    });
+    //     if (play == false) {
+    //         audioElement.play();
+    //         $(this).addClass("mute");
+    //         play = true;
+    //     } else if (play) {
+    //         audioElement.pause();
+    //         $(this).removeClass("mute");
+    //         play = false;
+    //     }
+    // });
 
 
     var scroller = HScroller.create("#pages"); // specify container element
 
     var modal = function(subtitulo, charName, imgSrc, modalColor, parrafo, target) {
         $(target + " h4").css('color', modalColor);
-        $("#front" + " img").attr('src', imgSrc);
-        $(target + " #modalContent").css('background', modalColor);
+        $("img.front").attr('src', imgSrc);
+        $(target + " .modalContent").css('background', modalColor).html(parrafo);
         $(target + " h4").text(subtitulo);
         $(target + " h1").text(charName);
-        $(target + " #modalContent").html(parrafo);
     }
 
     $("#loader").delay(500).fadeOut('slow', function() {
@@ -107,7 +106,7 @@ $(document).ready(function() {
         $("#overlay").fadeIn(200);
         $('#logo-big').animate({top: "-80%" }, 200);
         $(modalTarget).delay(200).animate({ top: "20%", opacity: "1" }, 200);
-        $("#front").delay(400).fadeIn(200);
+        $(".front").delay(400).fadeIn(200);
 
 
     });
@@ -163,7 +162,7 @@ $(document).ready(function() {
             },
             200, function() {
                 $('#overlay').fadeOut('200');
-                $("#front").fadeOut('200');
+                $(".front").fadeOut('200');
             });
     });
 

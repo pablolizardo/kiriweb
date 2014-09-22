@@ -1,0 +1,109 @@
+/* mixins */
+/* para usar: .box { @include border-radius(10px); } */
+
+@mixin border-radius(    $radius:5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+          // keeps background from busting out of border
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+@mixin transform($transform){
+     -webkit-transform: $transform;
+         -ms-transform: $transform;
+        -moz-transform: $transform;
+          -o-transform: $transform;
+             transform: $transform;
+}
+
+@mixin transition(    $time:.1s) {
+  -webkit-transition: $time;
+     -moz-transition: $time;
+      -ms-transition: $time;
+          transition: $time;
+}
+@mixin text-shadow( $shadow:0px 2px 0px rgba($cNegro, .3)){
+    -webkit-text-shadow: $shadow;
+       -moz-text-shadow: $shadow;
+         -o-text-shadow: $shadow;
+            text-shadow: $shadow;
+}
+
+@mixin box-shadow(      $shadow: 0px 2px 0px rgba($cNegro, .4) ){
+            box-shadow: $shadow;
+        -ms-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+     -opera-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+}
+
+@mixin opacity (    $opacity: 0.5 ) {
+          opacity: $opacity;
+   -khtml-opacity: $opacity;
+     -moz-opacity: $opacity;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $opacity * 100 ")";
+  filter: alpha(opacity= $opacity * 100 );
+}
+
+@mixin transform-origin($value: center center){
+    -webkit-transform-origin: $value;
+       -moz-transform-origin: $value;
+        -ms-transform-origin: $value;
+         -o-transform-origin: $value;
+            transform-origin: $value;
+}
+
+@mixin animation ($delay, $duration, $animation) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin hide-text{
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin blur($value:10px) {
+     -webkit-filter: blur($value);
+        -moz-filter: blur($value);
+          -o-filter: blur($value);
+         -ms-filter: blur($value);
+             filter: blur($value);
+}
+
