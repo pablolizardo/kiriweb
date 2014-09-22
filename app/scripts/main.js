@@ -71,15 +71,10 @@ $(document).ready(function() {
 
     var scroller = HScroller.create("#pages"); // specify container element
 
-    var modal = function(subtitulo, charName, imgSrc, modalColor, parrafo, target) {
-        $(target + " h4").css('color', modalColor);
-        $("img.front").attr('src', imgSrc);
-        $(target + " .modalContent").css('background', modalColor).html(parrafo);
-        $(target + " h4").text(subtitulo);
-        $(target + " h1").text(charName);
-    }
+    
 
     $("#loader").delay(500).fadeOut('slow', function() {
+        $(this).remove();
         $('header').delay(350).animate({top: 0 }, 'slow');
         $('#logo').delay(350).animate({top: 15 }, 'slow');
         $('#volumen').delay(350).animate({top: 20 }, 'slow');
@@ -88,12 +83,18 @@ $(document).ready(function() {
         $('.next').delay(700).animate({right: 25 }, 'slow');
     });
 
+    $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
+    $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
 
-    // $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
-    // $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
+    var modal = function(subtitulo, charName, imgSrc, modalColor, parrafo, target) {
+        $(target + " h4").css('color', modalColor);
+        $("img.front").attr('src', imgSrc);
+        $(target + " .modalContent").css('background', modalColor).html(parrafo);
+        $(target + " h4").text(subtitulo);
+        $(target + " h1").text(charName);
+    }
 
     $(".layer").bind('click tap',function() {
-
         //console.log("hiciste clic en layer");
         charName = $(this).data("name");
         modalColor = $(this).data("color");
@@ -101,17 +102,14 @@ $(document).ready(function() {
         parrafo = $(this).next("span").html();
         subtitulo = $(this).data("subtitulo");
         imgSrc = "images/overlays/over-" + $(this).data("img") + ".png";
-
         modal(subtitulo, charName, imgSrc, modalColor, parrafo, modalTarget);
         $("#overlay").fadeIn(200);
         $('#logo-big').animate({top: "-80%" }, 200);
         $(modalTarget).delay(200).animate({ top: "20%", opacity: "1" }, 200);
         $(".front").delay(400).fadeIn(200);
-
-
     });
 
-    $(".modalGaleria").bind('click tap',function() {
+    $(".galeria img").bind('click tap',function() {
         //console.log("hiciste clic en modalGaleria");
         imgSrc = $(this).attr('src');
         imgAlt = $(this).attr('alt');
@@ -132,25 +130,7 @@ $(document).ready(function() {
         });
 
     });
-    $(".modalEquipo").bind('click tap',function() {
-        console.log("hiciste clic en modalEquipo");
-        equipoRol = $("#equipoRol").text();
-        equipoNombre = $("#equipoNombre").html();
-        equipoDescripcion = $("#equipoDescripcion").html();
-        modalTarget = $(this).data('target');
-        $('#modalEquipo' + ' h4').text(equipoRol);
-        $('#modalEquipo' + ' h1').html(equipoNombre);
-        $('#modalEquipo' + ' p').html(equipoDescripcion);
-        $('#overlay').fadeIn('200', function() {
-            $('#modalEquipo').animate({
-                    top: "20%",
-                    bottom: "0",
-                    opacity: "1"
-                },
-                200);
-        });
 
-    });
 
 
     $('#overlay, #modal-close').bind('click tap',function() {
@@ -167,14 +147,14 @@ $(document).ready(function() {
     });
 
 
-    $('#social-lv').bind('mouseover tap', function() {
+    $('#social-lv').bind('mouseover click tap', function() {
         $("#social-globo").show();
         $("#social-globo").delay(10000).fadeOut('slow');
         //$(this).css('background-position', '-25px -75px');
         //setInterval(function(){$(this).css('background-position', '0px -50px');}, delay,10000);
     });
 
-    $('.toggleNextSection').on('click',function() {
+    $('.toggleNextSection').bind('click tap',function() {
         /* Act on the event */
         $('#section-arte').toggle('slow');
         //console.log("hiciste clic en la flechitaaa");

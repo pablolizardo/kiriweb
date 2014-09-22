@@ -239,64 +239,53 @@ header {
 footer {
     position: fixed;
     bottom: -90px;
-    left: 0;
+    left: 0; right: 0;
     z-index: 99;
-
     width: 100%;
     height: 65px;
-    background-color: rgba($cNegro,.8);
-    padding-top: 10px;
-     font-size: .75em;
-    #love {
-        padding: 6px 0 0 25px;
-    }
+    background-color: rgba($cNegro,.7);
+    padding-top: 8px;
+    #love { padding: 6px 0 0 25px; } 
     #logos a{
         @extend .sprite-kiriweb;
+        @include opacity(.8);
         display: inline-block;
+        vertical-align: middle;
+        margin-right: 25px;
+
+        &:last-child { margin-right: 0px;}
         &#logo-if{
-            margin-top: 18px;
-            width: 105px; height:7px;
-            
+            width: 90px; height:30px;
                         background-position: -150px -400px;
-            &:hover{    background-position: -150px -415px; }
+            &:hover{    background-position: -150px -430px; }
         }
         &#logo-sla{
-            margin-top: 6px;
             width: 72px; height:26px;
                         background-position: -260px -400px;
             &:hover{    background-position: -260px -430px; }
         }
         &#logo-slc{
-            width: 92px; height:40px;
-                        background-position: -405px -350px;
-            &:hover{    background-position: -405px -395px; }
+            width: 100px; height:45px;
+                        background-position: -400px -350px;
+            &:hover{    background-position: -400px -395px; }
         }
         &#logo-incaa{
-            margin-top: 5px;
-            width: 52px; height:28px;
-                        background-position: -150px -430px;
-            &:hover{    background-position: -150px -460px; }
+            width: 90px; height:50px;
+                        background-position: -150px -460px;
+            &:hover{    background-position: -240px -460px; }
         }
         &#logo-zetta{
-            margin-top: 10px;
-            width: 41px; height:18px;
-                        background-position: -205px -435px;
-            &:hover{    background-position: -205px -460px; }
+            width: 60px; height:30px;
+                        background-position: -240px -400px;
+            &:hover{    background-position: -240px -430px; }
         }
     }
-    #copyright {padding:15px 10px 0 0;}
-    #copyright a{ color: $cIndigo;  margin-left:3%;}
-    a:hover , a:active,a.active {  color: $cAmarillo !important; text-decoration: none;}
-    
-
-    small {
-        display:block;
-        font-family: sans-serif;
-        letter-spacing: -0.03em;
-        font-size: .7em;
-        color: #48647c;
-        line-height: 1.3em !important;
-        margin-top: 5px;
+    #copyright {padding:17px 25px 0 0;}
+    #copyright a{ display: inline-block ;color: $cIndigo;  margin-left:10px;}
+    a:hover , a:active,a.active {  
+         @include opacity(1);
+        color: $cAmarillo !important; 
+        text-decoration: none;
     }
 
     #gradient {
@@ -308,34 +297,10 @@ footer {
         bottom: 0;
         left:0;
         }
-    #social-fb ,#social-lv,  #social-tw, #social-yt {
-        @extend .sprite-kiriweb;
-        width:25px; height: 25px;
-        display:inline-block;
-        cursor: pointer;
-        margin-right: 3%;
-        margin-top: 2px;
-    }
-    #social-lv {
-                    background-position: -25px    -50px;
-        &:hover{    background-position: -0px    -50px; }
-    }
-    #social-fb {
-                    background-position: -75px   -50px;
-        &:hover{    background-position: -50px   -50px; }
-    }
-    #social-tw {
-                    background-position: -125px  -50px;
-        &:hover{    background-position: -100px  -50px; }
-    }
-    #social-yt {
-                    background-position: -175px  -50px;
-        &:hover{    background-position: -150px  -50px; }
-    }
+    
     #social-globo {
         @include transform-origin(15px 115px);
         @include animation(0s, 0.5s, socialGlobo);
-        //@include hide-text();
         position: absolute;
         left: 17px;
         bottom:46px;
@@ -370,7 +335,7 @@ footer {
          -o-animation-iteration-count: infinite;
     }
 #home {
-    background-image: url('../images/backgrounds/geriatricoDiaBlur.jpg');
+    background-image: url('../images/backgrounds/geriatricoDia.jpg');
     background-position: 50% 50%;
     overflow: hidden;
     h1, h5, strong, a.active, a:hover {
@@ -381,47 +346,36 @@ footer {
     position: absolute;
     top: 21%;
     z-index: 100;
-    // border:1px solid green;
     padding:0; margin:auto;
     left: 0; right: 0;
-    #logo_1_big {
+    #logo_1_big, #logo_2_big, #logo_3_big {
         @include opacity(0);
-        @include animation (1s, .5s, welcome);
         @extend .sprite-kiriweb;
         position:absolute;
         margin: auto;
+    }
+    #logo_1_big {
+        @include animation (1s, .5s, welcome);
         background-position: 0px -200px;
         width: 512px; height: 138px;
-        // border:1px solid yellow;
         top:0; bottom: 0;left: 0;right: 0;
     }
     #logo_2_big {
-        @include opacity(0);
         @include animation (1.5s, .3s, welcome);
-        @extend .sprite-kiriweb;
-        position:absolute;
-        margin: auto;
         background-position: 0px -350px;
         width: 400px; height: 50px;
-        // border:1px solid cyan;
         bottom: -120px;left: 0;right: 0;
     }
     #logo_3_big {
-        @include opacity(0);
         @include animation (3s, 2.5s, tresde);
         animation-play-state: pause;
         animation-iteration-count:infinite;
-        @extend .sprite-kiriweb;
-        position:absolute;
-        margin: auto;
         background-position: 0px -400px;
         width: 150px; height: 110px;
         bottom: -205px;left: 0;right: 0;
-        // border:1px solid red;
+        &:hover{animation-play-state: play; }
     }
-    #logo_3_big:hover{
-        animation-play-state: play;
-    }
+    
 }
 
 .layer {position: absolute; @extend .sprite-front; }
@@ -513,7 +467,6 @@ img.front {
     
 }
 #modal-close{
-
     width:25px;
     height:25px;
     cursor:pointer;
@@ -522,10 +475,7 @@ img.front {
     z-index: 100;
     @extend .sprite-kiriweb;
     background-position: 0px -150px;
-
-    &:hover{
-        background-position: -25px -175px;
-    }
+    &:hover{background-position: -25px -175px; }
     }
 #modalGaleria {
     @include text-shadow(0 2px 0px rgba(0,0,0,.2));
@@ -534,19 +484,23 @@ img.front {
     margin: auto;
     position: fixed;
     top:-250%;
-    //bottom:100%;
+    bottom:0;
     left: 0;
     right: 0;
     width: 75%;
     height: 65%;
     color: #fff;
     img{width: 100%; }
+    #modal-close {
+        position:relative;
+        top: -11px; 
+        right: -22px;
+    }
 }
 
 
 
 /* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
-body.pagina-1 { header, footer { background-color: rgba($cNegro, .3);  } }
 
 #trailer {
     background-image: url('../images/backgrounds/pasillo_bg.jpg');
@@ -562,6 +516,9 @@ body.pagina-1 { header, footer { background-color: rgba($cNegro, .3);  } }
         min-height: 250px;
         margin-bottom: 50px;
         @include box-shadow();
+    }
+    .galeria img {
+        cursor: pointer;
     }
 }
 
@@ -938,18 +895,14 @@ body.pagina-7 { header, footer { background-color: rgba($cNegro, .3); } }
 
 
 
-.icon-facebook       { background-position: -50px -50px; }
-.icon-facebook:hover { background-position: -50px -75px; }
-.icon-twitter        { background-position: -100px -50px; }
-.icon-twitter:hover  { background-position: -100px -75px; }
-.icon-youtube        { background-position: -150px -50px; }
-.icon-youtube:hover  { background-position: -150px -75px; }
-.icon-mail           { background-position: -100px -100px; }
-.icon-mail:hover     { background-position: -100px -125px; }
-.icon-lugar          { background-position: -150px -150px; }
-.icon-lugar:hover    { background-position: -150px -175px; }
-.icon-home           { background-position: -250px -50px; }
-.icon-home:hover     { background-position: -275px -75px; }
+.icon-facebook       { background-position: -50px -50px;    &:hover  { background-position: -50px -75px;  } }
+.icon-twitter        { background-position: -100px -50px;   &:hover  { background-position: -100px -75px; } }
+.icon-youtube        { background-position: -150px -50px;   &:hover  { background-position: -150px -75px; } }
+.icon-share          { background-position: -25px    -50px; &:hover  { background-position: -0px    -50px;  } cursor: pointer;}
+
+.icon-mail           { background-position: -100px -100px;  &:hover     { background-position: -100px -125px; } }
+.icon-lugar          { background-position: -150px -150px;  &:hover    { background-position: -150px -175px; } }
+.icon-home           { background-position: -250px -50px;   &:hover     { background-position: -275px -75px; } }
 .icon-Dummy          { background-image: none; }
 
 
@@ -960,7 +913,6 @@ body.pagina-7 { header, footer { background-color: rgba($cNegro, .3); } }
 .icon-mas       {background-position: -225px -0px; &:hover { background-position: -225px -25px; } }
 .icon-menos     {background-position: -275px -0px; &:hover { background-position: -275px -25px; } }
 .icon-zoom      {background-position: -325px -0px; &:hover { background-position: -325px -25px; } }
-
 
 
 

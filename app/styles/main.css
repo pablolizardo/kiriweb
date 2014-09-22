@@ -5209,7 +5209,7 @@ button.close {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.sprite-kiriweb, hr, .flechas, header #volumen, header #logo, footer #logos a, footer #social-fb, footer #social-lv, footer #social-tw, footer #social-yt, footer #social-globo, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .icon {
+.sprite-kiriweb, hr, .flechas, header #volumen, header #logo, footer #logos a, footer #social-globo, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .icon {
   background-image: url("../images/sprites/sprite-kiriweb.png"); }
 
 .sprite-elenco, #elenco .elenco-foto {
@@ -5475,66 +5475,69 @@ footer {
   position: fixed;
   bottom: -90px;
   left: 0;
+  right: 0;
   z-index: 99;
   width: 100%;
   height: 65px;
-  background-color: rgba(11, 13, 15, 0.8);
-  padding-top: 10px;
-  font-size: .75em; }
+  background-color: rgba(11, 13, 15, 0.7);
+  padding-top: 8px; }
   footer #love {
     padding: 6px 0 0 25px; }
   footer #logos a {
-    display: inline-block; }
+    opacity: 0.8;
+    -khtml-opacity: 0.8;
+    -moz-opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+    filter: alpha(opacity=80);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 25px; }
+    footer #logos a:last-child {
+      margin-right: 0px; }
     footer #logos a#logo-if {
-      margin-top: 18px;
-      width: 105px;
-      height: 7px;
+      width: 90px;
+      height: 30px;
       background-position: -150px -400px; }
       footer #logos a#logo-if:hover {
-        background-position: -150px -415px; }
+        background-position: -150px -430px; }
     footer #logos a#logo-sla {
-      margin-top: 6px;
       width: 72px;
       height: 26px;
       background-position: -260px -400px; }
       footer #logos a#logo-sla:hover {
         background-position: -260px -430px; }
     footer #logos a#logo-slc {
-      width: 92px;
-      height: 40px;
-      background-position: -405px -350px; }
+      width: 100px;
+      height: 45px;
+      background-position: -400px -350px; }
       footer #logos a#logo-slc:hover {
-        background-position: -405px -395px; }
+        background-position: -400px -395px; }
     footer #logos a#logo-incaa {
-      margin-top: 5px;
-      width: 52px;
-      height: 28px;
-      background-position: -150px -430px; }
+      width: 90px;
+      height: 50px;
+      background-position: -150px -460px; }
       footer #logos a#logo-incaa:hover {
-        background-position: -150px -460px; }
+        background-position: -240px -460px; }
     footer #logos a#logo-zetta {
-      margin-top: 10px;
-      width: 41px;
-      height: 18px;
-      background-position: -205px -435px; }
+      width: 60px;
+      height: 30px;
+      background-position: -240px -400px; }
       footer #logos a#logo-zetta:hover {
-        background-position: -205px -460px; }
+        background-position: -240px -430px; }
   footer #copyright {
-    padding: 15px 10px 0 0; }
+    padding: 17px 25px 0 0; }
   footer #copyright a {
+    display: inline-block;
     color: #48647c;
-    margin-left: 3%; }
+    margin-left: 10px; }
   footer a:hover, footer a:active, footer a.active {
+    opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
+    filter: alpha(opacity=100);
     color: #fbcf62 !important;
     text-decoration: none; }
-  footer small {
-    display: block;
-    font-family: sans-serif;
-    letter-spacing: -0.03em;
-    font-size: .7em;
-    color: #48647c;
-    line-height: 1.3em !important;
-    margin-top: 5px; }
   footer #gradient {
     width: 100%;
     height: 70px;
@@ -5543,29 +5546,6 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0; }
-  footer #social-fb, footer #social-lv, footer #social-tw, footer #social-yt {
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    cursor: pointer;
-    margin-right: 3%;
-    margin-top: 2px; }
-  footer #social-lv {
-    background-position: -25px    -50px; }
-    footer #social-lv:hover {
-      background-position: -0px    -50px; }
-  footer #social-fb {
-    background-position: -75px   -50px; }
-    footer #social-fb:hover {
-      background-position: -50px   -50px; }
-  footer #social-tw {
-    background-position: -125px  -50px; }
-    footer #social-tw:hover {
-      background-position: -100px  -50px; }
-  footer #social-yt {
-    background-position: -175px  -50px; }
-    footer #social-yt:hover {
-      background-position: -150px  -50px; }
   footer #social-globo {
     -webkit-transform-origin: 15px 115px;
     -moz-transform-origin: 15px 115px;
@@ -5681,7 +5661,7 @@ footer {
   -o-animation-iteration-count: infinite; }
 
 #home {
-  background-image: url("../images/backgrounds/geriatricoDiaBlur.jpg");
+  background-image: url("../images/backgrounds/geriatricoDia.jpg");
   background-position: 50% 50%;
   overflow: hidden; }
   #home h1, #home h5, #home strong, #home a.active, #home a:hover {
@@ -5695,12 +5675,15 @@ footer {
   margin: auto;
   left: 0;
   right: 0; }
-  #logo-big #logo_1_big {
+  #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big {
     opacity: 0;
     -khtml-opacity: 0;
     -moz-opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
     filter: alpha(opacity=0);
+    position: absolute;
+    margin: auto; }
+  #logo-big #logo_1_big {
     -webkit-animation-delay: 1s;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-name: welcome;
@@ -5721,8 +5704,6 @@ footer {
     animation-name: welcome;
     animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
-    position: absolute;
-    margin: auto;
     background-position: 0px -200px;
     width: 512px;
     height: 138px;
@@ -5731,11 +5712,6 @@ footer {
     left: 0;
     right: 0; }
   #logo-big #logo_2_big {
-    opacity: 0;
-    -khtml-opacity: 0;
-    -moz-opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
-    filter: alpha(opacity=0);
     -webkit-animation-delay: 1.5s;
     -webkit-animation-duration: 0.3s;
     -webkit-animation-name: welcome;
@@ -5756,8 +5732,6 @@ footer {
     animation-name: welcome;
     animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
-    position: absolute;
-    margin: auto;
     background-position: 0px -350px;
     width: 400px;
     height: 50px;
@@ -5765,11 +5739,6 @@ footer {
     left: 0;
     right: 0; }
   #logo-big #logo_3_big {
-    opacity: 0;
-    -khtml-opacity: 0;
-    -moz-opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
-    filter: alpha(opacity=0);
     -webkit-animation-delay: 3s;
     -webkit-animation-duration: 2.5s;
     -webkit-animation-name: tresde;
@@ -5792,16 +5761,14 @@ footer {
     /* this prevents the animation from restarting! */
     animation-play-state: pause;
     animation-iteration-count: infinite;
-    position: absolute;
-    margin: auto;
     background-position: 0px -400px;
     width: 150px;
     height: 110px;
     bottom: -205px;
     left: 0;
     right: 0; }
-  #logo-big #logo_3_big:hover {
-    animation-play-state: play; }
+    #logo-big #logo_3_big:hover {
+      animation-play-state: play; }
 
 .layer {
   position: absolute; }
@@ -5933,6 +5900,7 @@ img.front {
   margin: auto;
   position: fixed;
   top: -250%;
+  bottom: 0;
   left: 0;
   right: 0;
   width: 75%;
@@ -5940,11 +5908,12 @@ img.front {
   color: #fff; }
   #modalGaleria img {
     width: 100%; }
+  #modalGaleria #modal-close {
+    position: relative;
+    top: -11px;
+    right: -22px; }
 
 /* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
-body.pagina-1 header, body.pagina-1 footer {
-  background-color: rgba(11, 13, 15, 0.3); }
-
 #trailer {
   background-image: url("../images/backgrounds/pasillo_bg.jpg"); }
   #trailer h1, #trailer h5, #trailer strong, #trailer a.active, #trailer a:hover {
@@ -5964,6 +5933,8 @@ body.pagina-1 header, body.pagina-1 footer {
     -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
     -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
     -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4); }
+  #trailer .galeria img {
+    cursor: pointer; }
 
 /* :::::::::::::::::::::::::[2] LI#SINOPSIS::::::::::::::::::::::::::: */
 body.pagina-2 header, body.pagina-2 footer {
@@ -7092,39 +7063,39 @@ body.pagina-7 header, body.pagina-7 footer {
 
 .icon-facebook {
   background-position: -50px -50px; }
-
-.icon-facebook:hover {
-  background-position: -50px -75px; }
+  .icon-facebook:hover {
+    background-position: -50px -75px; }
 
 .icon-twitter {
   background-position: -100px -50px; }
-
-.icon-twitter:hover {
-  background-position: -100px -75px; }
+  .icon-twitter:hover {
+    background-position: -100px -75px; }
 
 .icon-youtube {
   background-position: -150px -50px; }
+  .icon-youtube:hover {
+    background-position: -150px -75px; }
 
-.icon-youtube:hover {
-  background-position: -150px -75px; }
+.icon-share {
+  background-position: -25px    -50px;
+  cursor: pointer; }
+  .icon-share:hover {
+    background-position: -0px    -50px; }
 
 .icon-mail {
   background-position: -100px -100px; }
-
-.icon-mail:hover {
-  background-position: -100px -125px; }
+  .icon-mail:hover {
+    background-position: -100px -125px; }
 
 .icon-lugar {
   background-position: -150px -150px; }
-
-.icon-lugar:hover {
-  background-position: -150px -175px; }
+  .icon-lugar:hover {
+    background-position: -150px -175px; }
 
 .icon-home {
   background-position: -250px -50px; }
-
-.icon-home:hover {
-  background-position: -275px -75px; }
+  .icon-home:hover {
+    background-position: -275px -75px; }
 
 .icon-Dummy {
   background-image: none; }
