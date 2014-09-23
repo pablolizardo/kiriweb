@@ -5197,1051 +5197,6 @@ button.close {
 /* mixins */
 /* para usar: .box { @include border-radius(10px); } */
 /* paleta nueva */
-/* ::::::::::::::::::::::::: variables/mixins ::::::::::::::::::::::::::: */
-/* extend */
-.bg-contain {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain; }
-
-.bg-cover, #content li {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-
-.sprite-kiriweb, hr, .flechas, header #volumen, header #logo, footer #logos a, footer #social-globo, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .icon {
-  background-image: url("../images/sprites/sprite-kiriweb.png"); }
-
-.sprite-elenco, #elenco .elenco-foto {
-  background-image: url("../images/sprites/sprite-elenco.png"); }
-
-.sprite-equipo, #equipo .equipo-foto {
-  background-image: url("../images/sprites/sprite-equipo.png"); }
-
-.sprite-front, .layer {
-  background-image: url("../images/sprites/sprite-front_2.png"); }
-
-/* ::::::::::::::::::::::::: GLOBALS ::::::::::::::::::::::::::: */
-* {
-  padding: 0;
-  margin: 0;
-  border: 0; }
-
-/* ::::::::::: FONTS ::::::::::: */
-@font-face {
-  font-family: 'kiriFont';
-  src: url("../fonts/kirifont-webfont.eot");
-  src: url("../fonts/kirifont-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/kirifont-webfont.woff") format("woff"), url("../fonts/kirifont-webfont.ttf") format("truetype"), url("../fonts/kirifont-webfont.svg#kirifontnormal") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: 'mclarenregular';
-  src: url("../fonts/mclaren-regular-webfont.eot");
-  src: url("../fonts/mclaren-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/mclaren-regular-webfont.woff") format("woff"), url("../fonts/mclaren-regular-webfont.ttf") format("truetype"), url("../fonts/mclaren-regular-webfont.svg#mclarenregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/* ::::::::::: FIN FONTS ::::::::::: */
-header, footer, h1, h2, h3, h4, h5, h6 {
-  font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
-
-body {
-  background-color: #0b0d0f;
-  color: #ffffff; }
-
-a {
-  color: #ffffff; }
-
-a:hover {
-  color: #fbcf62; }
-
-a:active {
-  color: #a7d163; }
-
-hr {
-  width: 255px;
-  height: 5px;
-  background-position: 0px -340px;
-  margin: 5px auto;
-  padding: 0;
-  border: 0; }
-
-hr.indigo {
-  background-position: 0px -345px; }
-
-hr.light {
-  background-position: -255px -340px; }
-
-hr.cyan {
-  background-position: -255px -345px; }
-
-html, body {
-  height: 100%;
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-font-smoothing: antialiased !important;
-  -o-font-smoothing: antialiased !important;
-  -ms-font-smoothing: antialiased !important;
-  font-smoothing: antialiased !important;
-  font-smooth: always !important;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 0px !important;
-  overflow-x: hidden;
-  /* disable horizontal scrollbar */ }
-
-/* ::::::::::::::::::::::::: FIN: GLOBALS ::::::::::::::::::::::::::: */
-/* ::::::::::::::::::::::::: FLECHAS ::::::::::::::::::::::::::: */
-.flechas {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  z-index: 6;
-  cursor: pointer;
-  width: 25px;
-  height: 25px; }
-
-.flechas.deactivated {
-  display: none; }
-
-.prev {
-  left: -20px;
-  background-position: -175px 0px; }
-
-.prev:hover {
-  background-position: -175px -25px; }
-
-.next {
-  right: -20px;
-  background-position: -75px 0px; }
-
-.next:hover {
-  background-position: -75px -25px; }
-
-.prev:hover, .next:hover {
-  opacity: 1;
-  -khtml-opacity: 1;
-  -moz-opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
-  filter: alpha(opacity=100); }
-
-/* ::::::::::::::::::::::::: FIN:FLECHAS ::::::::::::::::::::::::::: */
-/* ::::::::::::::::::::::::: SCROLLER / SWIPE FW ::::::::::::::::::::::::::: */
-ul#pages {
-  list-style-type: none;
-  height: 100%;
-  margin: 0 !important;
-  padding: 0 !important; }
-
-#content ul#pages, #content ul#pages > li {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  z-index: 0; }
-
-#content ul#pages {
-  -webkit-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
-  -ms-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
-  -moz-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
-  -o-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
-  transform: translate3d(0%, 0, 0) scale3d(1, 1, 1); }
-
-#content ul#pages.animate {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s; }
-
-#content ul#pages > li {
-  float: left; }
-
-.overthrow-enabled #content ul#pages li {
-  overflow-x: hidden;
-  /* disable horizontal scrollbar */
-  overflow-y: auto;
-  /* enable vertical scrolling */
-  -webkit-overflow-scrolling: touch;
-  /* preserve touch momentum while scrolling on WebKit browsers */ }
-
-#content {
-  /*configuraciones globales del texto interior */
-  height: 100%;
-  width: 100%; }
-  #content li h1 {
-    font-size: 3em; }
-  #content li h1, #content li h2, #content li h3, #content li h4, #content li h5, #content li h6 {
-    line-height: 1.5em; }
-  #content li img.img-responsive, #content li .embed-responsive {
-    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4); }
-  #content li .container {
-    padding-top: 110px;
-    padding-bottom: 110px;
-    -webkit-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3);
-    -moz-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3);
-    -o-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3);
-    text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3); }
-  #content li .container img {
-    margin: 10px auto; }
-  #content li .container p.lead {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
-
-.page li {
-  overflow-y: hidden !important; }
-
-/* ::::::::::::::::::::::::: FIN: SCROLLER / SWIPE FW ::::::::::::::::::::::::::: */
-/* ::::::::::::::::::::::::: STICKY/HEADER ::::::::::::::::::::::::::: */
-header {
-  position: fixed;
-  top: -70px;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 5;
-  padding-top: 26px;
-  height: 67px;
-  background-color: rgba(11, 13, 15, 0.7); }
-  header #volumen {
-    position: fixed;
-    top: -70px;
-    right: 18px;
-    width: 25px;
-    height: 25px;
-    background-position: -50px -100px;
-    cursor: pointer; }
-  header #volumen:hover {
-    background-position: -50px -125px; }
-  header #volumen:active, header #volumen.mute {
-    background-position: -75px -100px; }
-  header #gradient {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-position: bottom center;
-    background-size: contain;
-    background-image: url("../images/gradient_up.png");
-    opacity: 0.6;
-    -khtml-opacity: 0.6;
-    -moz-opacity: 0.6;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 60 ")";
-    filter: alpha(opacity=60); }
-  header #logo {
-    position: fixed;
-    top: -70px;
-    left: 30px;
-    background-position: -200px -100px;
-    width: 175px;
-    height: 40px;
-    z-index: 52; }
-  header #logo:hover {
-    background-position: -200px -150px; }
-  header #menu {
-    position: relative;
-    width: 100%; }
-  header #menu a {
-    -webkit-transition: 0.1s;
-    -moz-transition: 0.1s;
-    -ms-transition: 0.1s;
-    transition: 0.1s;
-    color: #48647c;
-    margin-right: 1%;
-    padding: 7px 1.5%;
-    font-size: 1.2em;
-    -webkit-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6);
-    -moz-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6);
-    -o-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6);
-    text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6); }
-    header #menu a:hover {
-      color: #ffffff !important;
-      text-decoration: none; }
-    header #menu a.active {
-      color: #0dcdc0; }
-    header #menu a:last-child {
-      margin-right: 0; }
-
-/* ::::::::::::::::::::::::: FIN:HEADER ::::::::::::::::::::::::::: */
-/* ::::::::::::::::::::::::: FOOTER ::::::::::::::::::::::::::: */
-footer {
-  position: fixed;
-  bottom: -90px;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  width: 100%;
-  height: 65px;
-  background-color: rgba(11, 13, 15, 0.7);
-  padding-top: 8px; }
-  footer #love {
-    padding: 6px 0 0 25px; }
-  footer #logos a {
-    opacity: 0.8;
-    -khtml-opacity: 0.8;
-    -moz-opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
-    filter: alpha(opacity=80);
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 25px; }
-    footer #logos a:last-child {
-      margin-right: 0px; }
-    footer #logos a#logo-if {
-      width: 90px;
-      height: 30px;
-      background-position: -150px -400px; }
-      footer #logos a#logo-if:hover {
-        background-position: -150px -430px; }
-    footer #logos a#logo-sla {
-      width: 72px;
-      height: 26px;
-      background-position: -260px -400px; }
-      footer #logos a#logo-sla:hover {
-        background-position: -260px -430px; }
-    footer #logos a#logo-slc {
-      width: 100px;
-      height: 45px;
-      background-position: -400px -350px; }
-      footer #logos a#logo-slc:hover {
-        background-position: -400px -395px; }
-    footer #logos a#logo-incaa {
-      width: 90px;
-      height: 50px;
-      background-position: -150px -460px; }
-      footer #logos a#logo-incaa:hover {
-        background-position: -240px -460px; }
-    footer #logos a#logo-zetta {
-      width: 60px;
-      height: 30px;
-      background-position: -240px -400px; }
-      footer #logos a#logo-zetta:hover {
-        background-position: -240px -430px; }
-  footer #copyright {
-    padding: 17px 25px 0 0; }
-  footer #copyright a {
-    display: inline-block;
-    color: #48647c;
-    margin-left: 10px; }
-  footer a:hover, footer a:active, footer a.active {
-    opacity: 1;
-    -khtml-opacity: 1;
-    -moz-opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
-    filter: alpha(opacity=100);
-    color: #fbcf62 !important;
-    text-decoration: none; }
-  footer #gradient {
-    width: 100%;
-    height: 70px;
-    background-size: contain;
-    background-image: url("../images/gradient.png");
-    position: fixed;
-    bottom: 0;
-    left: 0; }
-  footer #social-globo {
-    -webkit-transform-origin: 15px 115px;
-    -moz-transform-origin: 15px 115px;
-    -ms-transform-origin: 15px 115px;
-    -o-transform-origin: 15px 115px;
-    transform-origin: 15px 115px;
-    -webkit-animation-delay: 0s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: socialGlobo;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 0s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: socialGlobo;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 0s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: socialGlobo;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 0s;
-    animation-duration: 0.5s;
-    animation-name: socialGlobo;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    position: absolute;
-    left: 17px;
-    bottom: 46px;
-    background-position: -385px 0px;
-    background-repeat: no-repeat;
-    width: 125px;
-    height: 120px;
-    padding-top: 12px;
-    padding-left: 17px; }
-  footer .socialGloboShow {
-    -webkit-animation-delay: 0s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: socialGlobo;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 0s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: socialGlobo;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 0s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: socialGlobo;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 0s;
-    animation-duration: 0.5s;
-    animation-name: socialGlobo;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */ }
-  footer .socialGloboHide {
-    -webkit-animation-delay: 0s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: socialGloboInv;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 0s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: socialGloboInv;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 0s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: socialGloboInv;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 0s;
-    animation-duration: 0.5s;
-    animation-name: socialGloboInv;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */ }
-
-/* ::::::::::::::::::::::::: FIN: FOOTER ::::::::::::::::::::::::::: */
-/* :::::::::::::::::::::::::[2] LI#HOME::::::::::::::::::::::::::: */
-#doSwipe {
-  background-position: -388px -119px;
-  position: absolute;
-  width: 123px;
-  height: 76px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 10%;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-name: doSwipe;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-delay: 0s;
-  -moz-animation-duration: 2s;
-  -moz-animation-name: doSwipe;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-delay: 0s;
-  -o-animation-duration: 2s;
-  -o-animation-name: doSwipe;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-delay: 0s;
-  animation-duration: 2s;
-  animation-name: doSwipe;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite; }
-
-#home {
-  background-image: url("../images/backgrounds/geriatricoDia.jpg");
-  background-position: 50% 50%;
-  overflow: hidden; }
-  #home h1, #home h5, #home strong, #home a.active, #home a:hover {
-    color: #dedede !important; }
-
-#logo-big {
-  position: absolute;
-  top: 21%;
-  z-index: 100;
-  padding: 0;
-  margin: auto;
-  left: 0;
-  right: 0; }
-  #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big {
-    opacity: 0;
-    -khtml-opacity: 0;
-    -moz-opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
-    filter: alpha(opacity=0);
-    position: absolute;
-    margin: auto; }
-  #logo-big #logo_1_big {
-    -webkit-animation-delay: 1s;
-    -webkit-animation-duration: 0.5s;
-    -webkit-animation-name: welcome;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 1s;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-name: welcome;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 1s;
-    -o-animation-duration: 0.5s;
-    -o-animation-name: welcome;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 1s;
-    animation-duration: 0.5s;
-    animation-name: welcome;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    background-position: 0px -200px;
-    width: 512px;
-    height: 138px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  #logo-big #logo_2_big {
-    -webkit-animation-delay: 1.5s;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-name: welcome;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 1.5s;
-    -moz-animation-duration: 0.3s;
-    -moz-animation-name: welcome;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 1.5s;
-    -o-animation-duration: 0.3s;
-    -o-animation-name: welcome;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 1.5s;
-    animation-duration: 0.3s;
-    animation-name: welcome;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    background-position: 0px -350px;
-    width: 400px;
-    height: 50px;
-    bottom: -120px;
-    left: 0;
-    right: 0; }
-  #logo-big #logo_3_big {
-    -webkit-animation-delay: 3s;
-    -webkit-animation-duration: 2.5s;
-    -webkit-animation-name: tresde;
-    -webkit-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -moz-animation-delay: 3s;
-    -moz-animation-duration: 2.5s;
-    -moz-animation-name: tresde;
-    -moz-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    -o-animation-delay: 3s;
-    -o-animation-duration: 2.5s;
-    -o-animation-name: tresde;
-    -o-animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-delay: 3s;
-    animation-duration: 2.5s;
-    animation-name: tresde;
-    animation-fill-mode: forwards;
-    /* this prevents the animation from restarting! */
-    animation-play-state: pause;
-    animation-iteration-count: infinite;
-    background-position: 0px -400px;
-    width: 150px;
-    height: 110px;
-    bottom: -205px;
-    left: 0;
-    right: 0; }
-    #logo-big #logo_3_big:hover {
-      animation-play-state: play; }
-
-.layer {
-  position: absolute; }
-
-.layer:hover {
-  cursor: pointer;
-  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-  filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.6));
-  -o-filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.6));
-  -moz-filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.6));
-  -webkit-filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.6)); }
-
-#layer-center {
-  background-position: 0px 0px;
-  width: 393px;
-  height: 421px;
-  right: 35%;
-  top: 44%; }
-
-#layer-right {
-  background-position: -393px 0px;
-  right: 7%;
-  top: 36%;
-  width: 359px;
-  height: 422px; }
-
-#layer-left {
-  background-position: -162px -421px;
-  left: 7%;
-  top: 40%;
-  width: 451px;
-  height: 325px; }
-
-#layer-ramas {
-  position: absolute;
-  z-index: 390;
-  background-image: url("../images/front_ramas.png");
-  background-size: cover;
-  left: -10%;
-  top: 0%;
-  width: 510px;
-  height: 241px; }
-
-#layer-arbol {
-  position: absolute;
-  z-index: 391;
-  background-image: url("../images/arbol.png");
-  background-size: cover;
-  right: -10%;
-  top: 0%;
-  width: 177px;
-  height: 100%; }
-
-#overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  z-index: 99998; }
-
-img.front {
-  pointer-events: none;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 199999; }
-
-#modal {
-  -webkit-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  -moz-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  -o-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  z-index: 99999;
-  position: fixed;
-  top: -80%;
-  color: #fff; }
-  #modal p {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    line-height: 1.6em; }
-  #modal p.lead {
-    font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    font-size: 1.15em;
-    margin-bottom: 5px; }
-  #modal h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    margin-bottom: 0; }
-  #modal .modalContent {
-    padding: 25px 60px 25px 25px;
-    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box; }
-
-#modal-close {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  float: right;
-  top: 20px;
-  z-index: 100;
-  background-position: 0px -150px; }
-  #modal-close:hover {
-    background-position: -25px -175px; }
-
-#modalGaleria {
-  -webkit-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  -moz-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  -o-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
-  -webkit-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  -moz-transform: rotate(-1deg);
-  -o-transform: rotate(-1deg);
-  transform: rotate(-1deg);
-  z-index: 99999;
-  margin: auto;
-  position: fixed;
-  top: -250%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 75%;
-  height: 65%;
-  color: #fff; }
-  #modalGaleria img {
-    width: 100%; }
-  #modalGaleria #modal-close {
-    position: relative;
-    top: -11px;
-    right: -22px; }
-
-/* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
-#trailer {
-  background-image: url("../images/backgrounds/pasillo_bg.jpg"); }
-  #trailer h1, #trailer h5, #trailer strong, #trailer a.active, #trailer a:hover {
-    color: #ffffff !important; }
-  #trailer h3 {
-    color: #33595d; }
-  #trailer h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #33595d;
-    margin-bottom: -10px; }
-  #trailer #video-div {
-    background: #33595d;
-    min-height: 250px;
-    margin-bottom: 50px;
-    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4); }
-  #trailer .galeria img {
-    cursor: pointer; }
-
-/* :::::::::::::::::::::::::[2] LI#SINOPSIS::::::::::::::::::::::::::: */
-body.pagina-2 header, body.pagina-2 footer {
-  background-color: rgba(11, 13, 15, 0.3); }
-
-#sinopsis {
-  background-image: url("../images/backgrounds/calleDark_bg.jpg"); }
-  #sinopsis h1, #sinopsis h5, #sinopsis strong, #sinopsis a.active, #sinopsis a:hover {
-    color: #ffffff !important; }
-  #sinopsis h3, #sinopsis p.lead {
-    color: #fbcf62; }
-  #sinopsis h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #fbcf62;
-    margin-bottom: -10px; }
-
-/* :::::::::::::::::::::::::[3] LI#NOTICIAS::::::::::::::::::::::::::: */
-body.pagina-3 header, body.pagina-3 footer {
-  background-color: rgba(11, 13, 15, 0.6); }
-
-#noticias {
-  background-image: url("../images/backgrounds/campo_bg.jpg"); }
-  #noticias h1, #noticias h5, #noticias strong, #noticias a.active, #noticias a:hover {
-    color: #ffffff !important; }
-  #noticias h3 {
-    color: #ff6f6f; }
-  #noticias h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #ff6f6f;
-    margin-bottom: -10px; }
-
-/* ::::::::::::::::::::::::: [4] LI#EQUIPO ::::::::::::::::::::::::::: */
-#equipo {
-  background-image: url("../images/backgrounds/loteria_bg.jpg"); }
-  #equipo h1, #equipo h5, #equipo strong, #equipo a.active, #equipo a:hover {
-    color: #ffffff !important; }
-  #equipo h3 {
-    color: #fbcf62; }
-  #equipo h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #fbcf62;
-    margin-bottom: -10px; }
-  #equipo .equipo-foto {
-    width: 79px;
-    height: 79px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    float: left;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    -ms-border-radius: 40px;
-    border-radius: 40px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box; }
-  #equipo .img-75 .equipo-foto {
-    -webkit-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75);
-    margin: 2px; }
-  #equipo .img-50 .equipo-foto {
-    -webkit-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform: scale(0.5);
-    margin: -2px; }
-  #equipo .img-25 .equipo-foto {
-    -webkit-transform: scale(0.25);
-    -ms-transform: scale(0.25);
-    -moz-transform: scale(0.25);
-    -o-transform: scale(0.25);
-    transform: scale(0.25); }
-  #equipo #equipo-marcos {
-    background-position: 0px 0px; }
-  #equipo #equipo-ale {
-    background-position: -237px -79px; }
-  #equipo #equipo-zalcman {
-    background-position: -79px 0px; }
-  #equipo #equipo-corsini {
-    background-position: -158px 0px; }
-  #equipo #equipo-alex {
-    background-position: 0px -79px; }
-  #equipo #equipo-agos {
-    background-position: -237px 0px; }
-  #equipo #equipo-sabsay {
-    background-position: -395px -79px; }
-  #equipo #equipo-pablo {
-    background-position: -395px 0px; }
-  #equipo #equipo-gabo {
-    background-position: -158px -79px; }
-  #equipo #equipo-gio {
-    background-position: -79px -158px; }
-  #equipo #equipo-vicky {
-    background-position: -316px -79px; }
-  #equipo #equipo-hetors {
-    background-position: -237px -158px; }
-  #equipo #equipo-eibriel {
-    background-position: -395px -158px; }
-  #equipo #equipo-jpbouza {
-    background-position: -158px -237px; }
-  #equipo #equipo-incetta {
-    background-position: -158px -158px; }
-  #equipo #equipo-debo {
-    background-position: -79px -237px; }
-  #equipo #equipo-chango {
-    background-position: -0px -237px; }
-  #equipo ul {
-    list-style-type: none;
-    overflow: auto; }
-  #equipo ul li {
-    padding: 11px 0px 11px 10px;
-    margin: 0; }
-  #equipo ul li i {
-    -webkit-transform: scale(0.4);
-    -ms-transform: scale(0.4);
-    -moz-transform: scale(0.4);
-    -o-transform: scale(0.4);
-    transform: scale(0.4);
-    -webkit-transition: 0.1s;
-    -moz-transition: 0.1s;
-    -ms-transition: 0.1s;
-    transition: 0.1s;
-    margin: -19px -15px; }
-  #equipo ul li:hover i {
-    -webkit-transform: scale(0.75) rotate(-7deg);
-    -ms-transform: scale(0.75) rotate(-7deg);
-    -moz-transform: scale(0.75) rotate(-7deg);
-    -o-transform: scale(0.75) rotate(-7deg);
-    transform: scale(0.75) rotate(-7deg); }
-  #equipo ul.big li i {
-    -webkit-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75); }
-  #equipo ul.big li:hover i {
-    -webkit-transform: scale(1) rotate(-5deg);
-    -ms-transform: scale(1) rotate(-5deg);
-    -moz-transform: scale(1) rotate(-5deg);
-    -o-transform: scale(1) rotate(-5deg);
-    transform: scale(1) rotate(-5deg); }
-  #equipo ul.big li span {
-    font-size: 1.2em;
-    line-height: 1.75em; }
-  #equipo ul li span {
-    word-break: break-all;
-    word-wrap: break-word;
-    display: block;
-    font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    font-size: .8em;
-    line-height: 1.7em; }
-
-.box-1 {
-  background-image: url("../images/boxes/box_1.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  padding-top: 25px;
-  padding-bottom: 5px; }
-
-.no-float {
-  float: inherit; }
-
-/* ::::::::::::::::::::::::: [5] LI#ELENCO ::::::::::::::::::::::::::: */
-#elenco {
-  background-image: url("../images/backgrounds/geriatricoDiaBlur.jpg"); }
-  #elenco h1, #elenco h5, #elenco strong, #elenco a.active, #elenco a:hover {
-    color: #ffffff !important; }
-  #elenco h3, #elenco h4 {
-    color: #a7d163; }
-  #elenco h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    margin-bottom: -10px; }
-  #elenco h3 {
-    padding-top: 13px;
-    margin: 0;
-    margin-bottom: -5px; }
-  #elenco .lead {
-    margin: 0;
-    font-size: 1.2em; }
-  #elenco .elenco-low h3 {
-    font-size: 1.4em; }
-  #elenco .elenco-low .lead {
-    font-size: 1em; }
-  #elenco .elenco-low img {
-    height: 100px; }
-  #elenco .elenco-foto {
-    width: 90px;
-    height: 120px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
-    margin: 15px 15px 5px auto;
-    float: left; }
-  #elenco #elenco-pepe {
-    background-position: -90px -240px; }
-  #elenco #elenco-norma {
-    background-position: 0px -120px; }
-  #elenco #elenco-betiana {
-    background-position: -180px -240px; }
-  #elenco #elenco-rita {
-    background-position: -180px -120px; }
-  #elenco #elenco-pelusa {
-    background-position: -270px -0px; }
-  #elenco #elenco-santiago {
-    background-position: -360px -0px; }
-  #elenco #elenco-susana {
-    background-position: 0px -240px; }
-  #elenco #elenco-marcelo {
-    background-position: 0px 0px; }
-  #elenco #elenco-gustavo {
-    background-position: -180px -0px; }
-  #elenco #elenco-carlos {
-    background-position: -90px -120px; }
-  #elenco #elenco-mariano {
-    background-position: -360px -120px; }
-
-/* ::::::::::::::::::::::::: [6] LI#PRENSA ::::::::::::::::::::::::::: */
-body.pagina-6 header, body.pagina-6 footer {
-  background-color: rgba(11, 13, 15, 0.3); }
-
-#prensa {
-  background-image: url("../images/backgrounds/pasillo_bg.jpg"); }
-  #prensa h1, #prensa h5, #prensa strong, #prensa a.active, #prensa a:hover {
-    color: #ffffff !important; }
-  #prensa h3, #prensa p.lead {
-    color: #ff6f6f; }
-  #prensa h4 {
-    font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #ff6f6f;
-    margin-bottom: -10px; }
-
-/* ::::::::::::::::::::::::: [7] LI#CONTACTO ::::::::::::::::::::::::::: */
-body.pagina-7 header, body.pagina-7 footer {
-  background-color: rgba(11, 13, 15, 0.3); }
-
-#contacto {
-  background-image: url("../images/backgrounds/geriatricoDiaBlur.jpg"); }
-  #contacto h1, #contacto h5, #contacto strong, #contacto a.active, #contacto a:hover {
-    color: #ffffff !important; }
-  #contacto h3, #contacto p.lead {
-    color: #dedede; }
-  #contacto h4 {
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #dedede;
-    margin-bottom: -10px; }
-  #contacto ul {
-    font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    list-style-type: none;
-    font-size: .9em;
-    line-height: 2em; }
-  #contacto ul li {
-    margin-bottom: 5px; }
-  #contacto ul li i {
-    margin-right: 10px; }
-  #contacto ul li a {
-    color: inherit; }
-  #contacto ul li a:hover {
-    text-decoration: none !important; }
-  #contacto ul li a:hover span {
-    color: #ffffff; }
-  #contacto textarea {
-    width: 95%;
-    background: none;
-    border: none;
-    padding: 10px;
-    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
-    color: #3598db;
-    margin: auto;
-    margin: 10px;
-    resize: vertical; }
-  #contacto #btn-enviar {
-    position: relative;
-    float: right;
-    bottom: -90px;
-    margin-top: -80px;
-    font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
-  #contacto .box-1 {
-    padding-top: 0px; }
-
-/* :::::::::::::: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
-@media (max-width: 768px) {
-  li .container {
-    padding-top: 30px !important;
-    padding-bottom: 50px  !important; } }
-/* :::::::::::::: FIN: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
 /* :::::::::::::: KEYFRAMES :::::::::::::::::::::::::::::::::::::::::::::::: */
 @-webkit-keyframes welcome {
   0% {
@@ -7004,6 +5959,876 @@ body.pagina-7 header, body.pagina-7 footer {
     -o-transform: translateY(-30px);
     transform: translateY(-30px); } }
 /* :::::::::::::: FIN: KEYFRAMES :::::::::::::::::::::::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: variables/mixins ::::::::::::::::::::::::::: */
+/* extend */
+.bg-contain {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.bg-cover, #content li {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.sprite-kiriweb, hr, .flechas, footer #logos a, footer #social-globo, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .icon {
+  background-image: url("../images/sprites/sprite-kiriweb.png"); }
+
+.sprite-elenco, #elenco .elenco-foto {
+  background-image: url("../images/sprites/sprite-elenco.png"); }
+
+.sprite-equipo, #equipo .equipo-foto {
+  background-image: url("../images/sprites/sprite-equipo.png"); }
+
+.sprite-front, .layer {
+  background-image: url("../images/sprites/sprite-front_2.png"); }
+
+/* ::::::::::::::::::::::::: GLOBALS ::::::::::::::::::::::::::: */
+* {
+  padding: 0;
+  margin: 0; }
+
+/* ::::::::::: FONTS ::::::::::: */
+@font-face {
+  font-family: 'kiriFont';
+  src: url("../fonts/kirifont-webfont.eot");
+  src: url("../fonts/kirifont-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/kirifont-webfont.woff") format("woff"), url("../fonts/kirifont-webfont.ttf") format("truetype"), url("../fonts/kirifont-webfont.svg#kirifontnormal") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'mclarenregular';
+  src: url("../fonts/mclaren-regular-webfont.eot");
+  src: url("../fonts/mclaren-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/mclaren-regular-webfont.woff") format("woff"), url("../fonts/mclaren-regular-webfont.ttf") format("truetype"), url("../fonts/mclaren-regular-webfont.svg#mclarenregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* ::::::::::: FIN FONTS ::::::::::: */
+header, footer, h1, h2, h3, h5, h6 {
+  font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
+
+h4 {
+  font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
+
+body {
+  background-color: #404048;
+  color: #dedede; }
+
+a {
+  color: #ffffff; }
+
+a:hover {
+  color: #fbcf62; }
+
+a:active {
+  color: #0dcdc0; }
+
+hr {
+  width: 255px;
+  height: 5px;
+  background-position: 0px -340px;
+  margin: 5px auto;
+  padding: 0;
+  border: 0; }
+
+hr.indigo {
+  background-position: 0px -345px; }
+
+hr.light {
+  background-position: -255px -340px; }
+
+hr.cyan {
+  background-position: -255px -345px; }
+
+html, body {
+  height: 100%;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  -o-font-smoothing: antialiased !important;
+  -ms-font-smoothing: antialiased !important;
+  font-smoothing: antialiased !important;
+  font-smooth: always !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0px !important;
+  overflow-x: hidden;
+  /* disable horizontal scrollbar */ }
+
+/* ::::::::::::::::::::::::: FIN: GLOBALS ::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: FLECHAS ::::::::::::::::::::::::::: */
+.flechas {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 6;
+  cursor: pointer;
+  width: 25px;
+  height: 25px; }
+
+.flechas.deactivated {
+  display: none; }
+
+.prev {
+  left: -20px;
+  background-position: -175px 0px; }
+  .prev:hover {
+    background-position: -175px -25px; }
+
+.next {
+  right: -20px;
+  background-position: -75px 0px; }
+  .next:hover {
+    background-position: -75px -25px; }
+
+.prev:hover, .next:hover {
+  opacity: 1;
+  -khtml-opacity: 1;
+  -moz-opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
+  filter: alpha(opacity=100); }
+
+/* ::::::::::::::::::::::::: FIN:FLECHAS ::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: SCROLLER / SWIPE FW ::::::::::::::::::::::::::: */
+ul#pages {
+  list-style-type: none;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important; }
+
+#content ul#pages, #content ul#pages > li {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 0; }
+
+#content ul#pages {
+  -webkit-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
+  -ms-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
+  -moz-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
+  -o-transform: translate3d(0%, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(0%, 0, 0) scale3d(1, 1, 1); }
+
+#content ul#pages.animate {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#content ul#pages > li {
+  float: left; }
+
+.overthrow-enabled #content ul#pages li {
+  overflow-x: hidden;
+  /* disable horizontal scrollbar */
+  overflow-y: auto;
+  /* enable vertical scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* preserve touch momentum while scrolling on WebKit browsers */ }
+
+#content {
+  /*configuraciones globales del texto interior */
+  height: 100%;
+  width: 100%; }
+  #content li h1, #content li h2, #content li h3, #content li h4, #content li h5, #content li h6 {
+    line-height: 1.5em; }
+  #content li img.img-responsive, #content li .embed-responsive {
+    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4); }
+  #content li .container {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    -webkit-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3);
+    -moz-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3);
+    -o-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3);
+    text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.3); }
+  #content li .container img {
+    margin: 10px auto; }
+  #content li .container p.lead {
+    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
+
+.page li {
+  overflow-y: hidden !important; }
+
+/* ::::::::::::::::::::::::: FIN: SCROLLER / SWIPE FW ::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: STICKY/HEADER ::::::::::::::::::::::::::: */
+header {
+  position: fixed;
+  top: -70px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  padding-top: 26px;
+  height: 67px;
+  background-color: rgba(11, 13, 15, 0.6); }
+  header #menu a {
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    transition: 0.1s;
+    color: #48647c;
+    margin-right: 1%;
+    padding: 7px 1.5%;
+    font-size: 1.2em;
+    -webkit-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6);
+    -moz-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6);
+    -o-text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6);
+    text-shadow: 0px 2px 0px rgba(11, 13, 15, 0.6); }
+    header #menu a:hover {
+      color: #ffffff !important;
+      text-decoration: none; }
+    header #menu a.active {
+      color: #3598db; }
+    header #menu a:last-child {
+      margin-right: 0; }
+
+/* ::::::::::::::::::::::::: FIN:HEADER ::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: FOOTER ::::::::::::::::::::::::::: */
+footer {
+  position: fixed;
+  bottom: -90px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  width: 100%;
+  height: 65px;
+  background-color: rgba(11, 13, 15, 0.7);
+  padding-top: 8px; }
+  footer #love {
+    padding: 6px 0 0 25px; }
+  footer #logos a {
+    opacity: 0.8;
+    -khtml-opacity: 0.8;
+    -moz-opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+    filter: alpha(opacity=80);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 25px; }
+    footer #logos a:last-child {
+      margin-right: 0px; }
+    footer #logos a#logo-if {
+      width: 90px;
+      height: 30px;
+      background-position: -150px -400px; }
+      footer #logos a#logo-if:hover {
+        background-position: -150px -430px; }
+    footer #logos a#logo-sla {
+      width: 72px;
+      height: 26px;
+      background-position: -260px -400px; }
+      footer #logos a#logo-sla:hover {
+        background-position: -260px -430px; }
+    footer #logos a#logo-slc {
+      width: 100px;
+      height: 45px;
+      background-position: -400px -350px; }
+      footer #logos a#logo-slc:hover {
+        background-position: -400px -395px; }
+    footer #logos a#logo-incaa {
+      width: 90px;
+      height: 50px;
+      background-position: -150px -460px; }
+      footer #logos a#logo-incaa:hover {
+        background-position: -240px -460px; }
+    footer #logos a#logo-zetta {
+      width: 60px;
+      height: 30px;
+      background-position: -240px -400px; }
+      footer #logos a#logo-zetta:hover {
+        background-position: -240px -430px; }
+  footer #copyright {
+    padding: 17px 25px 0 0; }
+  footer #copyright a {
+    display: inline-block;
+    color: #48647c;
+    margin-left: 10px; }
+  footer a:hover, footer a:active, footer a.active {
+    opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
+    filter: alpha(opacity=100);
+    color: #fbcf62 !important;
+    text-decoration: none; }
+  footer #gradient {
+    width: 100%;
+    height: 70px;
+    background-size: contain;
+    background-image: url("../images/gradient.png");
+    position: fixed;
+    bottom: 0;
+    left: 0; }
+  footer #social-globo {
+    -webkit-transform-origin: 15px 115px;
+    -moz-transform-origin: 15px 115px;
+    -ms-transform-origin: 15px 115px;
+    -o-transform-origin: 15px 115px;
+    transform-origin: 15px 115px;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: socialGlobo;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 0s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: socialGlobo;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 0s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: socialGlobo;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+    animation-name: socialGlobo;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    position: absolute;
+    left: 17px;
+    bottom: 46px;
+    background-position: -385px 0px;
+    background-repeat: no-repeat;
+    width: 125px;
+    height: 120px;
+    padding-top: 12px;
+    padding-left: 17px; }
+  footer .socialGloboShow {
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: socialGlobo;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 0s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: socialGlobo;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 0s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: socialGlobo;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+    animation-name: socialGlobo;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */ }
+  footer .socialGloboHide {
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: socialGloboInv;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 0s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: socialGloboInv;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 0s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: socialGloboInv;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 0s;
+    animation-duration: 0.5s;
+    animation-name: socialGloboInv;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */ }
+
+/* ::::::::::::::::::::::::: FIN: FOOTER ::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::[2] LI#HOME::::::::::::::::::::::::::: */
+#doSwipe {
+  background-position: -388px -119px;
+  position: absolute;
+  width: 123px;
+  height: 76px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10%;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: doSwipe;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 2s;
+  -moz-animation-name: doSwipe;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-delay: 0s;
+  -o-animation-duration: 2s;
+  -o-animation-name: doSwipe;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-name: doSwipe;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite; }
+
+#home {
+  background-image: url("../images/backgrounds/geriatricoDia.jpg");
+  background-position: 50% 50%;
+  overflow: hidden; }
+  #home h1, #home h5, #home strong, #home a.active, #home a:hover {
+    color: #dedede !important; }
+
+#logo-big {
+  position: absolute;
+  top: 21%;
+  z-index: 100;
+  padding: 0;
+  margin: auto;
+  left: 0;
+  right: 0; }
+  #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big {
+    opacity: 0;
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
+    filter: alpha(opacity=0);
+    position: absolute;
+    margin: auto; }
+  #logo-big #logo_1_big {
+    -webkit-animation-delay: 1s;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: welcome;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 1s;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-name: welcome;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 1s;
+    -o-animation-duration: 0.5s;
+    -o-animation-name: welcome;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 1s;
+    animation-duration: 0.5s;
+    animation-name: welcome;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    background-position: 0px -200px;
+    width: 512px;
+    height: 138px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  #logo-big #logo_2_big {
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-name: welcome;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 1.5s;
+    -moz-animation-duration: 0.3s;
+    -moz-animation-name: welcome;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 1.5s;
+    -o-animation-duration: 0.3s;
+    -o-animation-name: welcome;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 1.5s;
+    animation-duration: 0.3s;
+    animation-name: welcome;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    background-position: 0px -350px;
+    width: 400px;
+    height: 50px;
+    bottom: -120px;
+    left: 0;
+    right: 0; }
+  #logo-big #logo_3_big {
+    -webkit-animation-delay: 3s;
+    -webkit-animation-duration: 2.5s;
+    -webkit-animation-name: tresde;
+    -webkit-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -moz-animation-delay: 3s;
+    -moz-animation-duration: 2.5s;
+    -moz-animation-name: tresde;
+    -moz-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    -o-animation-delay: 3s;
+    -o-animation-duration: 2.5s;
+    -o-animation-name: tresde;
+    -o-animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-delay: 3s;
+    animation-duration: 2.5s;
+    animation-name: tresde;
+    animation-fill-mode: forwards;
+    /* this prevents the animation from restarting! */
+    animation-play-state: pause;
+    animation-iteration-count: infinite;
+    background-position: 0px -400px;
+    width: 150px;
+    height: 110px;
+    bottom: -205px;
+    left: 0;
+    right: 0; }
+    #logo-big #logo_3_big:hover {
+      animation-play-state: play; }
+
+.layer {
+  position: absolute; }
+
+.layer:hover {
+  cursor: pointer; }
+
+#layer-center {
+  background-position: 0px 0px;
+  width: 393px;
+  height: 421px;
+  right: 35%;
+  top: 44%; }
+
+#layer-right {
+  background-position: -393px 0px;
+  right: 7%;
+  top: 36%;
+  width: 359px;
+  height: 422px; }
+
+#layer-left {
+  background-position: -162px -421px;
+  left: 7%;
+  top: 40%;
+  width: 451px;
+  height: 325px; }
+
+#layer-ramas {
+  position: absolute;
+  z-index: 390;
+  background-image: url("../images/front_ramas.png");
+  background-size: cover;
+  left: -10%;
+  top: 0%;
+  width: 510px;
+  height: 241px; }
+
+#layer-arbol {
+  position: absolute;
+  z-index: 391;
+  background-image: url("../images/arbol.png");
+  background-size: cover;
+  right: -10%;
+  top: 0%;
+  width: 177px;
+  height: 100%; }
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 99998; }
+
+img.front {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 199999; }
+
+#modal {
+  -webkit-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
+  -o-text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  z-index: 99999;
+  position: fixed;
+  top: -80%;
+  color: #fff; }
+  #modal p {
+    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
+    line-height: 1.6em; }
+  #modal p.lead {
+    font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
+    font-size: 1.15em;
+    margin-bottom: 5px; }
+  #modal h4 {
+    font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
+    margin-bottom: 0; }
+  #modal .modalContent {
+    padding: 25px 60px 25px 25px;
+    box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box; }
+
+#modal-close {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  float: right;
+  top: 20px;
+  z-index: 100;
+  background-position: 0px -150px; }
+  #modal-close:hover {
+    background-position: -25px -175px; }
+
+#modalGaleria {
+  z-index: 99999;
+  margin: auto;
+  position: fixed;
+  top: -500%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 75%;
+  height: 65%; }
+  #modalGaleria img {
+    width: 100%; }
+  #modalGaleria #modal-close {
+    position: relative;
+    top: -11px;
+    right: -22px; }
+
+/* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::[2] LI#SINOPSIS::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::[3] LI#NOTICIAS::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: [4] LI#EQUIPO ::::::::::::::::::::::::::: */
+#equipo .equipo-foto {
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  float: left;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  border-radius: 40px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; }
+#equipo .img-75 .equipo-foto {
+  width: 75px;
+  height: 75px; }
+#equipo .img-50 .equipo-foto {
+  width: 50px;
+  height: 50px; }
+#equipo .img-25 .equipo-foto {
+  width: 25px;
+  height: 25px; }
+#equipo #equipo-marcos {
+  background-position: 0px 0px; }
+#equipo #equipo-ale {
+  background-position: -237px -79px; }
+#equipo #equipo-zalcman {
+  background-position: -79px 0px; }
+#equipo #equipo-corsini {
+  background-position: -158px 0px; }
+#equipo #equipo-alex {
+  background-position: 0px -79px; }
+#equipo #equipo-agos {
+  background-position: -237px 0px; }
+#equipo #equipo-sabsay {
+  background-position: -395px -79px; }
+#equipo #equipo-pablo {
+  background-position: -395px 0px; }
+#equipo #equipo-gabo {
+  background-position: -158px -79px; }
+#equipo #equipo-gio {
+  background-position: -79px -158px; }
+#equipo #equipo-vicky {
+  background-position: -316px -79px; }
+#equipo #equipo-hetors {
+  background-position: -237px -158px; }
+#equipo #equipo-eibriel {
+  background-position: -395px -158px; }
+#equipo #equipo-jpbouza {
+  background-position: -158px -237px; }
+#equipo #equipo-incetta {
+  background-position: -158px -158px; }
+#equipo #equipo-debo {
+  background-position: -79px -237px; }
+#equipo #equipo-chango {
+  background-position: -0px -237px; }
+#equipo ul {
+  list-style-type: none; }
+#equipo ul li {
+  padding: 11px 0px 11px 10px;
+  margin: 0; }
+#equipo ul li i {
+  -webkit-transform: scale(0.4);
+  -ms-transform: scale(0.4);
+  -moz-transform: scale(0.4);
+  -o-transform: scale(0.4);
+  transform: scale(0.4);
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  transition: 0.1s;
+  margin: -19px -15px; }
+#equipo ul li:hover i {
+  -webkit-transform: scale(0.75) rotate(-7deg);
+  -ms-transform: scale(0.75) rotate(-7deg);
+  -moz-transform: scale(0.75) rotate(-7deg);
+  -o-transform: scale(0.75) rotate(-7deg);
+  transform: scale(0.75) rotate(-7deg); }
+#equipo ul.big li i {
+  -webkit-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  -o-transform: scale(0.75);
+  transform: scale(0.75); }
+#equipo ul.big li:hover i {
+  -webkit-transform: scale(1) rotate(-5deg);
+  -ms-transform: scale(1) rotate(-5deg);
+  -moz-transform: scale(1) rotate(-5deg);
+  -o-transform: scale(1) rotate(-5deg);
+  transform: scale(1) rotate(-5deg); }
+#equipo ul.big li span {
+  font-size: 1.2em;
+  line-height: 1.75em; }
+#equipo ul li span {
+  word-break: break-all;
+  word-wrap: break-word;
+  display: block;
+  font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
+  font-size: .8em;
+  line-height: 1.7em; }
+
+.box-1 {
+  background-image: url("../images/boxes/box_1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-top: 25px;
+  padding-bottom: 5px; }
+
+/* ::::::::::::::::::::::::: [5] LI#ELENCO ::::::::::::::::::::::::::: */
+#elenco .elenco-low h3 {
+  font-size: 1.4em; }
+#elenco .elenco-low .lead {
+  font-size: 1em; }
+#elenco .elenco-low img {
+  height: 100px; }
+#elenco .elenco-foto {
+  width: 90px;
+  height: 120px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -ms-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -moz-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -opera-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  -webkit-box-shadow: 0px 2px 0px rgba(11, 13, 15, 0.4);
+  margin: 15px 15px 5px auto;
+  float: left; }
+#elenco #elenco-pepe {
+  background-position: -90px -240px; }
+#elenco #elenco-norma {
+  background-position: 0px -120px; }
+#elenco #elenco-betiana {
+  background-position: -180px -240px; }
+#elenco #elenco-rita {
+  background-position: -180px -120px; }
+#elenco #elenco-pelusa {
+  background-position: -270px -0px; }
+#elenco #elenco-santiago {
+  background-position: -360px -0px; }
+#elenco #elenco-susana {
+  background-position: 0px -240px; }
+#elenco #elenco-marcelo {
+  background-position: 0px 0px; }
+#elenco #elenco-gustavo {
+  background-position: -180px -0px; }
+#elenco #elenco-carlos {
+  background-position: -90px -120px; }
+#elenco #elenco-mariano {
+  background-position: -360px -120px; }
+
+/* ::::::::::::::::::::::::: [6] LI#PRENSA ::::::::::::::::::::::::::: */
+/* ::::::::::::::::::::::::: [7] LI#CONTACTO ::::::::::::::::::::::::::: */
+#contacto ul {
+  font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
+  list-style-type: none;
+  font-size: .9em;
+  line-height: 2em; }
+#contacto ul li {
+  margin-bottom: 5px; }
+#contacto ul li i {
+  margin-right: 10px; }
+#contacto ul li a {
+  color: inherit; }
+#contacto ul li a:hover {
+  text-decoration: none !important; }
+#contacto ul li a:hover span {
+  color: #ffffff; }
+#contacto textarea {
+  width: 95%;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif;
+  color: #3598db;
+  margin: auto;
+  margin: 10px;
+  resize: vertical; }
+#contacto #btn-enviar {
+  position: relative;
+  float: right;
+  bottom: -90px;
+  margin-top: -80px;
+  font-family: kiriFont, "kiriFont", "KiriFont", "HammersmithOne", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
+#contacto .box-1 {
+  padding-top: 0px; }
+
+/* :::::::::::::: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
+@media (max-width: 768px) {
+  li .container {
+    padding-top: 30px !important;
+    padding-bottom: 50px  !important; } }
+/* :::::::::::::: FIN: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::::::::::: LOADER ::::::::::::::::::::::::::::::::::::::::::::::: */
 #loader {
   position: fixed;

@@ -20,17 +20,17 @@ $(document).ready(function() {
         $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
         $("#layer-center").css('right', 35 - currentMousePos.x/100 + '%');
         // overlays
-        $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
+        // $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
         $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
         // logo
-        $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
-            //$("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
-            $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');
-            $("#logo_2_big").css('bottom', -120 + currentMousePos.y/75 + 'px');
-            $("#logo_3_big").css('bottom', -205 - currentMousePos.y/50 + 'px');
+        // $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
+        // $("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
+        // $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');
+        // $("#logo_2_big").css('bottom', -120 + currentMousePos.y/75 + 'px');
+        // $("#logo_3_big").css('bottom', -205 - currentMousePos.y/50 + 'px');
     });
 
-    $("#logo_3_big").mouseover(function() { $(this).addClass("tresde"); });
+    // $("#logo_3_big").mouseover(function() { $(this).addClass("tresde"); });
 
     //hammertime.on("tap", alert("hola?"));
     // arranca el volumen en mute
@@ -40,38 +40,10 @@ $(document).ready(function() {
     $("#overlay").toggle();
     $(".front").toggle();
     $("#social-globo").toggle();
-
-
-    // inicia tooltip method bs3
     $('.C-tooltip').tooltip();
-
-    //se crea el elemento de audio
-    //var audioElement = document.createElement('audio');
-    // y se aniade el attr del origen de la fuente.
-    //audioElement.setAttribute('src', '../sounds/ice.ogg');
-
-    // no se bien que hace esto, revisar por si es necesario realmente
     $.get();
 
-    // play
-    // var play = false;
-    // $('#volumen').click(function() {
-
-    //     if (play == false) {
-    //         audioElement.play();
-    //         $(this).addClass("mute");
-    //         play = true;
-    //     } else if (play) {
-    //         audioElement.pause();
-    //         $(this).removeClass("mute");
-    //         play = false;
-    //     }
-    // });
-
-
     var scroller = HScroller.create("#pages"); // specify container element
-
-    
 
     $("#loader").delay(500).fadeOut('slow', function() {
         $(this).remove();
@@ -83,8 +55,8 @@ $(document).ready(function() {
         $('.next').delay(700).animate({right: 25 }, 'slow');
     });
 
-    $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
-    $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
+    // $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
+    // $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
 
     var modal = function(subtitulo, charName, imgSrc, modalColor, parrafo, target) {
         $(target + " h4").css('color', modalColor);
@@ -120,7 +92,7 @@ $(document).ready(function() {
         fullImgSrc = fullImgSrc.replace('images/', 'images/backgrounds/');
         //console.log("la ruta nueva es: "+fullImgSrc);
         $('#modalGaleria' + ' img').attr('src', fullImgSrc);
-        $('#modalGaleria' + ' h4').text(imgAlt);
+        // $('#modalGaleria' + ' h4').text(imgAlt);
         $('#overlay').fadeIn('200', function() {
             $('#modalGaleria').animate({
                     top: "0",
@@ -136,7 +108,7 @@ $(document).ready(function() {
     $('#overlay, #modal-close').bind('click tap',function() {
         $('#logo-big').animate({top: "21%" }, 'slow' );
         $(modalTarget).animate({
-                top: "-200%",
+                top: "-250%",
                 //bottom: "110%",
                 opacity: "0"
             },
@@ -154,10 +126,10 @@ $(document).ready(function() {
         //setInterval(function(){$(this).css('background-position', '0px -50px');}, delay,10000);
     });
 
-    $('.toggleNextSection').bind('click tap',function() {
-        /* Act on the event */
-        $('#section-arte').toggle('slow');
-        //console.log("hiciste clic en la flechitaaa");
-    });
+    // $('.toggleNextSection').bind('click tap',function() {
+    //     /* Act on the event */
+    //     $('#section-arte').toggle('slow');
+    //     //console.log("hiciste clic en la flechitaaa");
+    // });
     //$('#social-globo').mouseout(function() {$(this).delay(200).fadeOut('fast'); });
 });
