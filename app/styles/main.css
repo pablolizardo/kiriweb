@@ -5971,7 +5971,7 @@ button.close {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.sprite-kiriweb, hr, .flechas, footer #logos a, footer #social-globo, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .icon {
+.sprite-kiriweb, hr, .flechas, footer #logos a, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .icon {
   background-image: url("../images/sprites/sprite-kiriweb.png"); }
 
 .sprite-elenco, #elenco .elenco-foto {
@@ -6140,7 +6140,7 @@ ul#pages {
   /*configuraciones globales del texto interior */
   height: 100%;
   width: 100%; }
-  #content li h1, #content li h2, #content li h3, #content li h4, #content li h5, #content li h6 {
+  #content li h1, #content li h2, #content li h3, #content li h5, #content li h6 {
     line-height: 1.5em; }
   #content li img.img-responsive, #content li .embed-responsive {
     box-shadow: 0px 4px 0px rgba(14, 8, 9, 0.2);
@@ -6159,6 +6159,11 @@ ul#pages {
     margin: 10px auto; }
   #content li .container p.lead {
     font-family: mclarenregular, "mclarenregular", "McLaren", "McLaren-Regular", "McLaren Pro", "Chelsea Market", "FF Duper", "Helvetica Neue", "helvetica", "Helvetica", "Montserrat", Arial, Verdana, sans, sans-serif; }
+  #content h4 {
+    -webkit-text-shadow: none;
+    -moz-text-shadow: none;
+    -o-text-shadow: none;
+    text-shadow: none; }
 
 .page li {
   overflow-y: hidden !important; }
@@ -6299,11 +6304,11 @@ footer {
     background-repeat: repeat-x;
     background-image: url("../images/bg_gradient.png"); }
   footer #social-globo {
-    -webkit-transform-origin: 15px 115px;
-    -moz-transform-origin: 15px 115px;
-    -ms-transform-origin: 15px 115px;
-    -o-transform-origin: 15px 115px;
-    transform-origin: 15px 115px;
+    -webkit-transform-origin: 22px 135px;
+    -moz-transform-origin: 22px 135px;
+    -ms-transform-origin: 22px 135px;
+    -o-transform-origin: 22px 135px;
+    transform-origin: 22px 135px;
     -webkit-animation-delay: 0s;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-name: socialGlobo;
@@ -6324,15 +6329,37 @@ footer {
     animation-name: socialGlobo;
     animation-fill-mode: forwards;
     /* this prevents the animation from restarting! */
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    box-shadow: 0px 4px 0px rgba(14, 8, 9, 0.2);
+    -ms-box-shadow: 0px 4px 0px rgba(14, 8, 9, 0.2);
+    -moz-box-shadow: 0px 4px 0px rgba(14, 8, 9, 0.2);
+    -opera-box-shadow: 0px 4px 0px rgba(14, 8, 9, 0.2);
+    -webkit-box-shadow: 0px 4px 0px rgba(14, 8, 9, 0.2);
     position: absolute;
     left: 17px;
-    bottom: 46px;
-    background-position: -385px 0px;
-    background-repeat: no-repeat;
-    width: 125px;
-    height: 120px;
-    padding-top: 12px;
-    padding-left: 17px; }
+    bottom: 62px;
+    padding: 15px;
+    width: 115px;
+    background: #F6F7FB url("../images/noise.png"); }
+    footer #social-globo:after {
+      top: 100%;
+      left: 20%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-top-color: #F6F7FB;
+      border-width: 10px;
+      margin-left: -10px; }
   footer .socialGloboShow {
     -webkit-animation-delay: 0s;
     -webkit-animation-duration: 0.5s;
@@ -6747,6 +6774,9 @@ img.front {
     right: -22px; }
 
 /* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
+#trailer {
+  background-image: url("../images/backgrounds/geriatricoDiaBlur.jpg"); }
+
 /* :::::::::::::::::::::::::[2] LI#SINOPSIS::::::::::::::::::::::::::: */
 /* :::::::::::::::::::::::::[3] LI#NOTICIAS::::::::::::::::::::::::::: */
 /* ::::::::::::::::::::::::: [4] LI#EQUIPO ::::::::::::::::::::::::::: */
@@ -7015,10 +7045,10 @@ img.front {
     background-position: -150px -75px; }
 
 .icon-share {
-  background-position: -25px    -50px;
+  background-position: -0px    -50px;
   cursor: pointer; }
   .icon-share:hover {
-    background-position: -0px    -50px; }
+    background-position: -0px    -75px; }
 
 .icon-mail {
   background-position: -100px -100px; }

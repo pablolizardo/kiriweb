@@ -140,12 +140,13 @@ ul#pages { list-style-type: none; height: 100%; margin: 0 !important; padding: 0
     height: 100%;
     width: 100%;
 
-    li { h1, h2, h3, h4, h5, h6 { line-height: 1.5em; } }
+    li { h1, h2, h3, h5, h6 { line-height: 1.5em; } }
     li { @extend .bg-cover; }
     li img.img-responsive, li .embed-responsive { @include box-shadow(); }
     li .container { padding-top: 110px; padding-bottom:110px; @include text-shadow();}
     li .container img {     margin: 10px auto; }
     li .container p.lead { font-family: $font-cursive;   }
+    h4 {    @include text-shadow(none); }
 }
 
 .page li { overflow-y: hidden !important;}
@@ -295,18 +296,31 @@ footer {
         }
 
     #social-globo {
-        @include transform-origin(15px 115px);
+        @include transform-origin(22px 135px);
         @include animation(0s, 0.5s, socialGlobo);
+        @include border-radius();
+        @include box-shadow();
         position: absolute;
         left: 17px;
-        bottom:46px;
-        @extend .sprite-kiriweb;
-        background-position: -385px 0px;
-        background-repeat: no-repeat;
-        width: 125px;
-        height: 120px;
-        padding-top: 12px;
-        padding-left: 17px;
+        bottom:62px;
+        padding:15px;
+        width: 115px;
+        background: $cBlanco url('../images/noise.png');
+        &:after {
+            top: 100%;
+            left: 20%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-top-color: $cBlanco ;
+            border-width: 10px;
+            margin-left: -10px;
+        }
+
     }
     .socialGloboShow {@include animation(0s, 0.5s, socialGlobo);}
     .socialGloboHide {@include animation(0s, 0.5s, socialGloboInv);}
@@ -550,7 +564,9 @@ img.front {
 
 /* :::::::::::::::::::::::::[3] LI#TRAILER::::::::::::::::::::::::::: */
 
-#trailer {}
+#trailer {
+    background-image: url('../images/backgrounds/geriatricoDiaBlur.jpg');
+}
 
 /* :::::::::::::::::::::::::[2] LI#SINOPSIS::::::::::::::::::::::::::: */
 #sinopsis {}
@@ -774,19 +790,14 @@ img.front {
     &.icon-sm {@include transform(scale(.75)); }
 }
 
-
-
 .icon-facebook       { background-position: -50px -50px;    &:hover  { background-position: -50px -75px;  } }
 .icon-twitter        { background-position: -100px -50px;   &:hover  { background-position: -100px -75px; } }
 .icon-youtube        { background-position: -150px -50px;   &:hover  { background-position: -150px -75px; } }
-.icon-share          { background-position: -25px    -50px; &:hover  { background-position: -0px    -50px;  } cursor: pointer;}
-
+.icon-share          { background-position: -0px    -50px; &:hover  { background-position: -0px    -75px;  } cursor: pointer;}
 .icon-mail           { background-position: -100px -100px;  &:hover     { background-position: -100px -125px; } }
 .icon-lugar          { background-position: -150px -150px;  &:hover    { background-position: -150px -175px; } }
 .icon-home           { background-position: -250px -50px;   &:hover     { background-position: -275px -75px; } }
 .icon-Dummy          { background-image: none; }
-
-
 .icon-down      {background-position: -125px -0px; &:hover { background-position: -125px -25px; } }
 .icon-up        {background-position: -25px -0px;  &:hover { background-position: -25px -25px;  } }
 .icon-left      {background-position: -175px -0px; &:hover { background-position: -175px -25px; } }
@@ -794,8 +805,6 @@ img.front {
 .icon-mas       {background-position: -225px -0px; &:hover { background-position: -225px -25px; } }
 .icon-menos     {background-position: -275px -0px; &:hover { background-position: -275px -25px; } }
 .icon-zoom      {background-position: -325px -0px; &:hover { background-position: -325px -25px; } }
-
-
 
 /* txt-color */
 
