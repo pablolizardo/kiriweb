@@ -68,9 +68,8 @@ var HScroller = {
                     //console.log("es la pagina " + current_page);
                 }
                 $('.nav a').removeClass('active');
-                console.log(current_page);
                 $('.nav a').eq(current_page).addClass('active');
-                $('body').addClass(current_page);
+                $('body').removeClass().addClass('page-'+current_page);
                 /* (;,;) codeme */
             }
         })();

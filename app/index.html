@@ -39,13 +39,13 @@
         <link rel="stylesheet" href="styles/animate.css">
         <!-- endbuild -->
         <!-- Important Owl stylesheet -->
-        <link rel="stylesheet" href="styles/owl.carousel.css">
+        <link rel="stylesheet" href="../bower_components/owlcarousel/owl-carousel/owl.carousel.css">
          
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="../bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
 
-        <link href='http://fonts.googleapis.com/css?family=McLaren' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=McLaren|Damion' rel='stylesheet' type='text/css'>
 
     </head>
 
@@ -65,9 +65,9 @@
             // Google+ button
             add('http://apis.google.com/js/plusone.js');
             // Facebook SDK
-            add('//connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
+            add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
             // Twitter SDK
-            add('//platform.twitter.com/widgets.js');
+            add('http://platform.twitter.com/widgets.js');
 
             fjs.parentNode.insertBefore(frag, fjs);
         }(document, 'script'));
@@ -83,7 +83,7 @@
 <!-- :::::: HEADER ::::::::::::::::::::::::::::::::::::::::::::::::: -->
 <header class="text-center">
 
-    <!-- <div id="gradient"></div> -->
+    <div id="gradient"></div>
     <!-- <div id="volumen"></div> -->
     <div class="container-fluid">
         <div class="col-lg-12">
@@ -100,7 +100,6 @@
 
 <!-- :::::: FOOTER ::::::::::::::::::::::::::::::::::::::::::::::::: -->
 <footer class="hidden-xs">
-    <!-- <div id="gradient"></div> -->
     <div id="social-globo">
         <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-url="http://www.kiribatithemovie.com">Tweet</a><br>
         <div class="g-plusone" data-size="medium" data-count="true" data-href="http://www.kiribatithemovie.com"></div><br>
@@ -127,7 +126,11 @@
             </div>
         </div>
     </div>
+
+    
 </footer>
+
+<div class="featured " ></div>
 
 <div class="">
     <div class="flechas prev deactivated"></div>
@@ -201,47 +204,41 @@
 
 
         <!-- :::::: PAGINA TRAILER ::::::::::::::::::::::::::::::::::::::::::::::::: -->
-        <li id="trailer" class="page overthrow theme-amarillo">
+        <li id="trailer" class="page overthrow ">
             <!-- <img src="images/overlays/over-dora.png" alt=""> -->
             <div class="container">
                 
-               <!--  <div class="row">
+                <div class="row">
                     <div class="col-xs-12 col-md-offset-1 col-md-10">
                         <h4>Nuestra</h4>
                         <h1>Galeria</h1>
                     </div>
-                </div> -->
+                </div> 
                 <div id="owl-example" class="owl-carousel ">
                   <div> <img src="images/galeria/slide3.jpg" alt=""> </div>
                   <div> <img src="images/galeria/slide2.jpg" alt=""> </div>
                   <div> <img src="images/galeria/slide1.jpg" alt=""> </div>
                 </div>
-                   
-
             </div>
         </li>
 
         <!-- :::::: PAGINA SINOPSIS ::::::::::::::::::::::::::::::::::::::::::::::::: -->
-        <li id="sinopsis" class="page overthrow  theme-rojo">
+        <li id="sinopsis" class="page overthrow  ">
+            
             <div class="container ">
                 <div class="row">
-                    <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="col-xs-6 col-md-offset-1 col-md-5">
                         <h4>De que se trata la pelicula?</h4>
                         <h1>Sinópsis</h1>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="col-xs-6 col-md-offset-1 col-md-5">
 
-                        <p class="lead hero-unit">Yermo, el abuelo gruñón de una familia disfuncional, gana la lotería el mismo día en que es encerrado en un geriátrico de “máxima seguridad”.<br> Allí, junto a su nieto Luisito y la de un grupo desopilante de abuelitos, planearán un escape, cobrar el dinero y embarcarse en un asombroso viaje lleno de aventura y fantasía donde redescubrirán el significado de la amistad y la familia, camino a Kiribati.</p>
-
-
-
+                        <p class="lead">Yermo, el abuelo gruñón de una familia disfuncional, gana la lotería el mismo día en que es encerrado en un geriátrico de “máxima seguridad”.</p>
+                        <p>Allí, junto a su nieto Luisito y la de un grupo desopilante de abuelitos, planearán un escape, cobrar el dinero y embarcarse en un asombroso viaje lleno de aventura y fantasía donde redescubrirán el significado de la amistad y la familia, camino a Kiribati.</p>
                     </div>
-
                 </div>
-
             </div>
         </li>
 
@@ -252,333 +249,222 @@
 
 
          <!-- :::::: PAGINA EQUIPO ::::::::::::::::::::::::::::::::::::::::::::::::: -->
-        <li id="equipo" class="page overthrow theme-amarillo" >
+        <li id="equipo" class="page overthrow text-center" >
+            
             <div class="container">
-                 <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10">
-                    <div class="row text-center">
-                        <h4>Estos somos nosotros</h4>
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 ">
                         <h1>Equipo</h1>
                     </div>
-
-                    <div class="row">
-                        <h3 class="media-heading text-center">Directores</h3>
-                        <!-- columna izquierda -->
-                        <div class="col-xs-12 col-sm-offset-2 col-sm-4 " >
-                            <ul class="big">
-                                <li><i class="equipo-foto" id="equipo-ale"></i> <span>Alejandro<br>Carlini</span></li>
-                            </ul>
-                        </div> <!-- fin col -->
-                        <div class="col-xs-12 col-sm-4 " >
-                            <ul class="big">
-                                <li><i class="equipo-foto" id="equipo-marcos"></i> <span>Marcos<br>Valdivia</span></li>
-                            </ul>
-                        </div> <!-- fin col -->
-                    </div> <!-- fin row -->
-                    <div class="row img-75">
-                        <!-- columna derecha -->
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul >
-                                <li><i class="equipo-foto" id="equipo-alex"></i> <span>Alexander<br>Teper</span></li>
-                            </ul>
-                        </div> <!-- fin col -->
-                        <!-- columna derecha -->
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul >
-                                <li><i class="equipo-foto" id="equipo-rocca"></i> <span>Jorge<br>Rocca</span></li>
-                            </ul>
-                        </div> <!-- fin col -->
-                        <!-- columna derecha -->
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul >
-                                <li><i class="equipo-foto" id="equipo-zalcman"></i> <span>Nicolas<br>Zalcman</span></li>
-                            </ul>
-                        </div> <!-- fin col -->
-                    </div> <!-- fin row -->
-
-                    <hr class="light">
-
-                    <div class="row img-75">
-                        <h3 class="text-center">Arte</h3>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-gio"></i> <span>Facundo<br> Giovagnoli</span></li>
-                                <li><i class="equipo-foto" id="equipo-gabo"></i> <span>Gabriel<br> Romero</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-4 -->
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-chango"></i> <span>Andres<br> Semproni</span></li>
-                                <li><i class="equipo-foto" id="equipo-vicky"></i> <span>Victoria<br> Gonzalez</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-4 -->
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-mario"></i> <span>Mario<br> Carlini</span></li>
-                                <li><i class="equipo-foto" id="equipo-pablo"></i> <span>Pablo<br> Lizardo</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-4 -->
-                    </div> <!-- fin row -->
-
-
-
-                    <div class="row img-75">
-                        <i class="icon icon-descargar pull-right toggleNextSection"></i>
-                        <h3 class="text-center">Animacion</h3>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-sabsay"></i> <span>Gabriel<br> Sabsay</span></li>
-                                <li><i class="equipo-foto" id="equipo-hetors"></i> <span>Hector<br> Rojo</span></li>
-                                <li><i class="equipo-foto" id="equipo-incetta"></i> <span>Fernando<br> Incetta</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-6 -->
-
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-zalcman"></i> <span>Mauricio<br> Medina</span></li>
-                                <li><i class="equipo-foto" id="equipo-gabo"></i> <span>Ignacio<br> Fina</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-6 -->
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-zalcman"></i> <span>Jorge<br> Alvarez</span></li>
-                                <li><i class="equipo-foto" id="equipo-gabo"></i> <span>Gabriel<br> Quintana</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-3 -->
-                    </div> <!-- fin row -->
-
-
-
-                    <div class="row img-75">
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <h3>Iluminacion</h3>
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-sabsay"></i> <span>Pablo<br> Vazquez</span></li>
-                                <li><i class="equipo-foto" id="equipo-chango"></i> <span>Andres<br> Semproni</span></li>
-                                <li><i class="equipo-foto" id="equipo-sabsay"></i> <span>Ignacio<br> Corrales</span></li> </ul>
-                        </div> <!-- fin col-sm-6 -->
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <h3>_</h3>
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-hetors"></i> <span>Hector<br> Rojo</span></li>
-                                <li><i class="equipo-foto" id="equipo-incetta"></i> <span>Fernando<br> Incetta</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-6 -->
-
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                         <h3>Layout</h3>
-
-                            <ul>
-                                <li><i class="equipo-foto" id="equipo-sabsay"></i> <span>Gabriel<br> Sabsay</span></li>
-                                <li><i class="equipo-foto" id="equipo-hetors"></i> <span>Hector<br> Rojo</span></li>
-                                <li><i class="equipo-foto" id="equipo-incetta"></i> <span>Fernando<br> Incetta</span></li>
-                            </ul>
-                        </div> <!-- fin col-sm-6 -->
-
-                    </div> <!-- fin row -->
-
                 </div> <!-- fin col sm-10 -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-offset-2 col-sm-4 col-md-offset-2 col-md-4 col-lg-4 lead">
+                        <dl>
+                            <dt>Directores</dt>
+                            <dd>Alejandro Carlini y<br>Marcos Valdivia</dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 box-amarillo">
+                        <dl>
+                            <dt>Productor</dt>
+                            <dd>Jorge Rocca</dd>
+                            <dt>Productor General</dt>
+                            <dd>Alexander Teper</dd>
+                            <dt>Guión</dt>
+                            <dd>Nicolas Zalcman</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-offset-1 col-sm-3 col-md-3 col-lg-3">
+                        <dl>
+                            <dt>Director de Arte</dt>
+                            <dd>Facundo Giovagnoli &<br>Gabriel Romero</dd>
+                            <dt>Director de Animacion</dt>
+                            <dd>Gabriel Sabsay</dd>
+                            <dt>Riggerman</dt>
+                            <dd>Juan Pablo Bouza</dd>
+                            <dt>Sonido</dt>
+                            <dd>Facundo Corsini</dd>
+                            <dt>Editor</dt>
+                            <dd>Rodrigo Paz</dd>
+                            <dt>Iluminación</dt>
+                            <dd>Pablo Vazquez<br>Ignacio corrales</dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <dl>
+                            <dt>Technical Dicrector</dt>
+                            <dd>Gabriel Caraballo<br>Christian Corró (Asist)</dd>
+                            <dt>Production</dt>
+                            <dd>Alex Teper<br>Hector Rojo<br>Jezabel Giurlani</dd>
+                            <dt>Layout</dt>
+                            <dd>Sebastian Rafaele<br>Debora Gomez Rosso<br>Cristian Fernandez</dd>
+                            <dt>Diseño Gráfico</dt>
+                            <dd>Pablo Lizardo</dd>
+                            <dt>Voice Director</dt>
+                            <dd>Natalia Rosminati</dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                        <dl>
+                            <dt>Departamento de Arte</dt>
+                            <dd>Victoria Gonzalez<br>
+                                Jose Barbenza<br>
+                                Mario Carlini<br>
+                                Andres Semproni<br>
+                                Pablo Lizardo</dd>
+                            <dt>Animators</dt>
+                            <dd>Fernando Incetta<br>
+                                Andres Castro<br>
+                                Mauricio Medina<br>
+                                Nacho Fina<br>
+                                Jorge Alvarez<br>
+                                Seba Cartelli<br>
+                                Javier Candolf</dd>
+                            <dt>Accounts</dt>
+                            <dd>Agostina Salvarredi</dd>
+                        </dl>
+                    </div>
+                </div>
+
             </div> <!-- fin container? -->
         </li>
 
 
         <!-- :::::: PAGINA ELENCO ::::::::::::::::::::::::::::::::::::::::::::::::: -->
-        <li id="elenco" class="page overthrow theme-azul">
+        <li id="elenco" class="page overthrow text-center">
             <div class="container ">
                 <div class="row">
-                    <div class="col-xs-12 col-md-offset-1 col-md-10" >
-                        <h4>Las voces de Kiribati</h4>
+                    <div class="col-xs-12 col-md-12" >
                         <h1>Elenco</h1>
-
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-md-offset-1 col-md-5">
-                        <div class="media">
-
-                            <div class="elenco-foto" id="elenco-pepe"></div>
-
-                          <div class="media-body">
-                            <h3 class="media-heading">Pepe Soriano</h3>
-                            <p class="lead ">Interpretando a <strong>Yermo</strong></p>
-                            <hr class="indigo">
-                            <p>José Soriano was born on September 25, 1929 in Colegiales, Buenos Aires City, Distrito Federal, Argentina as José Carlos Soriano. He is an actor, known for Espérame en el cielo (1988), Corazón de fuego (2002) and A Shadow You Soon Will Be (1994).</p>
-                          </div>
-                        </div>
-                        <div class="media">
-
-                            <div class="elenco-foto" id="elenco-betiana"></div>
-
-                          <div class="media-body">
-                            <h3 class="media-heading">Betiana Blum</h3>
-                            <p class="lead ">Interpretando a <strong>Yermo</strong></p>
-                            <hr class="indigo">
-                            <p>Betiana Blum was born on July 23, 1939 in Chaco, Argentina as Beatriz Ana Blum. She is an actress and writer, known for Campeones de la vida (1999), Herederos de una venganza (2011) and Valientes (2009).</p>
-                          </div>
-                        </div>
-
+                    <div class="col-xs-4 col-sm-offset-1 col-sm-3 col-md-3 col-lg-3">
+                        <div class="sprite-elenco sprite-pelusa"></div>
+                        <h4>Pelusa Suero</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Totó</dd>
+                        </dl>
                     </div>
-                    <div class="col-xs-12  col-md-5">
-                        <div class="media">
-
-                            <div class="elenco-foto" id="elenco-norma"></div>
-
-                          <div class="media-body">
-                            <h3 class="media-heading">Norma Aleandro</h3>
-                            <p class="lead ">Interpretando a <strong>Yermo</strong></p>
-                            <hr class="indigo">
-                            <p>Norma Aleandro is the Grande Dame of Argentine theater and cinema not only because she was not content to have trodden the stage as early as the the age of nine, she is still active in theater and cinema in 2011. Her last film to date, Daniel Burman's La suerte en tus manos (2012) is in pre-production), that is sixty-six years later, but also...</p>
-                          </div>
-                        </div>
-
-                        <div class="media">
-
-                            <div class="elenco-foto" id="elenco-rita"></div>
-
-                          <div class="media-body">
-                            <h3 class="media-heading">Rita Cortese</h3>
-                            <p class="lead ">Interpretando a <strong>Yermo</strong></p>
-                            <hr class="indigo">
-                            <p>Rita Cortese was born in 1951 in Argentina. She is an actress, known for Herencia (2001), Brother and Sister (2010) and Viudas (2011).</p>
-                          </div>
-                        </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="sprite-elenco sprite-pepe"></div>
+                        <h4>Pepe Soriano</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Yermo</dd>
+                        </dl>
                     </div>
-
-
-
-                </div><!-- fin row -->
-                <hr >
-                <div class="row elenco-low">
-                    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-3">
-                        <div class="media">
-                          <div class="elenco-foto" id="elenco-pelusa"></div>
-                          <div class="media-body">
-                            <h3 class="media-heading">Pelusa Suero</h3>
-                            <p class="lead ">Interpretando a <strong>Toto</strong></p>
-                            <hr class="indigo">
-                          </div>
-                          <p>Pelusa Suero was born on August 11, 1938 in Buenos Aires, Argentina as Pedro Domingo Suero. He is an actor, known for Corazón, las alegrías de Pantriste (2000), Manuelita (1999) and Trapito (1975).</p>
-                        </div>
-                        <div class="media">
-
-                            <div class="elenco-foto" id="elenco-marcelo"></div>
-
-                          <div class="media-body">
-                            <h3 class="media-heading">Marcelo Armand</h3>
-                            <p class="lead ">Interpretando a <strong>Camilo</strong></p>
-                            <hr class="indigo">
-                          </div>
-                          <p>Marcelo Armand is an actor, known for Boogie, el aceitoso (2009), Selkirk, el verdadero Robinson Crusoe (2012) and La máquina que hace estrellas (2012).</p>
-                        </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="sprite-elenco sprite-norma"></div>
+                        <h4>Norma Aleandro</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Telma</dd>
+                        </dl>
                     </div>
-                    <div class="col-xs-12  col-sm-4">
-
-                        <div class="media">
-                          <div class="elenco-foto" id="elenco-santiago"></div>
-                          <div class="media-body">
-                            <h3 class="media-heading">Santiago Sordi</h3>
-                            <p class="lead ">Interpretando a <strong>Toto</strong></p>
-                            <hr class="indigo">
-                          </div>
-
-                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                        </div>
-
-                        <div class="media">
-                          <div class="elenco-foto" id="elenco-gustavo"></div>
-                          <div class="media-body">
-                            <h3 class="media-heading">Gustavo Bonfigli</h3>
-                            <p class="lead ">Interpretando a <strong>Toto</strong></p>
-                            <hr class="indigo">
-                          </div>
-                          <p>Gustavo Bonfigli es un actor egresado del Conservatorio Nacional de Arte Drámatico de La ciudad de Buenos Aires y locutor argentino egresado del ISER. Està activo en el doblaje desde 1991 y ha prestado su voz a varios actores de cine líderes, incluyendo Brad Pitt , Robert De Niro, James Gandolfini y Al Pacino.  </p>
-                        </div>
-                        <div class="media">
-                          <div class="elenco-foto" id="elenco-mariano"></div>
-                          <div class="media-body">
-                            <h3 class="media-heading">Mariano Cister</h3>
-                            <p class="lead ">Interpretando a <strong>Toto</strong></p>
-                            <hr class="indigo">
-                          </div>
-                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-offset-1 col-sm-3 col-md-3 col-lg-3">
+                        <div class="sprite-elenco sprite-rita"></div>
+                        <h4>Rita Cortese</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Dora</dd>
+                        </dl>
                     </div>
-                    <div class="col-xs-12  col-sm-3">
-                        <div class="media">
-                          <div class="elenco-foto" id="elenco-susana"></div>
-                          <div class="media-body">
-                            <h3 class="media-heading">Susana Alcoba</h3>
-                            <p class="lead ">Interpretando a <strong>Toto</strong></p>
-                            <hr class="indigo">
-                          </div>
-                          <p>Susana Alcoba Haydar es una locutora y actriz de doblaje argentina. Películas, Plan perfecto - Leslie, The Extra Man - Meredith Lagerfeld, Almas congeladas, En busca de un sueño - Kristy Moriarity, Teen Beach Movie , un paso atrás.</p>
-                           </div>
-                        <div class="media">
-                          <div class="elenco-foto" id="elenco-carlos"></div>
-                          <div class="media-body">
-                            <h3 class="media-heading">Carlos Secilio</h3>
-                            <p class="lead ">Interpretando a <strong>Toto</strong></p>
-                            <hr class="indigo">
-                          </div>
-                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                        </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="sprite-elenco sprite-santi"></div>
+                        <h4>Santiago Sordi</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Luisito</dd>
+                        </dl>
                     </div>
-                </div> <!-- fin row elenco-low -->
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="sprite-elenco sprite-susana"></div>
+                        <h4>Susana Alcoba</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Elena</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-offset-1 col-sm-3 col-md-3 col-lg-3">
+                        <div class="sprite-elenco sprite-betiana"></div>
+                        <h4>Betiana Blum</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Marta</dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="sprite-elenco sprite-marcelo"></div>
+                        <h4>Marcelo Armand</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Camilo</dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <div class="sprite-elenco sprite-ignacio"></div>
+                        <h4>Ignacio de Anca</h4>
+                        <dl>
+                            <dt>como</dt>
+                            <dd>Carlos</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
         </li>
 
 
          <!-- :::::: PAGINA PRENSA ::::::::::::::::::::::::::::::::::::::::::::::::: -->
-         <li id="prensa" class=" page overthrow theme-amarillo">
+         <li id="prensa" class=" page overthrow ">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-offset-1 col-md-10">
-                        <h4>Prensa y</h4>
-                        <h1>Difusión</h1>
+                        <h4>Descarga el material de</h4>
+                        <h1>Prensa y Difusión</h1>
                     </div>
                 </div>
-
+                
                 <div class="row">
-                    <div class="col-xs-12 col-md-offset-1 col-md-7">
-
-
-
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, a, suscipit, dolor officia repudiandae ratione dolore vel voluptatem ut eum quae corrupti culpa quis necessitatibus eos consequatur inventore. Cumque, sunt.</p>
-                    <p>Temporibus, laborum, reiciendis modi nisi sequi ut soluta molestiae natus earum error ullam ratione nam tempora quis optio tempore vero hic id odit voluptate consequuntur at porro velit debitis quidem!</p>
-                    <p>Ad, sed, quaerat saepe illo obcaecati neque placeat doloremque corporis perferendis veritatis quae excepturi ut laboriosam illum quas nesciunt enim tempore maxime reiciendis harum consequuntur unde consectetur nobis maiores commodi.</p>
-                    <div class="alert alert-danger visible-xs">
-
-                            <strong>:/</strong> El contenido solo esta disponible para ser descargado desde computadoras de escritorio.
+                    <div class="col-xs-12 col-md-offset-1 col-md-10">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                               <i class="icon icon-download"></i>
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Television</h4>
+                                <p >15mb - Videos, placas y zocalos</p>
+                            </div>
                         </div>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                               <i class="icon icon-download"></i>
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Web</h4>
+                                <p >35mb - Banners, logos y renders</p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                               <i class="icon icon-download"></i>
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">Grafica</h4>
+                                <p >5mb - Banners, logos y renders</p>
+                            </div>
+                        </div>
+                    
 
                      </div>
-                    <div class="col-xs-12 col-md-3 hidden-xs">
-                        <div class="panel panel-default ">
-                          <div class="panel-heading">
-                            <a href="#" class="pull-right"><i class="icon icon-descargar"></i></a>
-                            <h3 class="panel-title">TV <small>15mb</small></h3>
-                          </div>
-                          <div class="panel-body">
-                            <img class="img-rounded img-responsive" src="images/thumbs/elparaiso_bg.min.jpg"            />
-                          </div>
-                        </div>
-                        <div class="panel panel-default ">
-                          <div class="panel-heading">
-                            <a href="#" class="pull-right"><i class="icon icon-descargar"></i></a>
-                            <h3 class="panel-title">Web <small>15mb</small></h3>
-                          </div>
-
-                        </div>
-                       <div class="panel panel-default ">
-                          <div class="panel-heading">
-                            <a href="#" class="pull-right"><i class="icon icon-descargar"></i></a>
-                            <h3 class="panel-title">Grafica <small>15mb</small></h3>
-                          </div>
-
-                        </div>
-
-                    </div>
+                    
 
                  </div> <!-- fin row -->
             </div><!-- fin container -->
@@ -586,7 +472,7 @@
 
 
          <!-- :::::: PAGINA CONTACTO ::::::::::::::::::::::::::::::::::::::::::::::::: -->
-         <li id="contacto" class=" page overthrow theme-rojo">
+         <li id="contacto" class=" page overthrow ">
             <div class="container  ">
                  <div class="row">
                     <div class="col-xs-12 col-md-offset-1 col-md-10 ">
@@ -598,17 +484,35 @@
                     <div class="col-xs-12  col-sm-offset-0 col-sm-6 col-md-offset-1 col-md-5">
                         <h4 class="hidden">KiribatiTheMovie.com</h4>
                         <ul>
-                            <li><a href="https://www.facebook.com/KiribatiTheMovie"><i class="icon icon-facebook"></i><span class="text-azul">Kiribati</span><span class="text-azulDark">The</span><span class="text-azul">Movie</span></a></li>
-                            <li><a href="https://twitter.com/KiribatiMovie"><i class="icon icon-twitter"></i><span class="text-cyan">Kiribati</span><span class="text-cyanDark">Movie</span></a></li>
-                            <li><a href="https://www.youtube.com/user/KiribatiTheMovie"><i class="icon icon-youtube"></i><span class="text-Rojo">Kiribati</span><span class="text-RojoDark">The</span><span class="text-Rojo">Movie</span></a></li>
-                            <li><a href="mailto:info@kiribatithemovie.com"><i class="icon icon-mail"></i><span class="text-Verde">info</span> <small>(at)</small> <span class="text-Verde">Kiribati</span><span class="text-VerdeDark">The</span><span class="text-Verde">Movie</span>.com</a></li>
-                            <li class="hidden"><a href="#"><i class="icon icon-telefono"></i>+54 <span class="text-Naranja">0266</span> <span class="text-NaranjaDark">4374401</span></a></li>
-                            <li><a href="tel:005401155278248"><i class="icon icon-telefono"></i>011 <span class="text-Naranja">5527-</span> <span class="text-NaranjaDark">8248</span></a></li>
-                            <li><a href="tel:005422642107700"><i class="icon icon-telefono"></i>266 <span class="text-Naranja">4210-</span> <span class="text-NaranjaDark">7700</span></a></li>
-                            <li class="hidden"><a href="#"><i class="icon icon-Dummy"></i><span class="text-Verde">contacto</span> <small>(at)</small> <span class="text-Verde">ideasfijas</span>.com</a></li>
+                            <li>
+                                <a href="https://www.facebook.com/KiribatiTheMovie"><i class="icon icon-facebook"></i>KiribatiTheMovie</a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/KiribatiMovie"><i class="icon icon-twitter"></i>KiribatiMovie</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/user/KiribatiTheMovie"><i class="icon icon-youtube"></i>KiribatiTheMovie</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@kiribatithemovie.com"><i class="icon icon-mail"></i>info <small>(at)</small> KiribatiTheMovie.com</a>
+                            </li>
+                            <li class="hidden"><a href="#"><i class="icon icon-telefono"></i>+54 02664374401</a>
+                            </li>
+                            <li>
+                                <a href="tel:005401155278248"><i class="icon icon-telefono"></i>011 5527-8248</a>
+                            </li>
+                            <li>
+                                <a href="tel:005422642107700"><i class="icon icon-telefono"></i>266 4210-7700</a>
+                            </li>
+                            <li class="hidden"><a href="#"><i class="icon icon-Dummy"></i>contacto <small>(at)</small> ideasfijas.com</a>
+                            </li>
 
-                            <li class="hidden"><a href="#"><i class="icon icon-lugar"></i><span class="text-Amarillo">Ciudad del Rosario</span> <span class="text-AmarilloDark">550</span></a></li>
-                            <li class="hidden"><i class="icon icon-Dummy"></i>San Luis, Argentina</li>
+                            <li class="hidden">
+                                <a href="#"><i class="icon icon-lugar"></i><span class="text-Amarillo">Ciudad del Rosario 550</a>
+                            </li>
+                            <li class="hidden">
+                                <i class="icon icon-Dummy"></i>San Luis, Argentina
+                            </li>
 
                         </ul>
                     </div>
@@ -631,24 +535,23 @@
 <!-- bower:js -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
 <script src="../bower_components/hammerjs/hammer.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
 
+<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="../bower_components/owlcarousel/owl-carousel/owl.carousel.min.js"></script>
 <script src="../bower_components/hscroller.js/js/overthrow.min.js"></script>
 <script src="../bower_components/hscroller.js/js/jquery.ba-bbq.min.js"></script>
 <script src="../bower_components/hscroller.js/js/hscroller.js"></script>
-<script src="scripts/overthrow.min.js"></script>
-<script src="scripts/jquery.ba-bbq.min.js"></script>
-<script src="scripts/hscroller.js"></script>
-<script src="scripts/headroom.min.js"></script>
-<script src="scripts/owl.carousel.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+                            <script src="scripts/overthrow.min.js"></script>
+                            <script src="scripts/jquery.ba-bbq.min.js"></script>
+                            <script src="scripts/hscroller.js"></script>
 <!-- <script src="../bower_components/jparallax/js/jquery.event.frame.js"></script> -->
 <!-- <script src="../bower_components/jparallax/js/jquery.parallax.js"></script> -->
 
 
 
 <!-- build:js scripts/plugins.js -->
-    <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
 
 
 <!-- endbuild -->

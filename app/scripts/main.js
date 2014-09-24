@@ -20,35 +20,14 @@ $(document).ready(function() {
             currentMousePos.x = event.pageX-home_w_center;
             currentMousePos.y = event.pageY-home_h_center;
             new_x = currentMousePos.x / 2;
-            //$('#debug').text(new_x+' '+currentMousePos.y);
-            //$('#debug').text(home_w + ' x ' + home_h + ' center: '+home_w_center + ' x ' + home_h_center + 'cursor' + currentMousePos.x + ' x ' + currentMousePos.y);
-            // fondo
             $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
-            // personajes
-            //$("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
             $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
             $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
             $("#layer-center").css('right', 30 - currentMousePos.x/100 + '%');
-            // overlays
-            // $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
             $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
-            // logo
-            // $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
-            // $("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
-            // $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');
-            // $("#logo_2_big").css('bottom', -120 + currentMousePos.y/75 + 'px');
-            // $("#logo_3_big").css('bottom', -205 - currentMousePos.y/50 + 'px');
         });
     }
-    
 
-    // $("#logo_3_big").mouseover(function() { $(this).addClass("tresde"); });
-
-    //hammertime.on("tap", alert("hola?"));
-    // arranca el volumen en mute
-    //$('#volumen').addClass("mute");
-
-    // overlay, front y social-globo arrancan invisibles,
     $("#overlay").toggle();
     $(".front").toggle();
     $("#social-globo").toggle();
@@ -142,15 +121,5 @@ $(document).ready(function() {
         $("#social-globo").show();
         $("#social-globo").delay(10000).fadeOut('slow');
     });
-
-
-
-    // grab an element
-    var myElement = document.querySelector('header');
-    // construct an instance of Headroom, passing the element
-    var headroom  = new Headroom(myElement);
-    // initialise
-    headroom.init(); 
-
 
 });
