@@ -1,34 +1,44 @@
 //$(function onLoad(){
 $(document).ready(function() {
+     
+     $("#owl-example").owlCarousel({
+          navigation : false, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true
+      });
 
-    var currentMousePos = { x: -1, y: -1 };
-    var home_w = $('#home').width();
-    var home_h = $('#home').height();
-    $('#home').mousemove(function(event) {
-        home_w_center = home_w/2;
-        home_h_center = home_h/2;
-        currentMousePos.x = event.pageX-home_w_center;
-        currentMousePos.y = event.pageY-home_h_center;
-        new_x = currentMousePos.x / 2;
-        //$('#debug').text(new_x+' '+currentMousePos.y);
-        //$('#debug').text(home_w + ' x ' + home_h + ' center: '+home_w_center + ' x ' + home_h_center + 'cursor' + currentMousePos.x + ' x ' + currentMousePos.y);
-        // fondo
-        $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
-        // personajes
-        //$("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
-        $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
-        $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
-        $("#layer-center").css('right', 35 - currentMousePos.x/100 + '%');
-        // overlays
-        // $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
-        $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
-        // logo
-        // $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
-        // $("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
-        // $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');
-        // $("#logo_2_big").css('bottom', -120 + currentMousePos.y/75 + 'px');
-        // $("#logo_3_big").css('bottom', -205 - currentMousePos.y/50 + 'px');
-    });
+    function parallax () {
+        var currentMousePos = { x: -1, y: -1 };
+        var home_w = $('#home').width();
+        var home_h = $('#home').height();
+        $('#home').mousemove(function(event) {
+            home_w_center = home_w/2;
+            home_h_center = home_h/2;
+            currentMousePos.x = event.pageX-home_w_center;
+            currentMousePos.y = event.pageY-home_h_center;
+            new_x = currentMousePos.x / 2;
+            //$('#debug').text(new_x+' '+currentMousePos.y);
+            //$('#debug').text(home_w + ' x ' + home_h + ' center: '+home_w_center + ' x ' + home_h_center + 'cursor' + currentMousePos.x + ' x ' + currentMousePos.y);
+            // fondo
+            $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
+            // personajes
+            //$("#layer-carlos").css('left', 30 + currentMousePos.x/400 + '%');
+            $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
+            $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
+            $("#layer-center").css('right', 30 - currentMousePos.x/100 + '%');
+            // overlays
+            // $("#layer-ramas").css('left', -5 + currentMousePos.x/100 + '%');
+            $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
+            // logo
+            // $("#logo-big").css('top', 21 + currentMousePos.y/200 + '%');
+            // $("#logo_1_big").css('bottom', currentMousePos.y*0.1 + 'px');
+            // $("#logo_1_big").css('top', currentMousePos.y/140+ 'px');
+            // $("#logo_2_big").css('bottom', -120 + currentMousePos.y/75 + 'px');
+            // $("#logo_3_big").css('bottom', -205 - currentMousePos.y/50 + 'px');
+        });
+    }
+    
 
     // $("#logo_3_big").mouseover(function() { $(this).addClass("tresde"); });
 
@@ -45,6 +55,7 @@ $(document).ready(function() {
 
     var scroller = HScroller.create("#pages"); // specify container element
 
+    // animations at the start
     $("#loader").delay(500).fadeOut('slow', function() {
         $(this).remove();
         $('header').delay(350).animate({top: 0 }, 'slow');
@@ -53,30 +64,36 @@ $(document).ready(function() {
         $('footer').delay(400).animate({bottom: 0 }, 'slow');
         $('.prev').delay(700).animate({left: 25 }, 'slow');
         $('.next').delay(700).animate({right: 25 }, 'slow');
+        $('#layer-right').delay(800).animate({right: "7%" }, 500);
+        $('#layer-left').delay(900).animate({left: "7%" }, 500);
+        $('#layer-center').delay(1000).animate({right: "30%" }, 600, function(){
+            parallax();
+        });
+
     });
+
 
     // $(".layer").mouseover(function() { $(this).addClass("animated pulse"); });
     // $(".layer").mouseout(function() { $(this).removeClass("animated pulse"); });
 
-    var modal = function(subtitulo, charName, imgSrc, modalColor, parrafo, target) {
-        $(target + " h4").css('color', modalColor);
+    var modal = function(subtitulo, charName, imgSrc, parrafo, target) {
         $("img.front").attr('src', imgSrc);
-        $(target + " .modalContent").css('background', modalColor).html(parrafo);
+        $(target + " .hero-unit").html(parrafo);
         $(target + " h4").text(subtitulo);
-        $(target + " h1").text(charName);
+        $(target + " h2").text(charName);
     }
 
     $(".layer").bind('click tap',function() {
-        //console.log("hiciste clic en layer");
         charName = $(this).data("name");
-        modalColor = $(this).data("color");
+        modalTheme = $(this).data("theme");
         modalTarget = $(this).data('target');
         parrafo = $(this).next("span").html();
         subtitulo = $(this).data("subtitulo");
         imgSrc = "images/overlays/over-" + $(this).data("img") + ".png";
-        modal(subtitulo, charName, imgSrc, modalColor, parrafo, modalTarget);
+        modal(subtitulo, charName, imgSrc,  parrafo, modalTarget);
         $("#overlay").fadeIn(200);
         $('#logo-big').animate({top: "-80%" }, 200);
+        $(modalTarget).removeClass().addClass('theme-'+modalTheme);
         $(modalTarget).delay(200).animate({ top: "20%", opacity: "1" }, 200);
         $(".front").delay(400).fadeIn(200);
     });
@@ -122,14 +139,16 @@ $(document).ready(function() {
     $('#social-lv').bind('mouseover click tap', function() {
         $("#social-globo").show();
         $("#social-globo").delay(10000).fadeOut('slow');
-        //$(this).css('background-position', '-25px -75px');
-        //setInterval(function(){$(this).css('background-position', '0px -50px');}, delay,10000);
     });
 
-    // $('.toggleNextSection').bind('click tap',function() {
-    //     /* Act on the event */
-    //     $('#section-arte').toggle('slow');
-    //     //console.log("hiciste clic en la flechitaaa");
-    // });
-    //$('#social-globo').mouseout(function() {$(this).delay(200).fadeOut('fast'); });
+
+
+    // grab an element
+    var myElement = document.querySelector('header');
+    // construct an instance of Headroom, passing the element
+    var headroom  = new Headroom(myElement);
+    // initialise
+    headroom.init(); 
+
+
 });

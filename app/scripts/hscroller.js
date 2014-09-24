@@ -56,7 +56,7 @@ var HScroller = {
                 if (current_page != 0) {
                     $(".prev").show();
                     //console.log("no es la pagina 0, es la " + current_page);
-                    if (current_page === 7) {
+                    if (current_page === 6) {
                         $(".next").hide();
                         //console.log("es la pagina " + current_page);
                     } else {
@@ -67,9 +67,9 @@ var HScroller = {
                     $(".prev").hide();
                     //console.log("es la pagina " + current_page);
                 }
-                $('#menu a').removeClass('active');
+                $('.nav a').removeClass('active');
                 console.log(current_page);
-                $('#menu a').eq(current_page).addClass('active');
+                $('.nav a').eq(current_page).addClass('active');
                 $('body').addClass(current_page);
                 /* (;,;) codeme */
             }
@@ -192,7 +192,7 @@ var HScroller = {
         $(document).on("pagechanged", function(e, current_page) {
             var $link = $("a[data-page='" + current_page + "']");
             $.bbq.pushState($link.attr('href'), 2);
-
+            $('body').addClass(current_page);
 
         });
 

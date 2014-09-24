@@ -3,7 +3,6 @@
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
-
 @import "mixins";
 @import "colors";
 @import "keyframes";
@@ -21,9 +20,20 @@ $footer-height : 75px; // antes 75px;
 .sprite-front   { background-image:     url('../images/sprites/sprite-front_2.png');      }
 
 
+
+
+
+
 /* ::::::::::::::::::::::::: GLOBALS ::::::::::::::::::::::::::: */
 
-* { padding: 0; margin: 0; }
+* { padding: 0; margin: 0;}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 /* ::::::::::: FONTS ::::::::::: */
 
@@ -58,7 +68,7 @@ $font-cursive   : mclarenregular, 'mclarenregular', 'McLaren', "McLaren-Regular"
 
 header, footer, h1, h2, h3, h5, h6 {font-family: $font-kiriFont; }
 h4 {        font-family: $font-cursive; }
-body {background-color: $cCiruelon; color: $cGris; }
+body {background-color: $cNegro; color: $cGris; }
 a        {    color: $cBlanco; }
 a:hover  {    color: $cAmarillo; }
 a:active {    color: $cCyan; }
@@ -154,7 +164,7 @@ header {
     z-index: 5;
     padding-top: 26px;
     height: 67px;
-    background-color: rgba($cNegro,.6);
+    background: rgba($cNegro,.3) url('../images/noise.png');
     // #volumen{
     //     @extend .sprite-kiriweb;
     //     position: fixed;
@@ -171,46 +181,48 @@ header {
     // #volumen:active, #volumen.mute{
     //     background-position: -75px -100px;
     // }
-    // #gradient {
-    //     position: fixed;
-    //     top: 0;
-    //     left:0;
-    //     width: 100%;
-    //     height: 80px;
-    //     background-position: bottom center;
-    //     background-size: contain;
-    //     background-image: url('../images/gradient_up.png');
-    //     @include opacity(.6)
-    //      //display: none;
-    //     }
-    // #logo{
-    //     position:fixed;
-    //     top: -70px;
-    //     left: 30px;
-    //     @extend .sprite-kiriweb;
-    //     background-position: -200px -100px;
-    //     width: 175px;
-    //     height: 40px;
-    //     z-index: 52;
-    // }
-    // #logo:hover { background-position: -200px -150px; }
-    // #menu{
-    //     position: relative;
-    //     width: 100%;
-    // }
+    #gradient {
+        position: fixed;
+        top: 0;
+        left:0;
+        width: 100%;
+        height: 80px;
+        background-position: top left;
+        background-repeat: repeat-x;
+        background-image: url('../images/bg_gradient.png');
+        @include opacity(.6)
+         //display: none;
+        }
+
     #menu a{
         @include transition();
         color: $cIndigo;
-        margin-right:1%;
-        padding: 7px 1.5%;
+        margin-right:35px;
+        padding: 2px;
         font-size: 1.2em;
-        @include text-shadow(0px 2px 0px rgba($cNegro, .6));
+        display: inline-block;
+        position:relative;
+        @include text-shadow();
         &:hover{
             color: $cBlanco !important;
             text-decoration: none;
         }
-        &.active { color: $cAzul; }
+        &.active { color: $cRojo; }
         &:last-child { margin-right:0; }
+        &.active:after {
+            top: 145%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-top-color:  rgba($cNegro,.3);
+            border-width: 10px;
+            margin-left: -10px;
+        }
     }
 }
 
@@ -225,7 +237,7 @@ footer {
     z-index: 99;
     width: 100%;
     height: 65px;
-    background-color: rgba($cNegro,.7);
+    background: rgba($cNegro,.3) url('../images/noise.png');
     padding-top: 8px;
     #love { padding: 6px 0 0 25px; }
     #logos a{
@@ -265,19 +277,21 @@ footer {
     #copyright {padding:17px 25px 0 0;}
     #copyright a{ display: inline-block ;color: $cIndigo;  margin-left:10px;}
     a:hover , a:active,a.active {
-         @include opacity(1);
+        
         color: $cAmarillo !important;
         text-decoration: none;
     }
 
     #gradient {
-        width: 100%;
-        height: 70px;
-        background-size: contain;
-        background-image: url('../images/gradient.png');
         position: fixed;
         bottom: 0;
         left:0;
+        width: 100%;
+        height: 80px;
+        background-position: bottom left;
+        background-repeat: repeat-x;
+        background-image: url('../images/bg_gradient.png');
+        
         }
 
     #social-globo {
@@ -298,6 +312,58 @@ footer {
     .socialGloboHide {@include animation(0s, 0.5s, socialGloboInv);}
 }
 /* ::::::::::::::::::::::::: FIN: FOOTER ::::::::::::::::::::::::::: */
+.hero-unit {
+    background-image:url('../images/noise.png');
+    @include border-radius();
+    @include box-shadow();
+    padding: 20px;
+    position: relative;
+    &:after {
+            bottom: 100%;
+            left: 15%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-bottom-color: $cIndigoDark;
+            border-width: 10px;
+            margin-left: -10px;
+
+        }
+        &.hero-no-arrow {
+            &:after { border: 0;}
+        }
+    }
+
+.theme-rojo {
+    background: $cIndigoDark url('../images/noise.png') ; 
+    background-size: auto !important;
+    h4,h3,a,strong,dt{ color: $cRojo;}
+    .hero-unit {background-color: $cRojoDark; @include text-shadow(none) ; &:after {border-bottom-color: $cRojoDark; } } 
+}
+.theme-verde {
+    background: $cIndigoDark url('../images/noise.png') ;
+    background-size: auto !important;
+    h4,h3,a,strong,dt{ color: $cVerde;}
+    .hero-unit {background-color: $cVerdeDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cVerdeDark; } } 
+}
+.theme-azul {
+    background: $cIndigoDark url('../images/noise.png') ;
+    background-size: auto !important;
+    h4,h3,a,strong,dt{ color: $cAzul;}
+    .hero-unit {background-color: $cAzulDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAzulDark; } } 
+}
+.theme-amarillo {
+    background: $cIndigoDark url('../images/noise.png') ;
+    background-size: auto !important;
+    h4,h3,a,strong,dt{ color: $cAmarillo;}
+    .hero-unit {background-color: $cAmarilloDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAmarilloDark; } } 
+}
+
+#modal {background: none !important; }
 
 /* :::::::::::::::::::::::::[2] LI#HOME::::::::::::::::::::::::::: */
 #doSwipe {
@@ -363,27 +429,27 @@ footer {
 .layer {position: absolute; @extend .sprite-front; }
 .layer:hover {
     cursor: pointer;
-    // filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-    // -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-    // filter:         drop-shadow(0px 0px 3px rgba($cBlanco,.6));
-    // -o-filter:      drop-shadow(0px 0px 3px rgba($cBlanco,.6));
-    // -moz-filter:    drop-shadow(0px 0px 3px rgba($cBlanco,.6));
-    // -webkit-filter: drop-shadow(0px 0px 3px rgba($cBlanco,.6));
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
+    filter:         drop-shadow(0px 0px 4px rgba($cBlanco,.6));
+    -o-filter:      drop-shadow(0px 0px 4px rgba($cBlanco,.6));
+    -moz-filter:    drop-shadow(0px 0px 4px rgba($cBlanco,.6));
+    -webkit-filter: drop-shadow(0px 0px 4px rgba($cBlanco,.6));
 
 }
 
 #layer-center {
     background-position:  0px 0px;
-    width: 393px; height: 421px; right: 35%; top: 44%;
+    width: 393px; height: 421px; right: -50%; top: 44%;
 }
 
 #layer-right {
    background-position: -393px 0px;
-    right: 7%; top: 36%;width: 359px; height: 422px;
+    right: -50%; top: 36%;width: 359px; height: 422px;
 }
 #layer-left {
     background-position: -162px -421px;
-    left: 7%; top: 40%;  width: 451px; height: 325px;
+    left: -50%; top: 40%;  width: 451px; height: 325px;
 }
 
 
@@ -502,11 +568,13 @@ img.front {
         @extend .sprite-equipo;
         float: left;
         @include border-radius(40px);
-    }
 
-    .img-75 .equipo-foto{   width: 75px; height:75px;   }
-    .img-50 .equipo-foto{   width: 50px; height:50px;   }
-    .img-25 .equipo-foto{   width: 25px; height:25px;   }
+    }
+    li {position:relative;}
+    span {top: 32%; left: 90px; position: absolute;}
+    .img-75 .equipo-foto{   @include transform(scale(.75));  }
+    .img-50 .equipo-foto{   @include transform(scale(.5));  }
+    .img-25 .equipo-foto{   @include transform(scale(.25));  }
     #equipo-marcos     { background-position: 0px 0px; }
     #equipo-ale        { background-position: -237px -79px; }
     #equipo-zalcman    { background-position: -79px 0px; }
@@ -531,21 +599,6 @@ img.front {
         margin:0;
     }
 
-    ul li i {
-        @include transform(scale(.4));
-        @include transition();
-        margin: -19px -15px;
-    }
-    ul li:hover  i{
-        @include transform(scale(.75) rotate(-7deg));
-    }
-
-    ul.big li i {
-        @include transform(scale(.75));
-    }
-    ul.big li:hover  i{
-        @include transform(scale(1) rotate(-5deg));
-    }
     ul.big li span {
         font-size: 1.2em;
         line-height: 1.75em;
@@ -667,8 +720,8 @@ img.front {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: #131c1b;
-    overflow:hidden;
+    background-color: $cNegro;
+    
     z-index: 999999;
 }
 
@@ -763,9 +816,24 @@ img.front {
 /* panel */
 
 .panel{
-    background: rgba($cNegro,.6);
-    border-radius:0;
+    background: rgba($cNegro,.2) !important;
+    @include border-radius();
     border: 0;
+    position: relative;
+    &:after {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-right-color: rgba($cNegro,.2) !important;
+        border-width: 15px;
+        margin-top: -15px;
+    }
 }
 .panel-heading {
     border-radius:0;
@@ -815,4 +883,88 @@ img.front {
     background: $cRojoDark;
     color: $cBlanco;
     border-color: $cNegro;
+}
+
+
+/*
+*   Owl Carousel Owl Demo Theme 
+*   v1.3.3
+*/
+
+.owl-theme .owl-controls{
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+.owl-wrapper-outer {
+    // @include border-radius();
+    // @include box-shadow();
+}
+.owl-theme .owl-controls .owl-buttons div{
+    color: #FFF;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;/*IE7 life-saver */
+    margin: 5px;
+    padding: 3px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: #869791;
+    filter: Alpha(Opacity=50);/*IE7 fix*/
+    opacity: 0.5;
+}
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+    filter: Alpha(Opacity=100);/*IE7 fix*/
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* Styling Pagination*/
+
+.owl-theme .owl-controls .owl-page{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;/*IE7 life-saver */
+}
+.owl-theme .owl-controls .owl-page span{
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 5px 7px;
+    filter: Alpha(Opacity=50);/*IE7 fix*/
+    opacity: 0.5;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #869791;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+    filter: Alpha(Opacity=100);/*IE7 fix*/
+    opacity: 1;
+}
+
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+    height: auto;
+    width: auto;
+    color: #FFF;
+    padding: 2px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+/* preloading images */
+.owl-item.loading{
+    min-height: 150px;
+    background: url(../images/AjaxLoader.gif) no-repeat center center
 }

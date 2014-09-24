@@ -19,20 +19,20 @@
              transform: $transform;
 }
 
-@mixin transition(    $time:.1s) {
+@mixin transition(    $time:.2s) {
   -webkit-transition: $time;
      -moz-transition: $time;
       -ms-transition: $time;
           transition: $time;
 }
-@mixin text-shadow( $shadow:0px 2px 0px rgba($cNegro, .3)){
+@mixin text-shadow( $shadow:0px 3px 0px rgba($cNegro, .2)){
     -webkit-text-shadow: $shadow;
        -moz-text-shadow: $shadow;
          -o-text-shadow: $shadow;
             text-shadow: $shadow;
 }
 
-@mixin box-shadow(      $shadow: 0px 2px 0px rgba($cNegro, .4) ){
+@mixin box-shadow(      $shadow: 0px 4px 0px rgba($cNegro, .2) ){
             box-shadow: $shadow;
         -ms-box-shadow: $shadow;
        -moz-box-shadow: $shadow;
