@@ -185,9 +185,8 @@ footer {
     left: 0; right: 0;
     z-index: 99;
     width: 100%;
-    height: 75px;
-    //background: rgba($cNegro,.3) url('../images/noise.png');
-    padding-top: 8px;
+    height: 70px;
+    padding-top: 10px;
     #love { padding: 6px 0 0 25px; }
     #logos a{
         @extend .sprite-kiriweb;
@@ -225,20 +224,19 @@ footer {
     }
     #gradient {
         position: fixed;
-        top: 0;
+        bottom: 0;
         left:0;
         width: 100%;
         height: 80px;
         background-position: bottom center;
         background-repeat: repeat-x;
         background-image: url('../images/footer_bg.png');
-        @include opacity(.6)
          //display: none;
         }
     #copyright {padding:17px 25px 0 0;}
-    #copyright a{ 
+    #copyright a{
         display: inline-block ;
-        color: $cBlanco;  
+        color: $cBlanco;
         @include transition();
        @include text-shadow(none);
        padding: 5px;
@@ -250,7 +248,7 @@ footer {
         }
     }
 
-    
+
     #social-globo {
         @include transform-origin(22px 135px);
         @include animation(0s, 0.5s, socialGlobo);
@@ -311,7 +309,7 @@ footer {
         }
     }
 
-.featured { 
+.featured {
     position: fixed;
     bottom:     0px;
     right:      0px;
@@ -348,8 +346,8 @@ footer {
 }
 .page-1 { // galeria && trailer
     .featured {
-        background: url('../images/overlays/over-malos.png') no-repeat top left;
-        right:      0px; 
+        background: none;
+        right:      0px;
         left: 0px;
         width:  509px;
         height: 210px;
@@ -365,7 +363,7 @@ footer {
         background: radial-gradient(ellipse at center, rgba(237,85,100,1) 0%, rgba(219,68,83,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed5564', endColorstr='#db4453', GradientType=1 );
         }
-    header { 
+    header {
         background: rgba(219,68,83,1);
         background: -moz-linear-gradient(top, rgba(219,68,83,1) 50%, rgba(219,68,83,0) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(219,68,83,1)), color-stop(100%, rgba(219,68,83,0)));
@@ -375,7 +373,7 @@ footer {
         background: linear-gradient(to bottom, rgba(219,68,83,1) 50%, rgba(219,68,83,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db4453', endColorstr='#db4453', GradientType=0 );
     }
-    footer { 
+    footer {
         background: rgba(219,68,83,0);
         background: -moz-linear-gradient(top, rgba(219,68,83,0) 0%, rgba(219,68,83,1) 50%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(219,68,83,0)), color-stop(50%, rgba(219,68,83,1)));
@@ -389,7 +387,7 @@ footer {
 .page-2 { //sinopsis
     .featured {
         background: url('../images/overlays/over-marta.png') no-repeat bottom right;
-        right:      150px; 
+        right:      150px;
         width:  228px;
         height: 461px;
     }
@@ -405,7 +403,7 @@ footer {
         background: radial-gradient(ellipse at center, rgba(160,212,104,1) 0%, rgba(140,192,81,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0d468', endColorstr='#8cc051', GradientType=1 );
         }
-    header { 
+    header {
         background: rgba(140,192,81,1);
         background: -moz-linear-gradient(top, rgba(140,192,81,1) 50%, rgba(140,192,81,0) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(140,192,81,1)), color-stop(100%, rgba(140,192,81,0)));
@@ -415,7 +413,7 @@ footer {
         background: linear-gradient(to bottom, rgba(140,192,81,1) 50%, rgba(140,192,81,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cc051', endColorstr='#8cc051', GradientType=0 );
     }
-    footer { 
+    footer {
         background: rgba(140,192,81,0);
         background: -moz-linear-gradient(top, rgba(140,192,81,0) 0%, rgba(140,192,81,1) 50%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(140,192,81,0)), color-stop(50%, rgba(140,192,81,1)));
@@ -428,25 +426,25 @@ footer {
 }
 .page-3 { //equipo
     dl {
-        
-        dt { 
+
+        dt {
             font-weight: normal !important;
             font-family: 'Damion';
-            color: $cIndigoDark; 
+            color: $cIndigoDark;
             @include text-shadow(none);
             font-size: 1.6em;
             line-height: 2em;
 
         }
-        dd { 
-            font-family: $font-kiriFont; 
+        dd {
+            font-family: $font-kiriFont;
             color: $cBlanco;
             line-height: 2em;
         }
     }
     .featured {
         background: url('../images/overlays/over-dora-2.png') no-repeat bottom right;
-        right:      0px; 
+        right:      0px;
         width:  352px;
         height: 275px;
     }
@@ -461,7 +459,7 @@ footer {
         background: radial-gradient(ellipse at center, rgba(255,206,85,1) 0%, rgba(246,187,67,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffce55', endColorstr='#f6bb43', GradientType=1 );
         }
-    header { 
+    header {
         background: rgba(246,187,67,1);
         background: -moz-linear-gradient(top, rgba(246,187,67,1) 50%, rgba(246,187,67,0) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(246,187,67,1)), color-stop(100%, rgba(246,187,67,0)));
@@ -471,7 +469,7 @@ footer {
         background: linear-gradient(to bottom, rgba(246,187,67,1) 50%, rgba(246,187,67,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6bb43', endColorstr='#f6bb43', GradientType=0 );
     }
-    footer { 
+    footer {
         background: rgba(246,187,67,0);
         background: -moz-linear-gradient(top, rgba(246,187,67,0) 0%, rgba(246,187,67,1) 50%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(246,187,67,0)), color-stop(50%, rgba(246,187,67,1)));
@@ -490,18 +488,18 @@ footer {
         margin:0;
     }
     dl {
-        
-        dt { 
+
+        dt {
             font-weight: normal !important;
             font-family: 'Damion';
-            color: $cIndigoDark; 
+            color: $cIndigoDark;
             @include text-shadow(none);
             font-size: 1.6em;
             line-height: 1em;
 
         }
-        dd { 
-            font-family: $font-kiriFont; 
+        dd {
+            font-family: $font-kiriFont;
             color: $cAmarillo;
             line-height: 2em;
             font-size: 2em;
@@ -509,7 +507,7 @@ footer {
     }
     .featured {
         background: url('../images/overlays/over-malos.png') no-repeat top left;
-        right:      0px; 
+        right:      0px;
         left: 0px;
         width:  509px;
         height: 210px;
@@ -525,7 +523,7 @@ footer {
         background: radial-gradient(ellipse at center, rgba(171,147,235,1) 0%, rgba(150,123,220,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ab93eb', endColorstr='#967bdc', GradientType=1 );
         }
-    header { 
+    header {
         background: rgba(150,123,220,1);
         background: -moz-linear-gradient(top, rgba(150,123,220,1) 50%, rgba(150,123,220,0) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(50%, rgba(150,123,220,1)), color-stop(100%, rgba(150,123,220,0)));
@@ -535,7 +533,7 @@ footer {
         background: linear-gradient(to bottom, rgba(150,123,220,1) 50%, rgba(150,123,220,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#967bdc', endColorstr='#967bdc', GradientType=0 );
     }
-    footer { 
+    footer {
         background: rgba(150,123,220,0);
         background: -moz-linear-gradient(top, rgba(150,123,220,0) 0%, rgba(150,123,220,1) 50%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(150,123,220,0)), color-stop(50%, rgba(150,123,220,1)));
@@ -549,12 +547,12 @@ footer {
 .page-5 { //prensa
     .featured {
         background: url('../images/overlays/over-marta.png') no-repeat bottom right;
-        right:      150px; 
+        right:      150px;
         width:  228px;
         height: 461px;
     }
     .media { margin: 30px auto; }
-    h4 { 
+    h4.media-heading {
         font-family: $font-kiriFont;
         font-size: 1.4em;
         padding: 5px 0px;
@@ -572,7 +570,7 @@ footer {
         background: radial-gradient(ellipse at center, rgba(79,192,232,1) 0%, rgba(59,174,218,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4fc0e8', endColorstr='#3baeda', GradientType=1 );
     }
-    header { 
+    header {
         background: rgba(59,174,218,1);
         background: -moz-linear-gradient(top, rgba(59,174,218,1) 0%, rgba(59,174,218,0) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(59,174,218,1)), color-stop(100%, rgba(59,174,218,0)));
@@ -582,7 +580,7 @@ footer {
         background: linear-gradient(to bottom, rgba(59,174,218,1) 0%, rgba(59,174,218,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3baeda', endColorstr='#3baeda', GradientType=0 );
     }
-    footer { 
+    footer {
         background: rgba(59,174,218,0);
         background: -moz-linear-gradient(top, rgba(59,174,218,0) 0%, rgba(59,174,218,1) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(59,174,218,0)), color-stop(100%, rgba(59,174,218,1)));
@@ -596,7 +594,7 @@ footer {
 .page-6 { //contacto
     .featured {
         background: none;
-        right:     0px; 
+        right:     0px;
         left: 0px;
         width:  228px;
         height: 461px;
@@ -612,7 +610,7 @@ footer {
         background: radial-gradient(ellipse at center, rgba(250,110,82,1) 0%, rgba(233,88,62,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa6e52', endColorstr='#e9583e', GradientType=1 );
         }
-    header { 
+    header {
         background: rgba(233,88,62,1);
         background: -moz-linear-gradient(top, rgba(233,88,62,1) 0%, rgba(233,88,62,0) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(233,88,62,1)), color-stop(100%, rgba(233,88,62,0)));
@@ -622,7 +620,7 @@ footer {
         background: linear-gradient(to bottom, rgba(233,88,62,1) 0%, rgba(233,88,62,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9583e', endColorstr='#e9583e', GradientType=0 );
     }
-    footer { 
+    footer {
         background: rgba(233,88,62,0);
         background: -moz-linear-gradient(top, rgba(233,88,62,0) 0%, rgba(233,88,62,1) 100%);
         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(233,88,62,0)), color-stop(100%, rgba(233,88,62,1)));
@@ -634,28 +632,28 @@ footer {
     }
 }
 .theme-rojo {
-    //background: $cIndigoDark url('../images/noise.png') ; 
+    //background: $cIndigoDark url('../images/noise.png') ;
     background-size: auto !important;
     h4,h3,a,strong,dt{ color: $cRojo;}
-    .hero-unit {background-color: $cRojoDark; @include text-shadow(none) ; &:after {border-bottom-color: $cRojoDark; } } 
+    .hero-unit {background-color: $cRojoDark; @include text-shadow(none) ; &:after {border-bottom-color: $cRojoDark; } }
 }
 .theme-verde {
     //background: $cIndigoDark url('../images/noise.png') ;
     background-size: auto !important;
     h4,h3,a,strong,dt{ color: $cVerde;}
-    .hero-unit {background-color: $cVerdeDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cVerdeDark; } } 
+    .hero-unit {background-color: $cVerdeDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cVerdeDark; } }
 }
 .theme-azul {
     //background: $cIndigoDark url('../images/noise.png') ;
     background-size: auto !important;
     h4,h3,a,strong,dt{ color: $cAzul;}
-    .hero-unit {background-color: $cAzulDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAzulDark; } } 
+    .hero-unit {background-color: $cAzulDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAzulDark; } }
 }
 .theme-amarillo {
     //background: $cIndigoDark url('../images/noise.png') ;
     background-size: auto !important;
     h4,h3,a,strong,dt{ color: $cAmarillo;}
-    .hero-unit {background-color: $cAmarilloDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAmarilloDark; } } 
+    .hero-unit {background-color: $cAmarilloDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAmarilloDark; } }
 }
 
 #modal {background: none !important; }
@@ -894,7 +892,43 @@ img.front {
 
 
 /* :::::::::::::: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
-@media (max-width:768px) {li .container { padding-top: 30px !important; padding-bottom:50px  !important; } }
+@media (max-width:768px) {
+    * {
+         // -webkit-transition: none !important;
+         //  -moz-transition: none !important;
+         //  -o-transition: none !important;
+         //  -ms-transition: none !important;
+         //  transition: none !important;
+    }
+    .page-0 {
+        header #menu a { color: $cBlanco !important;}
+    }
+    li .container {
+        padding-top: 110px !important;
+        padding-bottom:50px  !important;
+    }
+    header #menu a {
+       margin-right: 0;
+       font-size: 1em;
+
+    }
+    .featured {
+        display: none!important;
+    }
+    .flechas {
+        top: 25px !important;
+        bottom: inherit !important;
+        &.next { right: 5px !important;}
+        &.prev {  left: 5px !important;}
+    }
+    #logo-big {
+        display: none;
+    }
+    .page-4 {
+        // img { width:50%; }
+        img { @include transform(scale(.75) !important) ;}
+    }
+}
 
 
 /* :::::::::::::: FIN: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -910,7 +944,7 @@ img.front {
     width: 100%;
     height: 100%;
     background-color: $cNegro;
-    
+
     z-index: 999999;
 }
 
@@ -929,24 +963,26 @@ img.front {
 /* ::::::::::::::::::::::::::::::::: FIN: LOADER ::::::::::::::::::::::::::::::::::::::::::::::: */
 
 /* ::::::::::::::::::: TOOLTIP ::::::::::::::::::::::::::: */
-.tooltip-inner {
-    color: $cIndigo;
-    top:0;
-    font-family: $font-cursive;
-    background:none;
-    padding: 6px 15px 10px 16px;
-    margin-top: -5px! important;
-    font-size: 1.1em;
 
-}
 .tooltip {
-    background-image: url('../images/tooltip-bg.png');
-    background-size: 100% 100%;
-}
-.tooltip-arrow {
-    display:none;
+    font-family: $font-cursive;
 
 }
+.tooltip-inner {
+    padding:8px;
+    font-size: 1.2em;
+    background: $cBlanco;
+    color: $cIndigo;
+    @include box-shadow;
+}
+.tooltip > .tooltip-arrow {
+    border-top-color: #FFF !important;
+    border-top-color: $cBlanco !important;
+    border-width: 8px 8px 0;
+    bottom: 0;
+    left: 50%;
+}
+
 
 /* ::::::::::::::::::: FIN : TOOLTIP ::::::::::::::::::::::::::: */
 
@@ -997,21 +1033,6 @@ img.front {
 .icon-zoom           { background-position: -325px -0px; &:hover { background-position: -325px -25px; } }
 .icon-download       { background-position: -325px -50px; &:hover { background-position: -300px -50px; } }
 
-/* txt-color */
-
-.text-azul { color: $cAzul;}
-.text-azulDark { color: $cAzulDark;}
-.text-cyan { color: $cCyan;}
-.text-cyanDark { color: $cCyanDark;}
-.text-Rojo { color: $cRojo;}
-.text-RojoDark { color: $cRojoDark;}
-.text-Naranja { color: $cNaranja;}
-.text-NaranjaDark { color: $cNaranjaDark;}
-.text-Verde { color: $cVerde;}
-.text-VerdeDark { color: $cVerdeDark;}
-.text-Amarillo { color: $cAmarillo;}
-.text-AmarilloDark { color: $cAmarilloDark;}
-
 
 .sprite-elenco {margin: 15px auto; background-image:url('../images/sprites/sprite-elenco-2.png'); }
 .sprite-pelusa      {background-position:  -8px -7px;       width: 135px;   height: 190px; }
@@ -1024,31 +1045,7 @@ img.front {
 .sprite-marcelo     {background-position: -6px -375px;      width: 166px;   height: 136px; }
 .sprite-susana      {background-position: -179px -356px;    width: 162px;   height: 144px; }
 
-.panel{
-    background: rgba($cNegro,.2) !important;
-    @include border-radius();
-    border: 0;
-    position: relative;
-    &:after {
-        right: 100%;
-        top: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-color: rgba(136, 183, 213, 0);
-        border-right-color: rgba($cNegro,.2) !important;
-        border-width: 15px;
-        margin-top: -15px;
-    }
-}
-.panel-heading {
-    border-radius:0;
-    border: 0;
-    background-color: inherit !important;
-}
+
 
 /* scrollbar */
 
@@ -1083,94 +1080,57 @@ img.front {
 ::scrollbar-thumb:active {background: rgba($cCyan, 0.7); }
 
 
-/* alerts */
-.alert {
-    font-family: $font-cursive;
-    @include text-shadow(none);
-}
-.alert-danger {
-    background: $cRojoDark;
-    color: $cBlanco;
-    border-color: $cNegro;
-}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
 
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
 
-/*
-*   Owl Carousel Owl Demo Theme 
-*   v1.3.3
-*/
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
 
-.owl-theme .owl-controls{
-    margin-top: 10px;
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  @include border-radius();
+  @include box-shadow();
+  }
+.rslides_nav.prev{ float:left;}
+.rslides_nav.next{ float:right;}
+.rslides_tabs {
+    width: 100%;
+    margin:auto;
     text-align: center;
-}
-
-/* Styling Next and Prev buttons */
-.owl-wrapper-outer {
-    // @include border-radius();
-    // @include box-shadow();
-}
-.owl-theme .owl-controls .owl-buttons div{
-    color: #FFF;
-    display: inline-block;
-    zoom: 1;
-    *display: inline;/*IE7 life-saver */
-    margin: 5px;
-    padding: 3px 10px;
-    font-size: 12px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    background: #869791;
-    filter: Alpha(Opacity=50);/*IE7 fix*/
-    opacity: 0.5;
-}
-/* Clickable class fix problem with hover on touch devices */
-/* Use it for non-touch hover action */
-.owl-theme .owl-controls.clickable .owl-buttons div:hover{
-    filter: Alpha(Opacity=100);/*IE7 fix*/
-    opacity: 1;
-    text-decoration: none;
-}
-
-/* Styling Pagination*/
-
-.owl-theme .owl-controls .owl-page{
-    display: inline-block;
-    zoom: 1;
-    *display: inline;/*IE7 life-saver */
-}
-.owl-theme .owl-controls .owl-page span{
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin: 10px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    background: $cRojoDark;
-}
-
-.owl-theme .owl-controls .owl-page.active span,
-.owl-theme .owl-controls.clickable .owl-page:hover span{
-    background: $cBlanco;
-}
-
-/* If PaginationNumbers is true */
-
-.owl-theme .owl-controls .owl-page span.owl-numbers{
-    height: auto;
-    width: auto;
-    color: #FFF;
-    padding: 2px 10px;
-    font-size: 12px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-}
-
-/* preloading images */
-.owl-item.loading{
-    min-height: 150px;
-    background: url(../images/AjaxLoader.gif) no-repeat center center
+    li {
+        margin-right:15px;
+        display: inline-block;
+        width: 12px; height:12px;
+        background: $cRojoDark;
+        font-size: .0001em;
+        @include border-radius(6px);
+        &.rslides_here {
+            background: $cBlanco;
+        }
+        &:last-child {
+            margin-right:0px;
+        }
+    }
 }

@@ -1,13 +1,11 @@
 //$(function onLoad(){
 $(document).ready(function() {
-     
-     $("#owl-example").owlCarousel({
-          navigation : false, // Show next and prev buttons
-          slideSpeed : 300,
-          paginationSpeed : 400,
-          singleItem:true,
-          itemsScaleUp:true,
-          responsive: true
+
+     $(function() {
+        $(".rslides").responsiveSlides({
+            pager: true,           // Boolean: Show pager, true or true
+            nav: true
+        });
       });
 
     function parallax () {
@@ -20,7 +18,7 @@ $(document).ready(function() {
             currentMousePos.x = event.pageX-home_w_center;
             currentMousePos.y = event.pageY-home_h_center;
             new_x = currentMousePos.x / 2;
-            $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
+            // $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
             $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
             $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
             $("#layer-center").css('right', 30 - currentMousePos.x/100 + '%');
