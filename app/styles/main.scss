@@ -214,6 +214,8 @@ footer {
             &:hover{    background-position: -240px -460px; }
         }
         &#logo-zetta{
+            position: relative;
+            left:10px;
             width: 60px; height:30px;
                         background-position: -240px -400px;
             &:hover{    background-position: -240px -430px; }
@@ -345,18 +347,16 @@ header, footer {@include transition(); }
 }
 
 // :::::::::::::::::::::: SINOPSIS ::::::::::::::::::::::::::::::
-#sinopsis {
-    @include radial-gradient(lighten($cVerde, 10%), $cVerdeDark);
-    .featured {
-            background: url('../images/overlays/over-marta.png') no-repeat bottom right;
-            right:      150px;
-            width:  228px;
-            height: 461px;
-        }
-    }
+#sinopsis {@include radial-gradient(lighten($cVerde, 10%), $cVerdeDark); }
 .page-2 {
     header {@include linear-gradient($cVerdeDark, rgba($cVerdeDark,0)); }
     footer {@include linear-gradient(rgba($cVerdeDark,0), $cVerdeDark); }
+    .featured {
+            background: url('../images/overlays/over-yermo.png') no-repeat bottom right;
+            right:      0px;
+            width:  434px;
+            height: 516px;
+        }
 }
 
 // :::::::::::::::::::::: EQUIPO ::::::::::::::::::::::::::::::
