@@ -19,14 +19,19 @@ $footer-height : 75px; // antes 75px;
 .sprite-equipo  { background-image:     url('../images/sprites/sprite-equipo.png');     }
 .sprite-front   { background-image:     url('../images/sprites/sprite-front_2.png');      }
 
-
-
-
-
-
 /* ::::::::::::::::::::::::: GLOBALS ::::::::::::::::::::::::::: */
 
-* { padding: 0; margin: 0;}
+* {
+    padding: 0; margin: 0;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-font-smoothing: antialiased!important;
+    -o-font-smoothing: antialiased!important;
+    -ms-font-smoothing: antialiased!important;
+    font-smoothing: antialiased!important;
+    font-smooth: always!important;
+    }
 html {box-sizing: border-box; }
 *, *:before, *:after {box-sizing: inherit; }
 
@@ -82,14 +87,6 @@ hr.cyan { background-position: -255px -345px; }
 
 html, body{
     height: 100%;
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-font-smoothing: antialiased!important;
-    -o-font-smoothing: antialiased!important;
-    -ms-font-smoothing: antialiased!important;
-    font-smoothing: antialiased!important;
-    font-smooth: always!important;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -325,15 +322,15 @@ header, footer {@include transition(); }
 
 
 // :::::::::::::::::::::: HOME ::::::::::::::::::::::::::::::
-#home {@include radial-gradient($cBlanco, $cGrisDark); }
+#home {@include radial-gradient(lighten($cGrisDark, 10%), $cGrisDark); }
 .page-0 {
     header {@include linear-gradient($cIndigo, rgba($cIndigo,0)); }
     footer {@include linear-gradient(rgba($cIndigo,0), $cIndigo); }
 }
 
 // :::::::::::::::::::::: GALERIA ::::::::::::::::::::::::::::::
-#trailer { 
-    @include radial-gradient($cRojo, $cRojoDark);  
+#trailer {
+    @include radial-gradient(lighten($cRojo, 10%), $cRojoDark);
     .featured {
         background: none;
         right:      0px;
@@ -342,14 +339,14 @@ header, footer {@include transition(); }
         height: 210px;
     }
 }
-.page-1 { 
+.page-1 {
     header {@include linear-gradient($cRojoDark, rgba($cRojoDark,0)); }
     footer {@include linear-gradient(rgba($cRojoDark,0), $cRojoDark); }
 }
 
 // :::::::::::::::::::::: SINOPSIS ::::::::::::::::::::::::::::::
 #sinopsis {
-    @include radial-gradient($cVerde, $cVerdeDark); 
+    @include radial-gradient(lighten($cVerde, 10%), $cVerdeDark);
     .featured {
             background: url('../images/overlays/over-marta.png') no-repeat bottom right;
             right:      150px;
@@ -357,14 +354,14 @@ header, footer {@include transition(); }
             height: 461px;
         }
     }
-.page-2 { 
+.page-2 {
     header {@include linear-gradient($cVerdeDark, rgba($cVerdeDark,0)); }
     footer {@include linear-gradient(rgba($cVerdeDark,0), $cVerdeDark); }
 }
 
 // :::::::::::::::::::::: EQUIPO ::::::::::::::::::::::::::::::
 #equipo {
-    @include radial-gradient($cAmarillo, $cAmarilloDark); 
+    @include radial-gradient(lighten($cAmarillo, 10%), $cAmarilloDark);
     dl {
         dt {
             font-weight: normal !important;
@@ -387,7 +384,7 @@ header, footer {@include transition(); }
         height: 275px;
     }
 }
-.page-3 { 
+.page-3 {
     header {@include linear-gradient($cAmarilloDark, rgba($cAmarilloDark,0)); }
     footer {@include linear-gradient(rgba($cAmarilloDark,0), $cAmarilloDark); }
 }
@@ -396,7 +393,7 @@ header, footer {@include transition(); }
 // :::::::::::::::::::::: ELENCO ::::::::::::::::::::::::::::::
 
 #elenco {
-    @include radial-gradient($cAzul, $cAzulDark); 
+    @include radial-gradient(lighten($cAzul, 10%), $cAzulDark);
     h4 {
         color: $cBlanco !important;
         font-size: 1.6em;
@@ -430,7 +427,7 @@ header, footer {@include transition(); }
         width:  509px;
         height: 210px;
     }
-    
+
     header {@include linear-gradient($cAzulDark, rgba($cAzulDark,0)); }
     footer {@include linear-gradient(rgba($cAzulDark,0), $cAzulDark); }
 
@@ -439,7 +436,7 @@ header, footer {@include transition(); }
 
 // :::::::::::::::::::::: PRENSA ::::::::::::::::::::::::::::::
 #prensa {
-    @include radial-gradient($cCyan, $cCyanDark); 
+    @include radial-gradient(lighten($cCyan, 10%), $cCyanDark);
     .media { margin: 30px auto; }
     h4.media-heading {
         font-family: $font-kiriFont;
@@ -462,7 +459,7 @@ header, footer {@include transition(); }
 
 // :::::::::::::::::::::: CONTACTO ::::::::::::::::::::::::::::::
 #contacto {
-    @include radial-gradient($cTomate, $cTomateDark); 
+    @include radial-gradient(lighten($cTomate, 10%), $cTomateDark);
 }
 .page-6 { //contacto
     .featured {
