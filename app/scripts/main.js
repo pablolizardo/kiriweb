@@ -8,23 +8,23 @@ $(document).ready(function() {
         });
       });
 
-    function parallax () {
-        var currentMousePos = { x: -1, y: -1 };
-        var home_w = $('#home').width();
-        var home_h = $('#home').height();
-        $('#home').mousemove(function(event) {
-            home_w_center = home_w/2;
-            home_h_center = home_h/2;
-            currentMousePos.x = event.pageX-home_w_center;
-            currentMousePos.y = event.pageY-home_h_center;
-            new_x = currentMousePos.x / 2;
-            // $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
-            $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
-            $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
-            $("#layer-center").css('right', 30 - currentMousePos.x/100 + '%');
-            $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
-        });
-    }
+    // function parallax () {
+    //     var currentMousePos = { x: -1, y: -1 };
+    //     var home_w = $('#home').width();
+    //     var home_h = $('#home').height();
+    //     $('#home').mousemove(function(event) {
+    //         home_w_center = home_w/2;
+    //         home_h_center = home_h/2;
+    //         currentMousePos.x = event.pageX-home_w_center;
+    //         currentMousePos.y = event.pageY-home_h_center;
+    //         new_x = currentMousePos.x / 2;
+    //         // $("#home").css('background-position', 50 - currentMousePos.x/450 + '%');
+    //         $("#layer-left").css('left', 7 + currentMousePos.x/300 + '%');
+    //         $("#layer-right").css('right', 7 - currentMousePos.x/250 + '%');
+    //         $("#layer-center").css('right', 30 - currentMousePos.x/100 + '%');
+    //         $("#layer-arbol").css('right', -10 - currentMousePos.x/50 + '%');
+    //     });
+    // }
 
     $("#overlay").toggle();
     $(".front").toggle();
@@ -45,9 +45,7 @@ $(document).ready(function() {
         $('.next').delay(700).animate({right: 25 }, 'slow');
         $('#layer-right').delay(800).animate({right: "7%" }, 500);
         $('#layer-left').delay(900).animate({left: "7%" }, 500);
-        $('#layer-center').delay(1000).animate({right: "30%" }, 600, function(){
-            parallax();
-        });
+        $('#layer-center').delay(1000).animate({right: "30%" }, 600);
 
     });
 
