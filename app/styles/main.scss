@@ -303,7 +303,11 @@ header, footer {@include transition(); }
 
 
 // :::::::::::::::::::::: HOME ::::::::::::::::::::::::::::::
-#home {@include radial-gradient($cIndigo, $cIndigoDark); }
+#home {
+    //@include linear-gradient($cIndigo, $cIndigoDark);
+    background: url('../images/home_bg.jpg') repeat;
+
+ }
 .page-0 {
     header {@include linear-gradient($cIndigoDark, rgba($cIndigoDark,0)); }
     footer {@include linear-gradient(rgba($cIndigoDark,0), $cIndigoDark); }
@@ -327,7 +331,16 @@ header, footer {@include transition(); }
 }
 
 // :::::::::::::::::::::: SINOPSIS ::::::::::::::::::::::::::::::
-#sinopsis {@include radial-gradient(lighten($cVerde, 10%), $cVerdeDark); }
+#sinopsis {
+    @include radial-gradient(lighten($cVerde, 10%), $cVerdeDark); 
+    strong { font-style: inherit; color: lighten($cVerde,20%); font-size: 1.2em;}
+    em { font-style: inherit; color: lighten($cVerde,20%);}
+    p:not(.lead) {
+        font-size: 1.4em;
+        strong { font-weight: bold; }
+    }
+
+}
 .page-2 {
     header {@include linear-gradient($cVerdeDark, rgba($cVerdeDark,0)); }
     footer {@include linear-gradient(rgba($cVerdeDark,0), $cVerdeDark); }
