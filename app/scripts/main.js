@@ -72,7 +72,7 @@ $(document).ready(function() {
         $("#overlay").fadeIn(200);
         $('#logo-big').animate({top: "-80%" }, 200);
         $(modalTarget).removeClass().addClass('theme-'+modalTheme);
-        $(modalTarget).delay(200).animate({ top: "20%", opacity: "1" }, 200);
+        $(modalTarget).delay(200).animate({ top: "10%", opacity: "1" }, 200);
         $(".front").delay(400).fadeIn(200);
     });
 
