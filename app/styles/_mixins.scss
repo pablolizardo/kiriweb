@@ -130,3 +130,36 @@ $pos2 : 60%;
     background: radial-gradient(ellipse at center, $from $pos1, $to $pos2);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 );
 }
+
+/* scrollbar */
+@mixin scrollbar($width:15px, $height: 15px, $top: 0px, $bottom:0px, $color: #fff) {
+  ::-webkit-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-webkit-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-webkit-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-webkit-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-webkit-scrollbar-thumb:active {background: $color; }
+
+  ::-moz-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-moz-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-moz-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-moz-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-moz-scrollbar-thumb:active {background: $color; }
+
+  ::-ms-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-ms-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-ms-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-ms-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-ms-scrollbar-thumb:active {background: $color; }
+
+  ::-o-scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::-o-scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::-o-scrollbar-thumb {background: rgba($color, 0.5); }
+  ::-o-scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::-o-scrollbar-thumb:active {background: $color; }
+
+  ::scrollbar {width: $width; height: $height; z-index: 99999; }
+  ::scrollbar-track {background: rgba($color, 0.1); margin-top: $top; margin-bottom: $bottom; }
+  ::scrollbar-thumb {background: rgba($color, 0.5); }
+  ::scrollbar-thumb:hover {background: rgba($color, 0.7); }
+  ::scrollbar-thumb:active {background: $color; }
+}

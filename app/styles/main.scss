@@ -160,12 +160,12 @@ header {
 
     #menu a{
         @include transition();
-        color: rgba($cNegroDark,.6);
+        color: rgba($cBlanco,.7);
         margin-right:35px;
         padding: 5px;
         font-size: 1.2em;
         display: inline-block;
-        @include text-shadow(none);
+        //@include text-shadow(none);
         background: url('../images/underline.png') no-repeat 50% 150% ;
         &:hover, &.active {
             color: $cBlanco !important;
@@ -309,8 +309,8 @@ header, footer {@include transition(); }
 
  }
 .page-0 {
-    header {@include linear-gradient($cIndigoDark, rgba($cIndigoDark,0)); }
-    footer {@include linear-gradient(rgba($cIndigoDark,0), $cIndigoDark); }
+    header {background: none; }
+    footer {@include linear-gradient(rgba($cIndigoDark,0), rgba($cNegroDark,.5)); }
 }
 
 // :::::::::::::::::::::: GALERIA ::::::::::::::::::::::::::::::
@@ -333,10 +333,11 @@ header, footer {@include transition(); }
 // :::::::::::::::::::::: SINOPSIS ::::::::::::::::::::::::::::::
 #sinopsis {
     @include radial-gradient(lighten($cVerde, 10%), $cVerdeDark); 
-    strong { font-style: inherit; color: lighten($cVerde,20%); font-size: 1.2em;}
-    em { font-style: inherit; color: lighten($cVerde,20%);}
+    p { color: lighten($cVerde,20%); }
+    strong { font-style: inherit; color: $cBlanco; font-size: 1.2em;}
+    em { font-style: inherit;color: $cBlanco;  }
     p:not(.lead) {
-        font-size: 1.4em;
+        font-size: 1.3em;
         strong { font-weight: bold; }
     }
 
@@ -354,15 +355,18 @@ header, footer {@include transition(); }
 
 // :::::::::::::::::::::: EQUIPO ::::::::::::::::::::::::::::::
 #equipo {
-    @include radial-gradient(lighten($cAmarillo, 10%), $cAmarilloDark);
+    //@include radial-gradient(lighten($cAmarillo, 10%), $cAmarilloDark);
+    @include radial-gradient($cAmarillo, $cAmarilloDark);
     dl {
         dt {
             font-weight: normal !important;
             font-family: 'Damion';
             color: $cIndigoDark;
             @include text-shadow(none);
-            font-size: 1.6em;
-            line-height: 2em;
+            font-size: 1.7em;
+            line-height: 1.6em;
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
         dd {
             font-family: $font-kiriFont;
@@ -370,6 +374,9 @@ header, footer {@include transition(); }
             line-height: 2em;
         }
     }
+    h3 { margin-top: 25px; color: rgba($cBlanco, .8); @include text-shadow(none);}
+    small { color: rgba($cBlanco, .7); font-family: $font-cursive; vertical-align:2px; @include text-shadow(none);}
+    strong { color: rgba($cBlanco, .8); font-size: .8em; vertical-align: 1px; @include text-shadow(none);}
 
 }
 .page-3 {
@@ -569,90 +576,49 @@ header, footer {@include transition(); }
     width: 90%;
     height: 70%;
     margin: auto;
+}
 
-
-}
-.layer {
-    position: absolute; @extend .sprite-front;
-    z-index: 3;
-}
-.layer:hover {
-    cursor: pointer;
-    z-index: 9;
-}
+.layer {position: absolute; background: url('../images/sprites/sprites.min.png') no-repeat; z-index: 3; }
+.layer:hover {cursor: pointer; z-index: 9; }
 #layer-yermo {
-    background-position:  0px 0px;
-    width: 257px; height: 486px; right: 0; left:0; bottom: 0;
+    width: 334px; height: 524px; background-position: 0 -832px; right: 0; left:0; bottom: 0;
     margin:auto;
-    &:hover {background-position:  -257px 0px; }
-    @extend .debug;
+    &:hover {   background-position: 0 -307px;  }
 }
 #layer-luisito {
-    background-position:  -515px 0px;
-    width: 220px; height: 359px; right: 50%; left:50%; bottom: 0;
+    width: 237px; height: 382px; background-position: -335px -1044px; right: 50%; left:50%; bottom: 0;
     margin:auto -312px -23px auto;
-    &:hover {background-position:  -735px 0px; }
-    @extend .debug;
+    &:hover {   background-position: -335px -661px; }
 }
 #layer-elena {
-    background-position:  -1115px -321px;
-    width: 138px; height: 203px; right: 15%; bottom: 10%;
-    //margin:auto -312px -23px auto;
-    &:hover {background-position:  -1252px -321px; }
-    @extend .debug;
+    width: 156px; height: 223px; background-position: -573px -1153px; right: 15%; bottom: 10%;
+    &:hover {   background-position: -573px -661px; }
 }
 #layer-telma {
-    background-position:  -955px 0px;
-    width: 88px; height: 305px; right: 120px; bottom: 12%;
-    //margin:auto -312px -23px auto;
-    &:hover {background-position:  -1043px 0px; }
-    @extend .debug;
+    width: 109px; height: 319px; background-position: -610px -1377px; right: 90px; bottom: 12%;
+    &:hover {   background-position: -623px 0;   }
 }
 #layer-toto {
-    background-position:  0px -510px;
-    width: 171px; height: 281px; right: 0px; bottom: 11%;
-    //margin:auto -312px -23px auto;
-    &:hover {background-position:  -171px -510px; }
-    @extend .debug;
+    width: 204px; height: 306px; background-position: -205px 0; right: 0px; bottom: 11%;
+    &:hover {   background-position: 0 0;   }
 }
-
 #layer-camilo {
-    background-position:  -695px -478px;
-    width: 184px; height: 313px; left: -15px; bottom: 11%;
-    //margin:auto -312px -23px auto;
-    &:hover {background-position:  -879px -478px; }
-    @extend .debug;
+    width: 212px; height: 337px; background-position: 0 -1357px; left: -15px; bottom: 11%;
+    &:hover {   background-position: -410px 0;  }
 }
 #layer-dora {
-    background-position:  -343px -495px;
-    width: 176px; height: 296px; left: 13%; bottom: 9%;
-    //margin:auto -312px -23px auto;
-    &:hover {background-position:  -519px -495px; }
-    @extend .debug;
+    width: 199px; height: 322px; background-position: -535px -338px; left: 8%; bottom: 9%;
+    &:hover {   background-position: -335px -338px; }
 }
 #layer-marta {
-    background-position:  -1130px -539px;
-    width: 123px; height: 252px; left: 25%; right:75%; bottom: 14%;
-    //margin:auto -312px -23px auto;
-    &:hover {background-position:  -1252px -539px; }
-    @extend .debug;
+    width: 158px; height: 267px; background-position: -451px -1427px; left: 20%; right:80%; bottom: 14%;
+    &:hover {   background-position: -573px -885px; }
 }
 #layer-carlos {
-    background-position:  -1132px -0px;
-    width: 99px; height: 254px; left: 25%; right:75%; bottom: 14%;
-    margin:auto -198px auto auto;
-    &:hover {background-position:  -1232px -0px; }
-    @extend .debug;
+    width: 118px; height: 269px; background-position: -332px -1427px; left: 20%; right:80%; bottom: 14%;
+    margin:auto -251px auto auto;
+    &:hover {   background-position: -213px -1357px; }
 }
-
-// #layer-right {
-//    background-position: -393px 0px;
-//     right: -50%; top: 36%;width: 359px; height: 422px;
-// }
-// #layer-left {
-//     background-position: -162px -421px;
-//     left: -50%; top: 40%;  width: 451px; height: 325px;
-// }
 
 
 #overlay{
@@ -679,6 +645,7 @@ img.front {
     position: fixed;
     top:-80%;
     color: #fff;
+    //overflow: auto;
     p{
         font-family: $font-cursive;
         line-height: 1.6em;
@@ -984,40 +951,6 @@ img.front {
 .sprite-betiana     {background-position: -390px -244px;    width: 140px;   height: 147px; }
 .sprite-marcelo     {background-position: -6px -375px;      width: 166px;   height: 136px; }
 .sprite-susana      {background-position: -179px -356px;    width: 162px;   height: 144px; }
-
-
-
-/* scrollbar */
-
-::-webkit-scrollbar {width: 16px; height: 16px; z-index: 99999; }
-::-webkit-scrollbar-track {background: rgba($cNegro, 0.2); margin-top: 67px; margin-bottom: 65px; }
-::-webkit-scrollbar-thumb {background: rgba($cNegro, 0.7); }
-::-webkit-scrollbar-thumb:hover {background: rgba($cIndigo, 0.7); }
-::-webkit-scrollbar-thumb:active {background: rgba($cCyan, 0.7); }
-
-::-moz-scrollbar {width: 16px; height: 16px; z-index: 99999; }
-::-moz-scrollbar-track {background: rgba($cNegro, 0.2); margin-top: 67px; margin-bottom: 65px; }
-::-moz-scrollbar-thumb {background: rgba($cNegro, 0.7); }
-::-moz-scrollbar-thumb:hover {background: rgba($cIndigo, 0.7); }
-::-moz-scrollbar-thumb:active {background: rgba($cCyan, 0.7); }
-
-::-ms-scrollbar {width: 16px; height: 16px; z-index: 99999; }
-::-ms-scrollbar-track {background: rgba($cNegro, 0.2); margin-top: 67px; margin-bottom: 65px; }
-::-ms-scrollbar-thumb {background: rgba($cNegro, 0.7); }
-::-ms-scrollbar-thumb:hover {background: rgba($cIndigo, 0.7); }
-::-ms-scrollbar-thumb:active {background: rgba($cCyan, 0.7); }
-
-::-o-scrollbar {width: 16px; height: 16px; z-index: 99999; }
-::-o-scrollbar-track {background: rgba($cNegro, 0.2); margin-top: 67px; margin-bottom: 65px; }
-::-o-scrollbar-thumb {background: rgba($cNegro, 0.7); }
-::-o-scrollbar-thumb:hover {background: rgba($cIndigo, 0.7); }
-::-o-scrollbar-thumb:active {background: rgba($cCyan, 0.7); }
-
-::scrollbar {width: 16px; height: 16px; z-index: 99999; }
-::scrollbar-track {background: rgba($cNegro, 0.2); margin-top: 67px; margin-bottom: 65px; }
-::scrollbar-thumb {background: rgba($cNegro, 0.7); }
-::scrollbar-thumb:hover {background: rgba($cIndigo, 0.7); }
-::scrollbar-thumb:active {background: rgba($cCyan, 0.7); }
 
 
 .rslides {
