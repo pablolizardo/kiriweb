@@ -43,9 +43,9 @@ $(document).ready(function() {
         $('footer').delay(400).animate({bottom: 0 }, 'slow');
         $('.prev').delay(700).animate({left: 25 }, 'slow');
         $('.next').delay(700).animate({right: 25 }, 'slow');
-        $('#layer-right').delay(800).animate({right: "7%" }, 500);
-        $('#layer-left').delay(900).animate({left: "7%" }, 500);
-        $('#layer-center').delay(1000).animate({right: "30%" }, 600);
+        //$('#layer-right').delay(800).animate({right: "7%" }, 500);
+        //$('#layer-left').delay(900).animate({left: "7%" }, 500);
+        //$('#layer-center').delay(1000).animate({right: "30%" }, 600);
 
     });
 
@@ -57,13 +57,14 @@ $(document).ready(function() {
         $("img.front").attr('src', imgSrc);
         $(target + " .hero-unit").html(parrafo);
         $(target + " h4").text(subtitulo);
-        $(target + " h2").text(charName);
+        $(target + " h1").text(charName);
     }
 
     $(".layer").bind('click tap',function() {
         charName = $(this).data("name");
         modalTheme = $(this).data("theme");
-        modalTarget = $(this).data('target');
+        //modalTarget = $(this).data('target');
+        modalTarget = '#modal';
         parrafo = $(this).next("span").html();
         subtitulo = $(this).data("subtitulo");
         imgSrc = "images/overlays/over-" + $(this).data("img") + ".png";

@@ -17,7 +17,11 @@ $footer-height : 75px; // antes 75px;
 .sprite-kiriweb { background-image:     url('../images/sprites/sprite-kiriweb.png');    }
 .sprite-elenco  { background-image:     url('../images/sprites/sprite-elenco.png');     }
 .sprite-equipo  { background-image:     url('../images/sprites/sprite-equipo.png');     }
-.sprite-front   { background-image:     url('../images/sprites/sprite-front_2.png');      }
+.sprite-front   { background-image:     url('../images/sprites/sprite-front.png');      }
+.debug          { 
+    border: 0px dotted red;    
+}
+//.sprite-front   { background-image:     url('../images/sprites/sprite-front_2.png');      }
 
 /* ::::::::::::::::::::::::: GLOBALS ::::::::::::::::::::::::::: */
 
@@ -194,9 +198,9 @@ footer {
 
         &:last-child { margin-right: 0px;}
         &#logo-if{
-            width: 90px; height:30px;
-                        background-position: -150px -400px;
-            &:hover{    background-position: -150px -430px; }
+            width: 90px; height:35px;
+                        background-position: -115px -390px;
+            &:hover{    background-position: -205px -390px; }
         }
         &#logo-sla{
             width: 72px; height:26px;
@@ -205,20 +209,20 @@ footer {
         }
         &#logo-slc{
             width: 100px; height:45px;
-                        background-position: -400px -350px;
-            &:hover{    background-position: -400px -395px; }
+                        background-position: -295px -390px;
+            &:hover{    background-position: -295px -435px; }
         }
         &#logo-incaa{
             width: 90px; height:50px;
-                        background-position: -150px -460px;
-            &:hover{    background-position: -240px -460px; }
+                        background-position: -115px -425px;
+            &:hover{    background-position: -205px -425px; }
         }
         &#logo-zetta{
             position: relative;
             left:10px;
             width: 60px; height:30px;
-                        background-position: -240px -400px;
-            &:hover{    background-position: -240px -430px; }
+                        background-position: -395px -390px;
+            &:hover{    background-position: -395px -420px; }
         }
     }
     #gradient {
@@ -282,31 +286,6 @@ footer {
 
 
 
-.hero-unit {
-    background-image:url('../images/noise.png');
-    @include border-radius();
-    @include box-shadow();
-    padding: 20px;
-    position: relative;
-    &:after {
-            bottom: 100%;
-            left: 15%;
-            border: solid transparent;
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            pointer-events: none;
-            border-color: rgba(136, 183, 213, 0);
-            border-bottom-color: $cIndigoDark;
-            border-width: 10px;
-            margin-left: -10px;
-
-        }
-        &.hero-no-arrow {
-            &:after { border: 0;}
-        }
-    }
 
 .featured {
     position: fixed;
@@ -324,26 +303,27 @@ header, footer {@include transition(); }
 
 
 // :::::::::::::::::::::: HOME ::::::::::::::::::::::::::::::
-#home {@include radial-gradient(lighten($cGrisDark, 10%), $cGrisDark); }
+#home {@include radial-gradient($cIndigo, $cIndigoDark); }
 .page-0 {
-    header {@include linear-gradient($cIndigo, rgba($cIndigo,0)); }
-    footer {@include linear-gradient(rgba($cIndigo,0), $cIndigo); }
+    header {@include linear-gradient($cIndigoDark, rgba($cIndigoDark,0)); }
+    footer {@include linear-gradient(rgba($cIndigoDark,0), $cIndigoDark); }
 }
 
 // :::::::::::::::::::::: GALERIA ::::::::::::::::::::::::::::::
 #trailer {
     @include radial-gradient(lighten($cRojo, 10%), $cRojoDark);
-    .featured {
-        background: none;
-        right:      0px;
-        left: 0px;
-        width:  509px;
-        height: 210px;
-    }
+    
 }
 .page-1 {
     header {@include linear-gradient($cRojoDark, rgba($cRojoDark,0)); }
     footer {@include linear-gradient(rgba($cRojoDark,0), $cRojoDark); }
+    .featured {
+            background: url('../images/overlays/over-marta.png') no-repeat bottom right;
+        right:      0px;
+        bottom:-150px;
+        width:  399px;
+        height: 750px;
+    }
 }
 
 // :::::::::::::::::::::: SINOPSIS ::::::::::::::::::::::::::::::
@@ -354,8 +334,8 @@ header, footer {@include transition(); }
     .featured {
             background: url('../images/overlays/over-yermo.png') no-repeat bottom right;
             right:      0px;
-            width:  434px;
-            height: 516px;
+            width:  547px;
+            height: 600px;
         }
 }
 
@@ -377,16 +357,17 @@ header, footer {@include transition(); }
             line-height: 2em;
         }
     }
-    .featured {
-        background: url('../images/overlays/over-dora-2.png') no-repeat bottom right;
-        right:      0px;
-        width:  352px;
-        height: 275px;
-    }
+    
 }
 .page-3 {
     header {@include linear-gradient($cAmarilloDark, rgba($cAmarilloDark,0)); }
     footer {@include linear-gradient(rgba($cAmarilloDark,0), $cAmarilloDark); }
+    .featured {
+        background: url('../images/overlays/over-toto.png') no-repeat bottom right;
+        right:      -160px;
+        width:  506px;
+        height: 568px;
+    }
 }
 
 
@@ -400,6 +381,8 @@ header, footer {@include transition(); }
         line-height: 1em;
         margin:0;
     }
+    
+
     dl {
 
         dt {
@@ -420,17 +403,15 @@ header, footer {@include transition(); }
     }
 }
 .page-4 { //elenco
-    .featured {
-        background: url('../images/overlays/over-malos.png') no-repeat top left;
-        right:      0px;
-        left: 0px;
-        width:  509px;
-        height: 210px;
-    }
-
     header {@include linear-gradient($cAzulDark, rgba($cAzulDark,0)); }
     footer {@include linear-gradient(rgba($cAzulDark,0), $cAzulDark); }
-
+    .featured {
+        background: url('../images/overlays/over-elena.png') no-repeat top left;
+        right:      -100px;
+        bottom:-100px;
+        width:  460px;
+        height: 600px;
+    }
 }
 
 
@@ -445,60 +426,74 @@ header, footer {@include transition(); }
         overflow: auto;
     }
     p { font-size: 1.1em;}
+    
 }
 .page-5 { //prensa
-    .featured {
-        background: url('../images/overlays/over-marta.png') no-repeat bottom right;
-        right:      150px;
-        width:  228px;
-        height: 461px;
-    }
+    
     header {@include linear-gradient($cCyanDark, rgba($cCyanDark,0)); }
     footer {@include linear-gradient(rgba($cCyanDark,0), $cCyanDark); }
+    .featured {
+        background: url('../images/overlays/over-carlos.png') no-repeat bottom right;
+        right:      250px;
+        width:  255px;
+        height: 708px;
+    }
 }
 
 // :::::::::::::::::::::: CONTACTO ::::::::::::::::::::::::::::::
 #contacto {
     @include radial-gradient(lighten($cTomate, 10%), $cTomateDark);
+    
 }
 .page-6 { //contacto
-    .featured {
-        background: none;
-        right:     0px;
-        left: 0px;
-        width:  228px;
-        height: 461px;
-    }
+    
     header {@include linear-gradient($cTomateDark, rgba($cTomateDark,0)); }
     footer {@include linear-gradient(rgba($cTomateDark,0), $cTomateDark); }
+    .featured {
+        background: url('../images/overlays/over-dora.png') no-repeat bottom right;
+        right:      -10px;
+        width:  459px;
+        height: 600px;
+    }
 }
 
 .theme-rojo {
-    //background: $cIndigoDark url('../images/noise.png') ;
-    background-size: auto !important;
-    h4,h3,a,strong,dt{ color: $cRojo;}
+    h4 { color: $cRojo;}
     .hero-unit {background-color: $cRojoDark; @include text-shadow(none) ; &:after {border-bottom-color: $cRojoDark; } }
 }
+.theme-tomate {
+    h4 { color: $cTomate;}
+    .hero-unit {background-color: $cTomateDark; @include text-shadow(none) ; &:after {border-bottom-color: $cTomateDark; } }
+}
 .theme-verde {
-    //background: $cIndigoDark url('../images/noise.png') ;
-    background-size: auto !important;
-    h4,h3,a,strong,dt{ color: $cVerde;}
+    h4 { color: $cVerde;}
     .hero-unit {background-color: $cVerdeDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cVerdeDark; } }
 }
 .theme-azul {
-    //background: $cIndigoDark url('../images/noise.png') ;
-    background-size: auto !important;
-    h4,h3,a,strong,dt{ color: $cAzul;}
+    h4 { color: $cAzul;}
     .hero-unit {background-color: $cAzulDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAzulDark; } }
 }
 .theme-amarillo {
-    //background: $cIndigoDark url('../images/noise.png') ;
-    background-size: auto !important;
-    h4,h3,a,strong,dt{ color: $cAmarillo;}
+    h4 { color: $cAmarillo;}
     .hero-unit {background-color: $cAmarilloDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cAmarilloDark; } }
 }
+.theme-cyan {
+    h4 { color: $cCyan;}
+    .hero-unit {background-color: $cCyanDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cCyanDark; } }
+}
+.theme-rosa {
+    h4 { color: $cRosa;}
+    .hero-unit {background-color: $cRosaDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cRosaDark; } }
+}
+.theme-violeta {
+    h4 { color: $cVioleta;}
+    .hero-unit {background-color: $cVioletaDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cVioletaDark; } }
+}
+.theme-esmeralda {
+    h4 { color: $cEsmeralda;}
+    .hero-unit {background-color: $cEsmeraldaDark; @include text-shadow(none) ;  &:after {border-bottom-color: $cEsmeraldaDark; } }
+}
 
-#modal {background: none !important; }
 
 /* :::::::::::::::::::::::::[2] LI#HOME::::::::::::::::::::::::::: */
 #doSwipe {
@@ -521,7 +516,7 @@ header, footer {@include transition(); }
 #logo-big {
     position: absolute;
     top: 21%;
-    z-index: 100;
+    z-index: 1;
     padding:0; margin:auto;
     left: 0; right: 0;
     #logo_1_big, #logo_2_big, #logo_3_big {
@@ -538,8 +533,8 @@ header, footer {@include transition(); }
     }
     #logo_2_big {
         @include animation (1.5s, .3s, welcome);
-        background-position: 0px -350px;
-        width: 400px; height: 50px;
+        background-position: 0px -340px;
+        width: 410px; height: 50px;
         bottom: -120px;left: 0;right: 0;
     }
     #logo_3_big {
@@ -553,55 +548,104 @@ header, footer {@include transition(); }
     }
 
 }
+#universo { 
+    @extend .debug;
+    
+    position:absolute;
+    bottom:5%; right: 0; left:0;
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    
 
-.layer {position: absolute; @extend .sprite-front; }
+}
+.layer {
+    position: absolute; @extend .sprite-front; 
+    z-index: 3;
+}
 .layer:hover {
     cursor: pointer;
-    // filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-    // -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#fff')";
-    // filter:         drop-shadow(0px 0px 4px rgba($cBlanco,.6));
-    // -o-filter:      drop-shadow(0px 0px 4px rgba($cBlanco,.6));
-    // -moz-filter:    drop-shadow(0px 0px 4px rgba($cBlanco,.6));
-    // -webkit-filter: drop-shadow(0px 0px 4px rgba($cBlanco,.6));
-
+    z-index: 9;
 }
-
-#layer-center {
+#layer-yermo {
     background-position:  0px 0px;
-    width: 393px; height: 421px; right: -50%; top: 44%;
+    width: 257px; height: 486px; right: 0; left:0; bottom: 0;
+    margin:auto;
+    &:hover {background-position:  -257px 0px; }
+    @extend .debug;
+}
+#layer-luisito {
+    background-position:  -515px 0px;
+    width: 220px; height: 359px; right: 50%; left:50%; bottom: 0;
+    margin:auto -312px -23px auto;
+    &:hover {background-position:  -735px 0px; }
+    @extend .debug;
+}
+#layer-elena {
+    background-position:  -1115px -321px;
+    width: 138px; height: 203px; right: 15%; bottom: 10%;
+    //margin:auto -312px -23px auto;
+    &:hover {background-position:  -1252px -321px; }
+    @extend .debug;
+}
+#layer-telma {
+    background-position:  -955px 0px;
+    width: 88px; height: 305px; right: 120px; bottom: 12%;
+    //margin:auto -312px -23px auto;
+    &:hover {background-position:  -1043px 0px; }
+    @extend .debug;
+}
+#layer-toto {
+    background-position:  0px -510px;
+    width: 171px; height: 281px; right: 0px; bottom: 11%;
+    //margin:auto -312px -23px auto;
+    &:hover {background-position:  -171px -510px; }
+    @extend .debug;
 }
 
-#layer-right {
-   background-position: -393px 0px;
-    right: -50%; top: 36%;width: 359px; height: 422px;
+#layer-camilo {
+    background-position:  -695px -478px;
+    width: 184px; height: 313px; left: -15px; bottom: 11%;
+    //margin:auto -312px -23px auto;
+    &:hover {background-position:  -879px -478px; }
+    @extend .debug;
 }
-#layer-left {
-    background-position: -162px -421px;
-    left: -50%; top: 40%;  width: 451px; height: 325px;
+#layer-dora {
+    background-position:  -343px -495px;
+    width: 176px; height: 296px; left: 13%; bottom: 9%;
+    //margin:auto -312px -23px auto;
+    &:hover {background-position:  -519px -495px; }
+    @extend .debug;
+}
+#layer-marta {
+    background-position:  -1130px -539px;
+    width: 123px; height: 252px; left: 25%; right:75%; bottom: 14%;
+    //margin:auto -312px -23px auto;
+    &:hover {background-position:  -1252px -539px; }
+    @extend .debug;
+}
+#layer-carlos {
+    background-position:  -1132px -0px;
+    width: 99px; height: 254px; left: 25%; right:75%; bottom: 14%;
+    margin:auto -198px auto auto;
+    &:hover {background-position:  -1232px -0px; }
+    @extend .debug;
 }
 
+// #layer-right {
+//    background-position: -393px 0px;
+//     right: -50%; top: 36%;width: 359px; height: 422px;
+// }
+// #layer-left {
+//     background-position: -162px -421px;
+//     left: -50%; top: 40%;  width: 451px; height: 325px;
+// }
 
-#layer-ramas {
-    //background-position: -351px -13px;
-    position: absolute;
-    z-index: 390;
-    background-image: url('../images/front_ramas.png');
-    background-size: cover;
-    left: -10%; top: 0%;  width: 510px; height: 241px;
-}
-#layer-arbol {
-    //background-position: -351px -13px;
-    position: absolute;
-    z-index: 391;
-    background-image: url('../images/arbol.png');
-    background-size: cover;
-    right: -10%; top: 0%;  width: 177px; height: 100%;
-}
 
 #overlay{
     width: 100%;
     height: 100%;
-    background: rgba($cIndigoDark, .6);
+    background: rgba($cNegroDark, .6);
     position: fixed;
     top:0;
     left:0;
@@ -614,6 +658,7 @@ img.front {
     position: absolute; bottom: 0; right: 0;
     z-index: 199999;
 }
+
 #modal {
     @include text-shadow(0 2px 0px rgba(0,0,0,.2));
     width: 100%;
@@ -624,25 +669,45 @@ img.front {
     p{
         font-family: $font-cursive;
         line-height: 1.6em;
+        font-size: 1.1em;
 
     }
     p.lead{
         font-family: $font-kiriFont;
-        font-size: 1.15em;
+        font-size: 1.2em;
         margin-bottom: 5px;
     }
     h4{
         font-family: $font-cursive;
         margin-bottom:0;
     }
-    .modalContent {
-        padding: 25px 60px 25px 25px;
-        @include box-shadow();
-        @include border-radius();
+}
+.hero-unit {
+    @include border-radius();
+    @include text-shadow();
+    @include box-shadow();
+    padding: 25px;
+    position: relative;
+    &:after {
+            bottom: 100%;
+            left: 12%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-bottom-color: $cIndigoDark;
+            border-width: 10px;
+            margin-left: -10px;
 
+        }
+        &.hero-no-arrow {
+            &:after { border: 0;}
+        }
     }
 
-}
 #modal-close{
     width:25px;
     height:25px;
@@ -921,7 +986,8 @@ img.front {
   overflow: hidden;
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 0 15px 0;
+
   }
 
 .rslides li {
@@ -948,6 +1014,8 @@ img.front {
   @include border-radius();
   @include box-shadow();
   }
+
+.rslides_nav {font-family: $font-cursive !important; }
 .rslides_nav.prev{ float:left;}
 .rslides_nav.next{ float:right;}
 .rslides_tabs {
@@ -957,10 +1025,12 @@ img.front {
     li {
         margin-right:15px;
         display: inline-block;
-        width: 12px; height:12px;
+        width: 14px; height:14px;
         background: $cRojoDark;
-        font-size: .0001em;
-        @include border-radius(6px);
+        font-size: 1em;
+        font-weight: bold;
+        a { color: transparent !important; @include text-shadow(none);}
+        @include border-radius(7px);
         &.rslides_here {
             background: $cBlanco;
         }
