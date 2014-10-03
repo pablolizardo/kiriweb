@@ -220,9 +220,9 @@ footer {
         &#logo-zetta{
             position: relative;
             left:10px;
-            width: 60px; height:30px;
+            width: 60px; height:40px;
                         background-position: -395px -390px;
-            &:hover{    background-position: -395px -420px; }
+            &:hover{    background-position: -395px -430px; }
         }
     }
     #gradient {
@@ -442,8 +442,8 @@ header, footer {@include transition(); }
     h4.media-heading {
         font-family: $font-kiriFont;
         font-size: 1.4em;
-        padding: 5px 0px;
-        overflow: auto;
+        padding: 6px 0px;
+        overflow: hidden;
     }
     p { font-size: 1.1em;}
 
@@ -454,7 +454,7 @@ header, footer {@include transition(); }
     footer {@include linear-gradient(rgba($cCyanDark,0), $cCyanDark); }
     .featured {
         background: url('../images/overlays/over-carlos.png') no-repeat bottom right;
-        right:      250px;
+        right:      150px;
         width:  255px;
         height: 708px;
     }
@@ -573,51 +573,55 @@ header, footer {@include transition(); }
 
     position:absolute;
     bottom:5%; right: 0; left:0;
-    width: 90%;
+    width: 100%;
     height: 70%;
     margin: auto;
 }
 
-.layer {position: absolute; background: url('../images/sprites/sprites.min.png') no-repeat; z-index: 3; }
+.layer {
+    position: absolute; 
+    background: url('../images/sprites/sprites.png') no-repeat; 
+    z-index: 3;
+ }
 .layer:hover {cursor: pointer; z-index: 9; }
 #layer-yermo {
-    width: 334px; height: 524px; background-position: 0 -832px; right: 0; left:0; bottom: 0;
+    width: 334px; height: 524px; background-position: 0 -525px; right: 0; left:0; bottom: 0;
     margin:auto;
-    &:hover {   background-position: 0 -307px;  }
+    &:hover {   background-position: 0 0;   }
 }
 #layer-luisito {
-    width: 237px; height: 382px; background-position: -335px -1044px; right: 50%; left:50%; bottom: 0;
+    width: 237px; height: 382px; background-position: -335px -653px; right: 50%; left:50%; bottom: 0;
     margin:auto -312px -23px auto;
-    &:hover {   background-position: -335px -661px; }
+    &:hover {   background-position: -335px -270px; }
 }
 #layer-elena {
-    width: 156px; height: 223px; background-position: -573px -1153px; right: 15%; bottom: 10%;
-    &:hover {   background-position: -573px -661px; }
+    width: 156px; height: 223px; background-position: -573px -760px; right: 15%; bottom: 10%;
+    &:hover {   background-position: -573px 0; }
 }
 #layer-telma {
-    width: 109px; height: 319px; background-position: -610px -1377px; right: 90px; bottom: 12%;
-    &:hover {   background-position: -623px 0;   }
+    width: 109px; height: 319px; background-position: -613px -1374px; right: 90px; bottom: 12%;
+    &:hover {   background-position: -410px -1036px;  }
 }
 #layer-toto {
-    width: 204px; height: 306px; background-position: -205px 0; right: 0px; bottom: 11%;
-    &:hover {   background-position: 0 0;   }
+    width: 204px; height: 306px;  background-position: -205px -1050px; right: 0px; bottom: 11%;
+    &:hover {   background-position: 0 -1050px;   }
 }
 #layer-camilo {
     width: 212px; height: 337px; background-position: 0 -1357px; left: -15px; bottom: 11%;
-    &:hover {   background-position: -410px 0;  }
+    &:hover {   background-position: -520px -1036px; }
 }
 #layer-dora {
-    width: 199px; height: 322px; background-position: -535px -338px; left: 8%; bottom: 9%;
-    &:hover {   background-position: -335px -338px; }
+    width: 199px; height: 322px; background-position: -413px -1374px; left: 8%; bottom: 9%;
+    &:hover {    background-position: -213px -1357px; }
 }
 #layer-marta {
-    width: 158px; height: 267px; background-position: -451px -1427px; left: 20%; right:80%; bottom: 14%;
-    &:hover {   background-position: -573px -885px; }
+    width: 158px; height: 267px; background-position: -573px -492px; left: 20%; right:80%; bottom: 14%;
+    &:hover {   background-position: -573px -224px; }
 }
 #layer-carlos {
-    width: 118px; height: 269px; background-position: -332px -1427px; left: 20%; right:80%; bottom: 14%;
+    width: 118px; height: 269px; background-position: -454px 0; left: 20%; right:80%; bottom: 14%;
     margin:auto -251px auto auto;
-    &:hover {   background-position: -213px -1357px; }
+    &:hover {   background-position: -335px 0; }
 }
 
 
@@ -836,8 +840,26 @@ img.front {
         @include transform(scale(.8));
          a{margin-right: 0px !important; }
     }
+    h1,h2,h3,h4,h5,h6 { text-align: center !important; }
 }
+@media (max-height:700px) { 
+    #universo {
+        bottom: -15%;
+    }
+    #logo-big {
+        z-index: 50;
 
+    }
+    .featured {
+        bottom: inherit;
+        top:20%;
+    }
+
+    img.front{
+        bottom: inherit;
+        top:20%;
+    }
+}
 /* :::::::::::::: FIN: MEDIA QUERIES :::::::::::::::::::::::::::::::::::::::::::::::: */
 
 
@@ -864,7 +886,7 @@ img.front {
     margin:auto;
     width: 170px; height: 70px;
     @extend .sprite-kiriweb;
-    background-position: -340px -440px;
+    background-position: -330px -130px;
 
 }
 /* ::::::::::::::::::::::::::::::::: FIN: LOADER ::::::::::::::::::::::::::::::::::::::::::::::: */
