@@ -5972,7 +5972,7 @@ button.close {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.sprite-kiriweb, hr, footer #logos a, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .flechas, .icon {
+.sprite-kiriweb, hr, footer #logos a, #doSwipe, #logo-big #logo_1_big, #logo-big #logo_2_big, #logo-big #logo_3_big, #modal-close, #loader #loader_txt, .flechas, .icon, .rslides_nav.prev:before, .rslides_nav.next:after {
   background-image: url("../images/sprites/sprite-kiriweb.png"); }
 
 .sprite-elenco {
@@ -6377,7 +6377,14 @@ header, footer {
   transition: 0.2s; }
 
 #home {
-  background: url("../images/home_bg.jpg") repeat; }
+  background: #8897aa;
+  background: -moz-radial-gradient(center, ellipse cover, #8897aa 0%, #474e58 80%);
+  background: -webkit-gradient(radial, center center, 0%, center center, 80%, color-stop(0%, #8897aa), color-stop(80%, #474e58));
+  background: -webkit-radial-gradient(center, ellipse cover, #8897aa 0%, #474e58 80%);
+  background: -o-radial-gradient(center, ellipse cover, #8897aa 0%, #474e58 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #8897aa 0%, #474e58 80%);
+  background: radial-gradient(ellipse at center, #8897aa 0%, #474e58 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
 
 .page-0 header {
   background: none; }
@@ -6401,12 +6408,12 @@ header, footer {
 
 #trailer {
   background: #f2838e;
-  background: -moz-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 60%);
-  background: -webkit-gradient(radial, center center, 0%, center center, 60%, color-stop(0%, #f2838e), color-stop(60%, #DB4453));
-  background: -webkit-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 60%);
-  background: -o-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 60%);
-  background: -ms-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 60%);
-  background: radial-gradient(ellipse at center, #f2838e 0%, #DB4453 60%);
+  background: -moz-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 80%);
+  background: -webkit-gradient(radial, center center, 0%, center center, 80%, color-stop(0%, #f2838e), color-stop(80%, #DB4453));
+  background: -webkit-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 80%);
+  background: -o-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #f2838e 0%, #DB4453 80%);
+  background: radial-gradient(ellipse at center, #f2838e 0%, #DB4453 80%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
 
 .page-1 header {
@@ -6452,12 +6459,12 @@ header, footer {
 
 #sinopsis {
   background: #b9df90;
-  background: -moz-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 60%);
-  background: -webkit-gradient(radial, center center, 0%, center center, 60%, color-stop(0%, #b9df90), color-stop(60%, #8CC051));
-  background: -webkit-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 60%);
-  background: -o-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 60%);
-  background: -ms-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 60%);
-  background: radial-gradient(ellipse at center, #b9df90 0%, #8CC051 60%);
+  background: -moz-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 80%);
+  background: -webkit-gradient(radial, center center, 0%, center center, 80%, color-stop(0%, #b9df90), color-stop(80%, #8CC051));
+  background: -webkit-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 80%);
+  background: -o-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #b9df90 0%, #8CC051 80%);
+  background: radial-gradient(ellipse at center, #b9df90 0%, #8CC051 80%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
   #sinopsis p {
     color: #d2ebb7; }
@@ -6515,12 +6522,12 @@ header, footer {
 
 #equipo {
   background: #FFCE55;
-  background: -moz-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 60%);
-  background: -webkit-gradient(radial, center center, 0%, center center, 60%, color-stop(0%, #FFCE55), color-stop(60%, #F6BB43));
-  background: -webkit-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 60%);
-  background: -o-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 60%);
-  background: -ms-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 60%);
-  background: radial-gradient(ellipse at center, #FFCE55 0%, #F6BB43 60%);
+  background: -moz-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 80%);
+  background: -webkit-gradient(radial, center center, 0%, center center, 80%, color-stop(0%, #FFCE55), color-stop(80%, #F6BB43));
+  background: -webkit-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 80%);
+  background: -o-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #FFCE55 0%, #F6BB43 80%);
+  background: radial-gradient(ellipse at center, #FFCE55 0%, #F6BB43 80%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
   #equipo dl dt {
     font-weight: normal !important;
@@ -6603,23 +6610,24 @@ header, footer {
   height: 568px; }
 
 #elenco {
-  background: #8db7f4;
-  background: -moz-radial-gradient(center, ellipse cover, #8db7f4 0%, #4989E0 60%);
-  background: -webkit-gradient(radial, center center, 0%, center center, 60%, color-stop(0%, #8db7f4), color-stop(60%, #4989E0));
-  background: -webkit-radial-gradient(center, ellipse cover, #8db7f4 0%, #4989E0 60%);
-  background: -o-radial-gradient(center, ellipse cover, #8db7f4 0%, #4989E0 60%);
-  background: -ms-radial-gradient(center, ellipse cover, #8db7f4 0%, #4989E0 60%);
-  background: radial-gradient(ellipse at center, #8db7f4 0%, #4989E0 60%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
+  background: #6b594b;
+  background: -webkit-repeating-linear-gradient(to right, #6b594b, #6b594b 20px, #635245 20px, #635245 40px);
+  background: -moz-repeating-linear-gradient(to right, #6b594b, #6b594b 20px, #635245 20px, #635245 40px);
+  background: -o-repeating-linear-gradient(to right, #6b594b, #6b594b 20px, #635245 20px, #635245 40px);
+  background: repeating-linear-gradient(to right, #6b594b, #6b594b 20px, #635245 20px, #635245 40px); }
   #elenco h4 {
     color: #FFFFFF !important;
     font-size: 1.6em;
     line-height: 1em;
-    margin: 0; }
+    margin: 0;
+    -webkit-text-shadow: 0px 2px 0px rgba(14, 8, 9, 0.1);
+    -moz-text-shadow: 0px 2px 0px rgba(14, 8, 9, 0.1);
+    -o-text-shadow: 0px 2px 0px rgba(14, 8, 9, 0.1);
+    text-shadow: 0px 2px 0px rgba(14, 8, 9, 0.1); }
   #elenco dl dt {
     font-weight: normal !important;
     font-family: 'Damion';
-    color: #434A54;
+    color: #332a23;
     -webkit-text-shadow: none;
     -moz-text-shadow: none;
     -o-text-shadow: none;
@@ -6631,43 +6639,46 @@ header, footer {
     color: #FFCE55;
     line-height: 2em;
     font-size: 2em; }
+  #elenco dl .small {
+    font-size: 1.5em;
+    letter-spacing: -0.1em; }
 
 .page-4 header {
-  background: #4989E0;
+  background: #514338;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #4989E0 0%, rgba(73, 137, 224, 0) 100%);
+  background: -moz-linear-gradient(top, #514338 0%, rgba(81, 67, 56, 0) 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4989E0), color-stop(100%, rgba(73, 137, 224, 0)));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #514338), color-stop(100%, rgba(81, 67, 56, 0)));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #4989E0 0%, rgba(73, 137, 224, 0) 100%);
+  background: -webkit-linear-gradient(top, #514338 0%, rgba(81, 67, 56, 0) 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #4989E0 0%, rgba(73, 137, 224, 0) 100%);
+  background: -o-linear-gradient(top, #514338 0%, rgba(81, 67, 56, 0) 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #4989E0 0%, rgba(73, 137, 224, 0) 100%);
+  background: -ms-linear-gradient(top, #514338 0%, rgba(81, 67, 56, 0) 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, #4989E0 0%, rgba(73, 137, 224, 0) 100%);
+  background: linear-gradient(to bottom, #514338 0%, rgba(81, 67, 56, 0) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 );
   /* IE6-9 */ }
 .page-4 footer {
-  background: rgba(73, 137, 224, 0);
+  background: rgba(81, 67, 56, 0);
   /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(73, 137, 224, 0) 0%, #4989E0 100%);
+  background: -moz-linear-gradient(top, rgba(81, 67, 56, 0) 0%, #514338 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(73, 137, 224, 0)), color-stop(100%, #4989E0));
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(81, 67, 56, 0)), color-stop(100%, #514338));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(73, 137, 224, 0) 0%, #4989E0 100%);
+  background: -webkit-linear-gradient(top, rgba(81, 67, 56, 0) 0%, #514338 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(73, 137, 224, 0) 0%, #4989E0 100%);
+  background: -o-linear-gradient(top, rgba(81, 67, 56, 0) 0%, #514338 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(73, 137, 224, 0) 0%, #4989E0 100%);
+  background: -ms-linear-gradient(top, rgba(81, 67, 56, 0) 0%, #514338 100%);
   /* IE10+ */
-  background: linear-gradient(to bottom, rgba(73, 137, 224, 0) 0%, #4989E0 100%);
+  background: linear-gradient(to bottom, rgba(81, 67, 56, 0) 0%, #514338 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 );
   /* IE6-9 */ }
 .page-4 .featured {
-  background: url("../images/overlays/over-elena.png") no-repeat top left;
+  background-image: none;
   right: -100px;
   bottom: -100px;
   width: 460px;
@@ -6675,12 +6686,12 @@ header, footer {
 
 #prensa {
   background: #7cd0ee;
-  background: -moz-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 60%);
-  background: -webkit-gradient(radial, center center, 0%, center center, 60%, color-stop(0%, #7cd0ee), color-stop(60%, #3BAEDA));
-  background: -webkit-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 60%);
-  background: -o-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 60%);
-  background: -ms-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 60%);
-  background: radial-gradient(ellipse at center, #7cd0ee 0%, #3BAEDA 60%);
+  background: -moz-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 80%);
+  background: -webkit-gradient(radial, center center, 0%, center center, 80%, color-stop(0%, #7cd0ee), color-stop(80%, #3BAEDA));
+  background: -webkit-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 80%);
+  background: -o-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #7cd0ee 0%, #3BAEDA 80%);
+  background: radial-gradient(ellipse at center, #7cd0ee 0%, #3BAEDA 80%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
   #prensa .media {
     margin: 30px auto; }
@@ -6734,12 +6745,12 @@ header, footer {
 
 #contacto {
   background: #fb9884;
-  background: -moz-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 60%);
-  background: -webkit-gradient(radial, center center, 0%, center center, 60%, color-stop(0%, #fb9884), color-stop(60%, #E9573E));
-  background: -webkit-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 60%);
-  background: -o-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 60%);
-  background: -ms-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 60%);
-  background: radial-gradient(ellipse at center, #fb9884 0%, #E9573E 60%);
+  background: -moz-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 80%);
+  background: -webkit-gradient(radial, center center, 0%, center center, 80%, color-stop(0%, #fb9884), color-stop(80%, #E9573E));
+  background: -webkit-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 80%);
+  background: -o-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 80%);
+  background: -ms-radial-gradient(center, ellipse cover, #fb9884 0%, #E9573E 80%);
+  background: radial-gradient(ellipse at center, #fb9884 0%, #E9573E 80%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 ); }
 
 .page-6 header {
@@ -7034,8 +7045,7 @@ header, footer {
   z-index: 3; }
 
 .layer:hover {
-  cursor: pointer;
-  z-index: 9; }
+  cursor: pointer; }
 
 #layer-yermo {
   width: 334px;
@@ -7055,7 +7065,7 @@ header, footer {
   right: 50%;
   left: 50%;
   bottom: 0;
-  margin: auto -312px -23px auto; }
+  margin: auto -315px -9px auto; }
   #layer-luisito:hover {
     background-position: -335px -270px; }
 
@@ -7090,8 +7100,8 @@ header, footer {
   width: 212px;
   height: 337px;
   background-position: 0 -1357px;
-  left: -15px;
-  bottom: 11%; }
+  left: -25px;
+  bottom: 10%; }
   #layer-camilo:hover {
     background-position: -520px -1036px; }
 
@@ -7099,8 +7109,8 @@ header, footer {
   width: 199px;
   height: 322px;
   background-position: -413px -1374px;
-  left: 8%;
-  bottom: 9%; }
+  left: 7%;
+  bottom: 8%; }
   #layer-dora:hover {
     background-position: -213px -1357px; }
 
@@ -7108,8 +7118,8 @@ header, footer {
   width: 158px;
   height: 267px;
   background-position: -573px -492px;
-  left: 20%;
-  right: 80%;
+  left: 18%;
+  right: 82%;
   bottom: 14%; }
   #layer-marta:hover {
     background-position: -573px -224px; }
@@ -7118,8 +7128,8 @@ header, footer {
   width: 118px;
   height: 269px;
   background-position: -454px 0;
-  left: 20%;
-  right: 80%;
+  left: 18%;
+  right: 82%;
   bottom: 14%;
   margin: auto -251px auto auto; }
   #layer-carlos:hover {
@@ -7133,7 +7143,8 @@ header, footer {
   top: 0;
   left: 0;
   cursor: pointer;
-  z-index: 99998; }
+  z-index: 99998;
+  overflow: hidden; }
 
 img.front {
   pointer-events: none;
@@ -7350,7 +7361,13 @@ img.front {
       margin-right: 0px !important; }
 
   h1, h2, h3, h4, h5, h6 {
-    text-align: center !important; } }
+    text-align: center !important; }
+
+  .rslides_nav * {
+    color: transparent; }
+
+  .rslides_tabs {
+    display: none !important; } }
 @media (max-height: 700px) {
   #universo {
     bottom: -15%; }
@@ -7540,52 +7557,71 @@ img.front {
 
 .sprite-elenco {
   margin: 15px auto;
-  background-image: url("../images/sprites/sprite-elenco-2.png"); }
+  background-image: url("../images/sprites/sprite-elenco.png");
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  -ms-border-radius: 75px;
+  border-radius: 75px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  box-shadow: 0px 3px 0px rgba(14, 8, 9, 0.2);
+  -ms-box-shadow: 0px 3px 0px rgba(14, 8, 9, 0.2);
+  -moz-box-shadow: 0px 3px 0px rgba(14, 8, 9, 0.2);
+  -opera-box-shadow: 0px 3px 0px rgba(14, 8, 9, 0.2);
+  -webkit-box-shadow: 0px 3px 0px rgba(14, 8, 9, 0.2);
+  border: 2px solid #514338; }
+  .sprite-elenco:hover {
+    border: 2px solid #FFCE55; }
 
 .sprite-pelusa {
-  background-position: -8px -7px;
-  width: 135px;
-  height: 190px; }
+  background-position: -450px 0; }
 
 .sprite-pepe {
-  background-position: -168px -5px;
-  width: 177px;
-  height: 171px; }
+  background-position: -450px -150px; }
 
 .sprite-norma {
-  background-position: -390px 0;
-  width: 124px;
-  height: 235px; }
+  background-position: -300px -300px; }
 
 .sprite-rita {
-  background-position: 0 -201px;
-  width: 138px;
-  height: 159px; }
+  background-position: -450px -300px; }
 
 .sprite-santi {
-  background-position: -144px -212px;
-  width: 99px;
-  height: 117px; }
-
-.sprite-ignacio {
-  background-position: -250px -185px;
-  width: 127px;
-  height: 151px; }
+  background-position: 0 -450px; }
 
 .sprite-betiana {
-  background-position: -390px -244px;
-  width: 140px;
-  height: 147px; }
+  background-position: 0px 0px; }
 
 .sprite-marcelo {
-  background-position: -6px -375px;
-  width: 166px;
-  height: 136px; }
+  background-position: -300px -150px; }
 
 .sprite-susana {
-  background-position: -179px -356px;
-  width: 162px;
-  height: 144px; }
+  background-position: -150px -450px; }
+
+.sprite-bonfi {
+  background-position: -150px 0; }
+
+.sprite-candia {
+  background-position: -300px 0; }
+
+.sprite-carlos {
+  background-position: 0 -150px; }
+
+.sprite-ignacio {
+  background-position: -150px -150px; }
+
+.sprite-mariano {
+  background-position: 0 -300px; }
+
+.sprite-natalia {
+  background-position: -150px -300px; }
+
+.sprite-empty {
+  background-position: -150px -300px;
+  background-image: none;
+  background: #514338; }
 
 .rslides {
   position: relative;
@@ -7632,9 +7668,25 @@ img.front {
 
 .rslides_nav.prev {
   float: left; }
+  .rslides_nav.prev:before {
+    content: " ";
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: -8px;
+    margin-right: 5px;
+    background-position: -150px -0px; }
 
 .rslides_nav.next {
   float: right; }
+  .rslides_nav.next:after {
+    content: " ";
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: -8px;
+    margin-left: 5px;
+    background-position: -50px -0px; }
 
 .rslides_tabs {
   width: 100%;

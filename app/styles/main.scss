@@ -304,8 +304,8 @@ header, footer {@include transition(); }
 
 // :::::::::::::::::::::: HOME ::::::::::::::::::::::::::::::
 #home {
-    //@include linear-gradient($cIndigo, $cIndigoDark);
-    background: url('../images/home_bg.jpg') repeat;
+    @include radial-gradient(#8897aa,#474e58);
+    //background: url('../images/home_bg.jpg') repeat;
 
  }
 .page-0 {
@@ -394,12 +394,16 @@ header, footer {@include transition(); }
 // :::::::::::::::::::::: ELENCO ::::::::::::::::::::::::::::::
 
 #elenco {
-    @include radial-gradient(lighten($cAzul, 10%), $cAzulDark);
+    //@include radial-gradient(lighten($cMarron, 10%), $cMarronDark);
+    //background: repeating-linear-gradient(to right, $cMarron , $cMarron 20px, #635245 20px, #635245 40px );
+    //background: repeating-linear-gradient(to right, $cMarron , $cMarron 20px, #635245 20px, #635245 40px );
+    @include repeating-linear-gradient($cMarron,#635245);
     h4 {
         color: $cBlanco !important;
         font-size: 1.6em;
         line-height: 1em;
         margin:0;
+        @include text-shadow();
     }
 
 
@@ -408,7 +412,7 @@ header, footer {@include transition(); }
         dt {
             font-weight: normal !important;
             font-family: 'Damion';
-            color: $cIndigoDark;
+            color: darken($cMarronDark,10%);
             @include text-shadow(none);
             font-size: 1.6em;
             line-height: 1em;
@@ -419,14 +423,20 @@ header, footer {@include transition(); }
             color: $cAmarillo;
             line-height: 2em;
             font-size: 2em;
+            
         }
+        .small {
+                font-size: 1.5em ;
+                letter-spacing: -0.1em ;
+            }
     }
 }
 .page-4 { //elenco
-    header {@include linear-gradient($cAzulDark, rgba($cAzulDark,0)); }
-    footer {@include linear-gradient(rgba($cAzulDark,0), $cAzulDark); }
+    header {@include linear-gradient($cMarronDark, rgba($cMarronDark,0)); }
+    footer {@include linear-gradient(rgba($cMarronDark,0), $cMarronDark); }
     .featured {
-        background: url('../images/overlays/over-elena.png') no-repeat top left;
+        //background: url('../images/overlays/over-elena.png') no-repeat top left;
+        background-image:none;
         right:      -100px;
         bottom:-100px;
         width:  460px;
@@ -583,7 +593,7 @@ header, footer {@include transition(); }
     background: url('../images/sprites/sprites.png') no-repeat; 
     z-index: 3;
  }
-.layer:hover {cursor: pointer; z-index: 9; }
+.layer:hover {cursor: pointer;  }
 #layer-yermo {
     width: 334px; height: 524px; background-position: 0 -525px; right: 0; left:0; bottom: 0;
     margin:auto;
@@ -591,7 +601,7 @@ header, footer {@include transition(); }
 }
 #layer-luisito {
     width: 237px; height: 382px; background-position: -335px -653px; right: 50%; left:50%; bottom: 0;
-    margin:auto -312px -23px auto;
+    margin:auto -315px -9px auto;
     &:hover {   background-position: -335px -270px; }
 }
 #layer-elena {
@@ -607,19 +617,19 @@ header, footer {@include transition(); }
     &:hover {   background-position: 0 -1050px;   }
 }
 #layer-camilo {
-    width: 212px; height: 337px; background-position: 0 -1357px; left: -15px; bottom: 11%;
+    width: 212px; height: 337px; background-position: 0 -1357px; left: -25px; bottom: 10%;
     &:hover {   background-position: -520px -1036px; }
 }
 #layer-dora {
-    width: 199px; height: 322px; background-position: -413px -1374px; left: 8%; bottom: 9%;
+    width: 199px; height: 322px; background-position: -413px -1374px; left: 7%; bottom: 8%;
     &:hover {    background-position: -213px -1357px; }
 }
 #layer-marta {
-    width: 158px; height: 267px; background-position: -573px -492px; left: 20%; right:80%; bottom: 14%;
+    width: 158px; height: 267px; background-position: -573px -492px; left: 18%; right:82%; bottom: 14%;
     &:hover {   background-position: -573px -224px; }
 }
 #layer-carlos {
-    width: 118px; height: 269px; background-position: -454px 0; left: 20%; right:80%; bottom: 14%;
+    width: 118px; height: 269px; background-position: -454px 0; left: 18%; right:82%; bottom: 14%;
     margin:auto -251px auto auto;
     &:hover {   background-position: -335px 0; }
 }
@@ -634,6 +644,7 @@ header, footer {@include transition(); }
     left:0;
     cursor: pointer;
     z-index: 99998;
+    overflow: hidden;
 }
 
 img.front {
@@ -841,6 +852,12 @@ img.front {
          a{margin-right: 0px !important; }
     }
     h1,h2,h3,h4,h5,h6 { text-align: center !important; }
+    .rslides_nav * {
+        color: transparent;
+    }
+    .rslides_tabs {
+        display: none !important;
+    }
 }
 @media (max-height:700px) { 
     #universo {
@@ -963,16 +980,33 @@ img.front {
 .icon-download       { background-position: -325px -50px; &:hover { background-position: -300px -50px; } }
 
 
-.sprite-elenco {margin: 15px auto; background-image:url('../images/sprites/sprite-elenco-2.png'); }
-.sprite-pelusa      {background-position:  -8px -7px;       width: 135px;   height: 190px; }
-.sprite-pepe        {background-position: -168px -5px;      width: 177px;   height: 171px; }
-.sprite-norma       {background-position: -390px 0;         width: 124px;   height: 235px; }
-.sprite-rita        {background-position: 0 -201px;         width: 138px;   height: 159px; }
-.sprite-santi       {background-position: -144px -212px;    width: 99px;    height: 117px; }
-.sprite-ignacio     {background-position: -250px -185px;    width: 127px;   height: 151px; }
-.sprite-betiana     {background-position: -390px -244px;    width: 140px;   height: 147px; }
-.sprite-marcelo     {background-position: -6px -375px;      width: 166px;   height: 136px; }
-.sprite-susana      {background-position: -179px -356px;    width: 162px;   height: 144px; }
+.sprite-elenco      {
+    margin: 15px auto; 
+    background-image:url('../images/sprites/sprite-elenco.png'); 
+    width: 150px; height: 150px;
+    @include border-radius(75px);
+    @include box-shadow();
+    border: 2px solid $cMarronDark;
+    &:hover {
+        border: 2px solid $cAmarillo;
+    }
+}
+
+.sprite-pelusa      {background-position: -450px 0;      }
+.sprite-pepe        {background-position: -450px -150px;     }
+.sprite-norma       {background-position: -300px -300px;        }
+.sprite-rita        {background-position: -450px -300px;        }
+.sprite-santi       {background-position: 0 -450px;    }
+.sprite-betiana     {background-position: 0px 0px;     }
+.sprite-marcelo     {background-position: -300px -150px;      }
+.sprite-susana      {background-position: -150px -450px;     }
+.sprite-bonfi      {background-position:  -150px 0;    }
+.sprite-candia      {background-position: -300px 0;   }
+.sprite-carlos      {background-position:  0 -150px;   }
+.sprite-ignacio     {background-position: -150px -150px;    }
+.sprite-mariano     {background-position:  0 -300px;   }
+.sprite-natalia     {background-position:  -150px -300px;   }
+.sprite-empty        {background-position:  -150px -300px; background-image: none; background: $cMarronDark;   }
 
 
 .rslides {
@@ -1011,8 +1045,29 @@ img.front {
   }
 
 .rslides_nav {font-family: $font-cursive !important; }
-.rslides_nav.prev{ float:left;}
-.rslides_nav.next{ float:right;}
+.rslides_nav.prev{ 
+    float:left; 
+    
+        &:before {
+            content: " ";
+            @extend .sprite-kiriweb;
+            width: 25px; height: 25px;
+            display: inline-block;
+            vertical-align: -8px; margin-right:5px;
+            background-position: -150px -0px;
+        }
+    }
+.rslides_nav.next{ 
+    float:right; 
+    &:after {
+            content: " ";
+            @extend .sprite-kiriweb;
+            width: 25px; height: 25px;
+            display: inline-block;
+            vertical-align: -8px; margin-left:5px;
+            background-position: -50px -0px;
+        }
+}
 .rslides_tabs {
     width: 100%;
     margin:auto;

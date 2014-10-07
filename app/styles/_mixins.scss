@@ -119,7 +119,7 @@
 }
 
 $pos1 : 0%;
-$pos2 : 60%;
+$pos2 : 80%;
 @mixin radial-gradient($from, $to) {
     background: $from;
     background: -moz-radial-gradient(center, ellipse cover, $from $pos1, $to $pos2);
@@ -129,6 +129,14 @@ $pos2 : 60%;
     background: -ms-radial-gradient(center, ellipse cover, $from $pos1, $to $pos2);
     background: radial-gradient(ellipse at center, $from $pos1, $to $pos2);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='#f6bb43', GradientType=1 );
+}
+
+@mixin repeating-linear-gradient ($col1, $col2) {
+  background: $col1;
+  background: -webkit-repeating-linear-gradient(to right, $col1 , $col1 20px, $col2 20px, $col2 40px);
+  background:    -moz-repeating-linear-gradient(to right, $col1 , $col1 20px, $col2 20px, $col2 40px);
+  background:      -o-repeating-linear-gradient(to right, $col1 , $col1 20px, $col2 20px, $col2 40px);
+  background:         repeating-linear-gradient(to right, $col1 , $col1 20px, $col2 20px, $col2 40px);
 }
 
 /* scrollbar */
